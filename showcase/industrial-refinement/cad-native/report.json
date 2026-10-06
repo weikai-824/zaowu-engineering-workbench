@@ -1,0 +1,583 @@
+{
+  "schema": "cad-result-v1",
+  "jobId": "cd588125-f0c2-4dd4-81e3-6fd15b08970e",
+  "projectId": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+  "projectRevision": 13,
+  "designSha256": "df4586fb1860dd885da6be1d53231a22cb0d9ebf91029b9e3ef4c9d9a0aa0a73",
+  "executor": "controlled-cad-v2",
+  "runtime": {
+    "cadquery": "2.8.0",
+    "ocp": "7.9.3.1.1",
+    "python": "3.12.14",
+    "nlopt": "2.9.0",
+    "casadi": "3.8.0",
+    "exitPolicy": "normal_interpreter_shutdown"
+  },
+  "files": {
+    "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c.brep": {
+      "sha256": "11a70cbaa93b15be48b4037c1741b550eb255f41455ecb0ad3043ecc8aaeec8a",
+      "bytes": 23670
+    },
+    "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c.step": {
+      "sha256": "d608ae76ced7dfb610521e4b5bf053f234d946c0e9bc1ad897d54c79272296fe",
+      "bytes": 78299
+    },
+    "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c.stl": {
+      "sha256": "c4f9e9cb67a12012f0fd266201e65394220511cc606750415e073104fc79a619",
+      "bytes": 473684
+    },
+    "assembly.step": {
+      "sha256": "239d1a286efa6bb16656fe944240728bc97a18680f94e96543a62475db584ae8",
+      "bytes": 484113
+    },
+    "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d.brep": {
+      "sha256": "55702056f3d8cfcf03c1313e5e1653837224dac3eee576b8003ab4ca0b46b8c4",
+      "bytes": 43724
+    },
+    "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d.step": {
+      "sha256": "d4bb44edfa7094f6faba41ca6c57774c483571990cdc2a845d12e6d5d61634ba",
+      "bytes": 181303
+    },
+    "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d.stl": {
+      "sha256": "8fe327b39d1491b8e6406197eca75acb744446e5a0e931efa5e57c1aefca0e4e",
+      "bytes": 480684
+    },
+    "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e.brep": {
+      "sha256": "2595062b8d8a070816044e5109bfa046db132504dfd06f4e20963c4a89490baa",
+      "bytes": 23833
+    },
+    "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e.step": {
+      "sha256": "33d65b26a8ff248dc2ecf8b58399aee9feaac5018e14fdf279e9214e639ae3ae",
+      "bytes": 75907
+    },
+    "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e.stl": {
+      "sha256": "f3b82aeeee93e0d51b9a3ee7305b930c56a9b21396df4ddbae75d44913c0a292",
+      "bytes": 573484
+    },
+    "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b.brep": {
+      "sha256": "cf448fdc6a1d488131530af714f725d4268ac7ce9fc00a435d44c1f0b519cb3e",
+      "bytes": 33588
+    },
+    "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b.step": {
+      "sha256": "92690f9e23165d5fba94c5cdaa6b0684edf016efebdb6174ccb9416f3ac3e74b",
+      "bytes": 139621
+    },
+    "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b.stl": {
+      "sha256": "9a34d4b21c29afffa4334e9ca3a3595e8a7b7be010851210b972b2e706ea805e",
+      "bytes": 676684
+    },
+    "design.json": {
+      "sha256": "df4586fb1860dd885da6be1d53231a22cb0d9ebf91029b9e3ef4c9d9a0aa0a73",
+      "bytes": 7561
+    }
+  },
+  "parts": [
+    {
+      "id": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "name": "lower shell",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions": [
+        130.0,
+        92.0,
+        30.0
+      ],
+      "volumeMm3": 105240.19879148187,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    },
+    {
+      "id": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "name": "front display panel",
+      "position": [
+        0.0,
+        0.0,
+        28.8
+      ],
+      "dimensions": [
+        114.0,
+        47.0,
+        2.4000000000000004
+      ],
+      "volumeMm3": 7730.116881294832,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    },
+    {
+      "id": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "name": "rear vent cover",
+      "position": [
+        0.0,
+        0.0,
+        30.8
+      ],
+      "dimensions": [
+        114.0,
+        22.0,
+        2.4000000000000004
+      ],
+      "volumeMm3": 5137.4513988374,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    },
+    {
+      "id": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "name": "underside support",
+      "position": [
+        0.0,
+        0.0,
+        -3.0
+      ],
+      "dimensions": [
+        118.0,
+        80.0,
+        3.0
+      ],
+      "volumeMm3": 28181.21900172343,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    }
+  ],
+  "features": [
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_body",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_round",
+      "operation": "fillet_all",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_cavity",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_shell",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_riser",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_riser_join",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_boss1",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_boss2",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_boss3",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_boss4",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_bosses_a",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_bosses_b",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_bosses_c",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_bosses",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_hole1",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_hole2",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_hole3",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_hole4",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_holes_a",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_holes_b",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_holes_c",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_holes",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_usb",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "featureId": "ls_result",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "featureId": "fp_body",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "featureId": "fp_round",
+      "operation": "fillet_all",
+      "kernelValid": true
+    },
+    {
+      "partId": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "featureId": "fp_window",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "featureId": "fp_sensor",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "featureId": "fp_cut_a",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "featureId": "fp_result",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_body",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_round",
+      "operation": "fillet_all",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot1",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot2",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot3",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot4",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot5",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot6",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot7",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_slot8",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_cut_a",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_cut_b",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_cut_c",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_cut_d",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_cut_e",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_cut_f",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_cut_g",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "featureId": "rv_result",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_body",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_round",
+      "operation": "fillet_all",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_pad1",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_pad2",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_pad3",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_pad4",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_union_a",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_union_b",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_union_c",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "featureId": "us_result",
+      "operation": "union",
+      "kernelValid": true
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "iface_m3_1",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    },
+    {
+      "id": "iface_m3_2",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    },
+    {
+      "id": "iface_m3_3",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    },
+    {
+      "id": "iface_m3_4",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    }
+  ],
+  "interference": [
+    {
+      "partA": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "partB": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "partB": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "f1b2c3d4-5e6f-4a70-8b91-0c1d2e3f4a5b",
+      "partB": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "partB": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "a2c3d4e5-6f70-4b81-9c02-1d2e3f4a5b6c",
+      "partB": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "b3d4e5f6-7081-4c92-8d13-2e3f4a5b6c7d",
+      "partB": "c4e5f6a7-8192-4da3-9e24-3f4a5b6c7d8e",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    }
+  ],
+  "stl": {
+    "linearToleranceMm": 0.05,
+    "relative": false,
+    "angularToleranceRadians": 0.1
+  },
+  "verification": "unsigned_local_report",
+  "productionReady": false,
+  "physicalValidation": "not_run",
+  "notChecked": [
+    "strength",
+    "wall_thickness",
+    "assembly_clearance",
+    "thread_fit",
+    "support_strategy",
+    "printability",
+    "actual_machine_calibration"
+  ]
+}

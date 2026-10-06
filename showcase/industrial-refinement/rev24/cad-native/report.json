@@ -1,0 +1,559 @@
+{
+  "schema": "cad-result-v1",
+  "jobId": "f8094348-a445-47e1-86b7-4dcb7488fb4d",
+  "projectId": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+  "projectRevision": 18,
+  "designSha256": "9341e1e959acfde2f402f915d9b336747680401ac3ff43b48a8e26831856bb44",
+  "executor": "controlled-cad-v3",
+  "runtime": {
+    "cadquery": "2.8.0",
+    "ocp": "7.9.3.1.1",
+    "python": "3.12.14",
+    "nlopt": "2.9.0",
+    "casadi": "3.8.0",
+    "exitPolicy": "normal_interpreter_shutdown"
+  },
+  "files": {
+    "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741.brep": {
+      "sha256": "c639c653ae2b18425a9c68dd0f88eeb1209eeaf161e42ad792cbb23f8364c4b8",
+      "bytes": 41841
+    },
+    "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741.step": {
+      "sha256": "228e406f7a2496271da18b619311a36339d43de355c1df0593a2bb8c18c95a71",
+      "bytes": 159786
+    },
+    "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741.stl": {
+      "sha256": "380fdfaa5a1a41fb969258ac2c85567961c6836cef7b581a76dd779258408d92",
+      "bytes": 311284
+    },
+    "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25.brep": {
+      "sha256": "fc0abfc81889a39ff2251e25cc517d119d27ba009bccaaf023b82c3250f005ec",
+      "bytes": 20638
+    },
+    "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25.step": {
+      "sha256": "dbf7c2efda7758c3cd317f1bc6a37cd1015159243d10eddeb44eb3c18cd495b3",
+      "bytes": 63021
+    },
+    "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25.stl": {
+      "sha256": "757b87efcd5ed00a73ac4f1aaeaa86d6f9631a6ae72c8c41c1eb9e8c6c54b679",
+      "bytes": 59884
+    },
+    "assembly.step": {
+      "sha256": "3d3c4f638127d4eb5056a606479ea112d02d38bf608ef38a64a383c7b3072b7d",
+      "bytes": 551226
+    },
+    "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36.brep": {
+      "sha256": "f35a04753613386e9c13ddb9c67a0aec607399f9888ff4ceeb8f788c46baa8fb",
+      "bytes": 72643
+    },
+    "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36.step": {
+      "sha256": "5d46d0f062690a985096c0ad2de915457fa3775aba5482da92d7d2eb1b095106",
+      "bytes": 239344
+    },
+    "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36.stl": {
+      "sha256": "e197cd03bee94425e4712fc00908747141628300b6b55b9c824a2e72a8c09c22",
+      "bytes": 71484
+    },
+    "c204dd17-8c55-4ac2-b720-2b8ee3144d47.brep": {
+      "sha256": "953e2a88c17b2b2266001cd865a4f1ca8f4ef84a9f4b0a6852c013c75cc1ed15",
+      "bytes": 21861
+    },
+    "c204dd17-8c55-4ac2-b720-2b8ee3144d47.step": {
+      "sha256": "2978a56014f82a6a8dba63990fef0accd424691ce929bc15dd3a01e32ce30d00",
+      "bytes": 78563
+    },
+    "c204dd17-8c55-4ac2-b720-2b8ee3144d47.stl": {
+      "sha256": "18177b4c2b1afb55431d57f4ce5423b80f3c8fb57377e6a3bb5dfdb9f209b4f0",
+      "bytes": 128284
+    },
+    "design.json": {
+      "sha256": "9341e1e959acfde2f402f915d9b336747680401ac3ff43b48a8e26831856bb44",
+      "bytes": 6806
+    }
+  },
+  "parts": [
+    {
+      "id": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "name": "warm-white wedge lower shell",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions": [
+        130.0,
+        92.0,
+        35.87883539039338
+      ],
+      "volumeMm3": 95102.62468010375,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    },
+    {
+      "id": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "name": "dark floating display visor",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions": [
+        112.0,
+        57.0,
+        16.03341458388269
+      ],
+      "volumeMm3": 16400.340049019294,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    },
+    {
+      "id": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "name": "graphite rear vent service cover",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions": [
+        112.0,
+        24.0,
+        6.434644432030815
+      ],
+      "volumeMm3": 5190.163476827615,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    },
+    {
+      "id": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "name": "recessed shadow plinth with feet",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions": [
+        109.83822588230571,
+        68.0,
+        4.6
+      ],
+      "volumeMm3": 25891.28707611877,
+      "kernelValid": true,
+      "stepRoundtrip": "valid_volume_checked"
+    }
+  ],
+  "features": [
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "body_profile",
+      "operation": "profile_extrude",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "body_soft",
+      "operation": "fillet_edges",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "open_cavity",
+      "operation": "profile_extrude",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "hollow_body",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "boss_fl",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "boss_fr",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "boss_rl",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "boss_rr",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bossed_a",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bossed_b",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bossed_c",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bossed",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_fl",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_fr",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_rl",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_rr",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bored_a",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bored_b",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bored_c",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "bored",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "usb_bridge",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "usb_left",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "usb_right",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "usb_tool_a",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "usb_tool",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "shell_result",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "featureId": "visor_profile",
+      "operation": "profile_extrude",
+      "kernelValid": true
+    },
+    {
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "featureId": "visor_soft",
+      "operation": "fillet_edges",
+      "kernelValid": true
+    },
+    {
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "featureId": "sensor_aperture",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "featureId": "visor_result",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "cover_profile",
+      "operation": "profile_extrude",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "cover_soft",
+      "operation": "fillet_edges",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vent_1",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vented_1",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vent_2",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vented_2",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vent_3",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vented_3",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vent_4",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vented_4",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vent_5",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vented_5",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "vent_6",
+      "operation": "box",
+      "kernelValid": true
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "featureId": "cover_result",
+      "operation": "subtract",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "plinth_profile",
+      "operation": "profile_extrude",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "plinth_soft",
+      "operation": "fillet_edges",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "foot_fl",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "foot_fr",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "foot_rl",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "foot_rr",
+      "operation": "cylinder",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "feet_a",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "feet_b",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "feet_c",
+      "operation": "union",
+      "kernelValid": true
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "featureId": "plinth_result",
+      "operation": "union",
+      "kernelValid": true
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "m3_front_left",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    },
+    {
+      "id": "m3_front_right",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    },
+    {
+      "id": "m3_rear_left",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    },
+    {
+      "id": "m3_rear_right",
+      "passed": true,
+      "coreIntersectionMm3": 0,
+      "ringMissingMm3": 0.0,
+      "toleranceMm": 0.01,
+      "scope": "declared_straight_bore_span_only"
+    }
+  ],
+  "interference": [
+    {
+      "partA": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "partB": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "partB": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "partB": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "partB": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "partB": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    },
+    {
+      "partA": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "partB": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "overlapVolumeMm3": 0,
+      "overlapDetected": false
+    }
+  ],
+  "stl": {
+    "linearToleranceMm": 0.05,
+    "relative": false,
+    "angularToleranceRadians": 0.1
+  },
+  "verification": "unsigned_local_report",
+  "productionReady": false,
+  "physicalValidation": "not_run",
+  "notChecked": [
+    "strength",
+    "wall_thickness",
+    "assembly_clearance",
+    "thread_fit",
+    "support_strategy",
+    "printability",
+    "actual_machine_calibration"
+  ]
+}

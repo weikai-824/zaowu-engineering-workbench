@@ -1,0 +1,1781 @@
+[
+  {
+    "id": "sla-lite600-utr8000-reference",
+    "process": "SLA_LASER",
+    "machine": "UnionTech 联泰 Lite600",
+    "material": "UnionTech 联泰 UTR8000",
+    "colorCapability": "取决于具体材料与装载",
+    "parameters": [
+      {
+        "name": "设备公布成型空间",
+        "value": [
+          600,
+          600,
+          400
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://www.uniontech3d.cn/show-lite600-sla.html",
+        "sourcePointer": null,
+        "applicability": null,
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          600,
+          600,
+          400
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "设备公布层厚范围",
+        "value": {
+          "min": 0.05,
+          "max": 0.25
+        },
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://www.uniontech3d.cn/show-lite600-sla.html",
+        "sourcePointer": null,
+        "applicability": "设备层厚范围；未证明UTR8000在每档层厚均已具备完整合格参数",
+        "valueType": "range",
+        "originalUnit": "mm",
+        "normalizedValue": {
+          "min": 0.05,
+          "max": 0.25
+        },
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "激光波长",
+        "value": 355,
+        "unit": "nm",
+        "scope": "machine",
+        "sourceUrl": "https://www.uniontech3d.cn/show-lite600-sla.html",
+        "sourcePointer": null,
+        "applicability": null,
+        "valueType": "scalar",
+        "originalUnit": "nm",
+        "normalizedValue": 355,
+        "normalizedUnit": "nm"
+      },
+      {
+        "name": "设备环境温度",
+        "value": {
+          "min": 22,
+          "max": 26
+        },
+        "unit": "°C",
+        "scope": "machine",
+        "sourceUrl": "https://www.uniontech3d.cn/show-lite600-sla.html",
+        "sourcePointer": null,
+        "applicability": null,
+        "valueType": "range",
+        "originalUnit": "degC",
+        "normalizedValue": {
+          "min": 22,
+          "max": 26
+        },
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "前处理软件",
+        "value": [
+          "Polydevs Pro",
+          "BPC"
+        ],
+        "unit": null,
+        "scope": "machine",
+        "sourceUrl": "https://www.uniontech3d.cn/show-lite600-sla.html",
+        "sourcePointer": null,
+        "applicability": null,
+        "valueType": "enum",
+        "originalUnit": null,
+        "normalizedValue": [
+          "Polydevs Pro",
+          "BPC"
+        ],
+        "normalizedUnit": null
+      },
+      {
+        "name": "设备操作软件",
+        "value": "RSCON",
+        "unit": null,
+        "scope": "machine",
+        "sourceUrl": "https://www.uniontech3d.cn/show-lite600-sla.html",
+        "sourcePointer": null,
+        "applicability": null,
+        "valueType": "scalar",
+        "originalUnit": null,
+        "normalizedValue": "RSCON",
+        "normalizedUnit": null
+      }
+    ],
+    "unknownParameters": [
+      "设备编号和准确代次",
+      "UTR8000实际料号/颜色/批次",
+      "树脂与层厚匹配的厂商扫描工艺包",
+      "扫描/涂覆/支撑配置",
+      "软件版本及实际授权接口",
+      "清洗固化流程",
+      "试制验收记录"
+    ],
+    "notes": [
+      "官网同页列出UTR8000汽车轮毂实例；这是公开应用证据，不是该项目完整切片配置。未填写扫描功率、速度或补偿。官网英文/中文页扫描速度数字不同，本数据未合并使用。"
+    ],
+    "sourceUrls": [
+      "https://www.uniontech3d.cn/show-lite600-sla.html"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "sla-form3plus-grey41-reference",
+    "process": "SLA_LASER",
+    "machine": "Formlabs Form 3+",
+    "material": "Formlabs Grey Resin V4.1",
+    "colorCapability": "Grey",
+    "parameters": [
+      {
+        "name": "该机器与树脂公开支持层厚",
+        "value": [
+          0.025,
+          0.05,
+          0.1
+        ],
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://formlabs.com/support/Choosing-the-Right-Material/",
+        "sourcePointer": "Grey Resin V4.1 table",
+        "applicability": "Form 3/3B/3+/3B+ + Grey Resin V4.1",
+        "valueType": "enum",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          0.025,
+          0.05,
+          0.1
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "材料产品页最小层厚",
+        "value": 0.025,
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://formlabs.com/products/grey-resin-v4-1/",
+        "sourcePointer": null,
+        "applicability": "Form 3 Series + Grey Resin V4.1",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.025,
+        "normalizedUnit": "mm"
+      }
+    ],
+    "unknownParameters": [
+      "PreForm版本与材料设置版",
+      "设备编号、树脂槽/平台",
+      "指定层厚的完整打印设置",
+      "清洗后固化条件",
+      "具体模型支撑与摆放",
+      "试制验收记录"
+    ],
+    "notes": [
+      "用于说明机型+树脂版次决定可选层厚。不能把V4、V4.1、V5或Form 3与Form 4配置混用。未填写未公开曝光/扫描参数。"
+    ],
+    "sourceUrls": [
+      "https://formlabs.com/support/Choosing-the-Right-Material/",
+      "https://formlabs.com/products/grey-resin-v4-1/"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "lcd-saturn4u16k-standard20-grey-reference",
+    "process": "LCD_MSLA",
+    "machine": "ELEGOO Saturn 4 Ultra 16K",
+    "material": "ELEGOO Standard Resin 2.0",
+    "colorCapability": "Grey",
+    "parameters": [
+      {
+        "name": "设备公布成型空间",
+        "value": [
+          211.68,
+          118.37,
+          220
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://us.elegoo.com/products/saturn-4-ultra-16k-10inch-monochrome-lcd-resin-3d-printer",
+        "sourcePointer": null,
+        "applicability": null,
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          211.68,
+          118.37,
+          220
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "标称XY像素尺寸",
+        "value": [
+          0.014,
+          0.019
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://us.elegoo.com/products/saturn-4-ultra-16k-10inch-monochrome-lcd-resin-3d-printer",
+        "sourcePointer": null,
+        "applicability": "像素尺寸，不等于成品尺寸精度",
+        "valueType": "vector2",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          0.014,
+          0.019
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "参考层厚",
+        "value": 0.05,
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing",
+        "sourcePointer": "Sheet1!G1906",
+        "applicability": "ELEGOO Saturn 4 Ultra 16K + Standard Resin 2.0 + Grey；官方表20250508版 Sheet1 第1906行",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.05,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "普通层曝光参考范围",
+        "value": {
+          "min": 2.3,
+          "max": 2.8
+        },
+        "unit": "s",
+        "scope": "machine_material",
+        "sourceUrl": "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing",
+        "sourcePointer": "Sheet1!F1906",
+        "applicability": "ELEGOO Saturn 4 Ultra 16K + Standard Resin 2.0 + Grey；官方表20250508版 Sheet1 第1906行",
+        "valueType": "range",
+        "originalUnit": "s",
+        "normalizedValue": {
+          "min": 2.3,
+          "max": 2.8
+        },
+        "normalizedUnit": "s"
+      },
+      {
+        "name": "底层曝光参考范围",
+        "value": {
+          "min": 25,
+          "max": 35
+        },
+        "unit": "s",
+        "scope": "machine_material",
+        "sourceUrl": "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing",
+        "sourcePointer": "Sheet1!E1906",
+        "applicability": "ELEGOO Saturn 4 Ultra 16K + Standard Resin 2.0 + Grey；官方表20250508版 Sheet1 第1906行",
+        "valueType": "range",
+        "originalUnit": "s",
+        "normalizedValue": {
+          "min": 25,
+          "max": 35
+        },
+        "normalizedUnit": "s"
+      }
+    ],
+    "unknownParameters": [
+      "树脂批次和实际温度",
+      "切片器与固件版本",
+      "底层数/过渡层/其他未列出设置",
+      "该固件的倾斜脱模相关设置",
+      "真实模型支撑/摆放/空腔排液",
+      "清洗固化流程",
+      "校准与试制验收"
+    ],
+    "notes": [
+      "官方表为建议值。表中该机型的Z提升/回落/回落后静置字段为“/”，本数据没有把它解释为0，也没有套用其他升降机型参数。尚未形成可直接生产的完整profile。"
+    ],
+    "sourceUrls": [
+      "https://us.elegoo.com/products/saturn-4-ultra-16k-10inch-monochrome-lcd-resin-3d-printer",
+      "https://www.elegoo.com/blogs/3d-printer-user-guide/elegoo-printers-resin-setting-sheet",
+      "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "lcd-saturn4u16k-abslike30-grey-reference",
+    "process": "LCD_MSLA",
+    "machine": "ELEGOO Saturn 4 Ultra 16K",
+    "material": "ELEGOO ABS-Like Resin 3.0",
+    "colorCapability": "Grey",
+    "parameters": [
+      {
+        "name": "设备公布成型空间",
+        "value": [
+          211.68,
+          118.37,
+          220
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://us.elegoo.com/products/saturn-4-ultra-16k-10inch-monochrome-lcd-resin-3d-printer",
+        "sourcePointer": null,
+        "applicability": null,
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          211.68,
+          118.37,
+          220
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "标称XY像素尺寸",
+        "value": [
+          0.014,
+          0.019
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://us.elegoo.com/products/saturn-4-ultra-16k-10inch-monochrome-lcd-resin-3d-printer",
+        "sourcePointer": null,
+        "applicability": "像素尺寸，不等于成品尺寸精度",
+        "valueType": "vector2",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          0.014,
+          0.019
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "参考层厚",
+        "value": 0.05,
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing",
+        "sourcePointer": "Sheet1!G1927",
+        "applicability": "ELEGOO Saturn 4 Ultra 16K + ABS-Like Resin 3.0 + Grey；官方表20250508版 Sheet1 第1927行",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.05,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "普通层曝光参考范围",
+        "value": {
+          "min": 2.5,
+          "max": 3
+        },
+        "unit": "s",
+        "scope": "machine_material",
+        "sourceUrl": "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing",
+        "sourcePointer": "Sheet1!F1927",
+        "applicability": "ELEGOO Saturn 4 Ultra 16K + ABS-Like Resin 3.0 + Grey；官方表20250508版 Sheet1 第1927行",
+        "valueType": "range",
+        "originalUnit": "s",
+        "normalizedValue": {
+          "min": 2.5,
+          "max": 3
+        },
+        "normalizedUnit": "s"
+      },
+      {
+        "name": "底层曝光参考范围",
+        "value": {
+          "min": 25,
+          "max": 35
+        },
+        "unit": "s",
+        "scope": "machine_material",
+        "sourceUrl": "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing",
+        "sourcePointer": "Sheet1!E1927",
+        "applicability": "ELEGOO Saturn 4 Ultra 16K + ABS-Like Resin 3.0 + Grey；官方表20250508版 Sheet1 第1927行",
+        "valueType": "range",
+        "originalUnit": "s",
+        "normalizedValue": {
+          "min": 25,
+          "max": 35
+        },
+        "normalizedUnit": "s"
+      }
+    ],
+    "unknownParameters": [
+      "树脂批次和实际温度",
+      "切片器与固件版本",
+      "底层数/过渡层/其他未列出设置",
+      "该固件的倾斜脱模相关设置",
+      "真实模型支撑/摆放/空腔排液",
+      "清洗固化流程",
+      "校准与试制验收"
+    ],
+    "notes": [
+      "官方表为建议值。表中该机型的Z提升/回落/回落后静置字段为“/”，本数据没有把它解释为0，也没有套用其他升降机型参数。尚未形成可直接生产的完整profile。"
+    ],
+    "sourceUrls": [
+      "https://us.elegoo.com/products/saturn-4-ultra-16k-10inch-monochrome-lcd-resin-3d-printer",
+      "https://www.elegoo.com/blogs/3d-printer-user-guide/elegoo-printers-resin-setting-sheet",
+      "https://drive.google.com/file/d/1_jnyMfNkm4sPJhKyN46ey5CO-ks4MRyR/view?usp=sharing"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "fdm-x1c-pla-basic-reference",
+    "process": "FDM",
+    "machine": "Bambu Lab X1 Carbon",
+    "material": "Bambu Lab PLA Basic",
+    "colorCapability": "取决于具体材料与装载",
+    "parameters": [
+      {
+        "name": "设备公布成型空间",
+        "value": [
+          256,
+          256,
+          256
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+        "sourcePointer": null,
+        "applicability": "名义成型范围；可用板面禁入区与实际高度须按配置检查",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          256,
+          256,
+          256
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "对应喷嘴直径",
+        "value": 0.4,
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PLA%20Basic%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "compatible_printers 包含 Bambu Lab X1 Carbon 0.4 nozzle",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.4,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "普通层喷嘴温度",
+        "value": 220,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PLA%20Basic%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature",
+        "applicability": "Bambu PLA Basic @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 220,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "首层喷嘴温度",
+        "value": 220,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PLA%20Basic%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature_initial_layer",
+        "applicability": "Bambu PLA Basic @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 220,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "可选官方工艺预设名称",
+        "value": "0.20mm Standard @BBL X1C",
+        "unit": null,
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "对应0.4 nozzle，需安装版匹配和完整继承",
+        "valueType": "scalar",
+        "originalUnit": null,
+        "normalizedValue": "0.20mm Standard @BBL X1C",
+        "normalizedUnit": null
+      },
+      {
+        "name": "标准预设继承层高",
+        "value": 0.2,
+        "unit": "mm",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "0.20mm Standard → fdm_process_single_0.20 → fdm_process_single_common → fdm_process_common",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.2,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "标准预设继承壁圈数",
+        "value": 2,
+        "unit": "count",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "默认值，不是给具体承载件的设计建议",
+        "valueType": "scalar",
+        "originalUnit": "count",
+        "normalizedValue": 2,
+        "normalizedUnit": "count"
+      },
+      {
+        "name": "标准预设继承填充密度",
+        "value": 15,
+        "unit": "percent",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "原值15%；默认值不代表满足强度要求",
+        "valueType": "scalar",
+        "originalUnit": "percent",
+        "normalizedValue": 15,
+        "normalizedUnit": "percent"
+      }
+    ],
+    "unknownParameters": [
+      "实际设备编号、固件与Bambu Studio版本",
+      "打印板型号与其温度",
+      "完整machine/filament/process继承配置",
+      "喷嘴/挤出机变体与实际校准",
+      "耗材干燥/颜色/批次",
+      "零件摆放、支撑、接缝及结构验收",
+      "实机试制记录"
+    ],
+    "notes": [
+      "数据为官方仓库固定commit的默认值，未执行切片或实物验证。喷嘴温度两项数组值相同；没有把不同挤出机变体的速度数组粗略合并。PETG HF与普通PETG、TPU 95A HF与TPU for AMS不可互换。"
+    ],
+    "sourceUrls": [
+      "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PLA%20Basic%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "fdm-x1c-abs-reference",
+    "process": "FDM",
+    "machine": "Bambu Lab X1 Carbon",
+    "material": "Bambu Lab ABS",
+    "colorCapability": "取决于具体材料与装载",
+    "parameters": [
+      {
+        "name": "设备公布成型空间",
+        "value": [
+          256,
+          256,
+          256
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+        "sourcePointer": null,
+        "applicability": "名义成型范围；可用板面禁入区与实际高度须按配置检查",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          256,
+          256,
+          256
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "对应喷嘴直径",
+        "value": 0.4,
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20ABS%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "compatible_printers 包含 Bambu Lab X1 Carbon 0.4 nozzle",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.4,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "普通层喷嘴温度",
+        "value": 270,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20ABS%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature",
+        "applicability": "Bambu ABS @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 270,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "首层喷嘴温度",
+        "value": 260,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20ABS%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature_initial_layer",
+        "applicability": "Bambu ABS @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 260,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "可选官方工艺预设名称",
+        "value": "0.20mm Standard @BBL X1C",
+        "unit": null,
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "对应0.4 nozzle，需安装版匹配和完整继承",
+        "valueType": "scalar",
+        "originalUnit": null,
+        "normalizedValue": "0.20mm Standard @BBL X1C",
+        "normalizedUnit": null
+      },
+      {
+        "name": "标准预设继承层高",
+        "value": 0.2,
+        "unit": "mm",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "0.20mm Standard → fdm_process_single_0.20 → fdm_process_single_common → fdm_process_common",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.2,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "标准预设继承壁圈数",
+        "value": 2,
+        "unit": "count",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "默认值，不是给具体承载件的设计建议",
+        "valueType": "scalar",
+        "originalUnit": "count",
+        "normalizedValue": 2,
+        "normalizedUnit": "count"
+      },
+      {
+        "name": "标准预设继承填充密度",
+        "value": 15,
+        "unit": "percent",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "原值15%；默认值不代表满足强度要求",
+        "valueType": "scalar",
+        "originalUnit": "percent",
+        "normalizedValue": 15,
+        "normalizedUnit": "percent"
+      }
+    ],
+    "unknownParameters": [
+      "实际设备编号、固件与Bambu Studio版本",
+      "打印板型号与其温度",
+      "完整machine/filament/process继承配置",
+      "喷嘴/挤出机变体与实际校准",
+      "耗材干燥/颜色/批次",
+      "零件摆放、支撑、接缝及结构验收",
+      "实机试制记录"
+    ],
+    "notes": [
+      "数据为官方仓库固定commit的默认值，未执行切片或实物验证。喷嘴温度两项数组值相同；没有把不同挤出机变体的速度数组粗略合并。PETG HF与普通PETG、TPU 95A HF与TPU for AMS不可互换。"
+    ],
+    "sourceUrls": [
+      "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20ABS%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "fdm-x1c-petg-hf-reference",
+    "process": "FDM",
+    "machine": "Bambu Lab X1 Carbon",
+    "material": "Bambu Lab PETG HF",
+    "colorCapability": "取决于具体材料与装载",
+    "parameters": [
+      {
+        "name": "设备公布成型空间",
+        "value": [
+          256,
+          256,
+          256
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+        "sourcePointer": null,
+        "applicability": "名义成型范围；可用板面禁入区与实际高度须按配置检查",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          256,
+          256,
+          256
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "对应喷嘴直径",
+        "value": 0.4,
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PETG%20HF%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "compatible_printers 包含 Bambu Lab X1 Carbon 0.4 nozzle",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.4,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "普通层喷嘴温度",
+        "value": 245,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PETG%20HF%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature",
+        "applicability": "Bambu PETG HF @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 245,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "首层喷嘴温度",
+        "value": 230,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PETG%20HF%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature_initial_layer",
+        "applicability": "Bambu PETG HF @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 230,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "可选官方工艺预设名称",
+        "value": "0.20mm Standard @BBL X1C",
+        "unit": null,
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "对应0.4 nozzle，需安装版匹配和完整继承",
+        "valueType": "scalar",
+        "originalUnit": null,
+        "normalizedValue": "0.20mm Standard @BBL X1C",
+        "normalizedUnit": null
+      },
+      {
+        "name": "标准预设继承层高",
+        "value": 0.2,
+        "unit": "mm",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "0.20mm Standard → fdm_process_single_0.20 → fdm_process_single_common → fdm_process_common",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.2,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "标准预设继承壁圈数",
+        "value": 2,
+        "unit": "count",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "默认值，不是给具体承载件的设计建议",
+        "valueType": "scalar",
+        "originalUnit": "count",
+        "normalizedValue": 2,
+        "normalizedUnit": "count"
+      },
+      {
+        "name": "标准预设继承填充密度",
+        "value": 15,
+        "unit": "percent",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "原值15%；默认值不代表满足强度要求",
+        "valueType": "scalar",
+        "originalUnit": "percent",
+        "normalizedValue": 15,
+        "normalizedUnit": "percent"
+      }
+    ],
+    "unknownParameters": [
+      "实际设备编号、固件与Bambu Studio版本",
+      "打印板型号与其温度",
+      "完整machine/filament/process继承配置",
+      "喷嘴/挤出机变体与实际校准",
+      "耗材干燥/颜色/批次",
+      "零件摆放、支撑、接缝及结构验收",
+      "实机试制记录"
+    ],
+    "notes": [
+      "数据为官方仓库固定commit的默认值，未执行切片或实物验证。喷嘴温度两项数组值相同；没有把不同挤出机变体的速度数组粗略合并。PETG HF与普通PETG、TPU 95A HF与TPU for AMS不可互换。"
+    ],
+    "sourceUrls": [
+      "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20PETG%20HF%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "fdm-x1c-tpu-95a-hf-reference",
+    "process": "FDM",
+    "machine": "Bambu Lab X1 Carbon",
+    "material": "Bambu Lab TPU 95A HF",
+    "colorCapability": "取决于具体材料与装载",
+    "parameters": [
+      {
+        "name": "设备公布成型空间",
+        "value": [
+          256,
+          256,
+          256
+        ],
+        "unit": "mm",
+        "scope": "machine",
+        "sourceUrl": "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+        "sourcePointer": null,
+        "applicability": "名义成型范围；可用板面禁入区与实际高度须按配置检查",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          256,
+          256,
+          256
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "对应喷嘴直径",
+        "value": 0.4,
+        "unit": "mm",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20TPU%2095A%20HF%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "compatible_printers 包含 Bambu Lab X1 Carbon 0.4 nozzle",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.4,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "普通层喷嘴温度",
+        "value": 230,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20TPU%2095A%20HF%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature",
+        "applicability": "Bambu TPU 95A HF @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 230,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "首层喷嘴温度",
+        "value": 230,
+        "unit": "°C",
+        "scope": "machine_material",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20TPU%2095A%20HF%20%40BBL%20X1C.json",
+        "sourcePointer": "nozzle_temperature_initial_layer",
+        "applicability": "Bambu TPU 95A HF @BBL X1C",
+        "valueType": "scalar",
+        "originalUnit": "degC",
+        "normalizedValue": 230,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "可选官方工艺预设名称",
+        "value": "0.20mm Standard @BBL X1C",
+        "unit": null,
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+        "sourcePointer": null,
+        "applicability": "对应0.4 nozzle，需安装版匹配和完整继承",
+        "valueType": "scalar",
+        "originalUnit": null,
+        "normalizedValue": "0.20mm Standard @BBL X1C",
+        "normalizedUnit": null
+      },
+      {
+        "name": "标准预设继承层高",
+        "value": 0.2,
+        "unit": "mm",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "0.20mm Standard → fdm_process_single_0.20 → fdm_process_single_common → fdm_process_common",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.2,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "标准预设继承壁圈数",
+        "value": 2,
+        "unit": "count",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "默认值，不是给具体承载件的设计建议",
+        "valueType": "scalar",
+        "originalUnit": "count",
+        "normalizedValue": 2,
+        "normalizedUnit": "count"
+      },
+      {
+        "name": "标准预设继承填充密度",
+        "value": 15,
+        "unit": "percent",
+        "scope": "job",
+        "sourceUrl": "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json",
+        "sourcePointer": null,
+        "applicability": "原值15%；默认值不代表满足强度要求",
+        "valueType": "scalar",
+        "originalUnit": "percent",
+        "normalizedValue": 15,
+        "normalizedUnit": "percent"
+      }
+    ],
+    "unknownParameters": [
+      "实际设备编号、固件与Bambu Studio版本",
+      "打印板型号与其温度",
+      "完整machine/filament/process继承配置",
+      "喷嘴/挤出机变体与实际校准",
+      "耗材干燥/颜色/批次",
+      "零件摆放、支撑、接缝及结构验收",
+      "实机试制记录"
+    ],
+    "notes": [
+      "数据为官方仓库固定commit的默认值，未执行切片或实物验证。喷嘴温度两项数组值相同；没有把不同挤出机变体的速度数组粗略合并。PETG HF与普通PETG、TPU 95A HF与TPU for AMS不可互换。"
+    ],
+    "sourceUrls": [
+      "https://public-cdn.bambulab.com/store/X1-Carbon%20tech%20specs.pdf",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/filament/Bambu%20TPU%2095A%20HF%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/0.20mm%20Standard%20%40BBL%20X1C.json",
+      "https://raw.githubusercontent.com/bambulab/BambuStudio/f2b55a5a83f266cf56e06c7943a81a08bebb7fad/resources/profiles/BBL/process/fdm_process_common.json"
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "sls-eos-p110-pa2200-official",
+    "process": "SLS",
+    "machine": "EOS FORMIGA P 110 Velocis",
+    "material": "EOS PA 2200（PA12 尼龙粉末）",
+    "colorCapability": "白色本体；本组合不直接进行纹理全彩打印，染色属于后处理。",
+    "publishedParameters": [
+      {
+        "name": "设备构建空间 X×Y×Z",
+        "value": [
+          200,
+          250,
+          330
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.eos.info/polymer-solutions/polymer-printers/data-sheets/sds-formiga-p-110-velocis"
+      },
+      {
+        "name": "PA 2200 可选工艺层厚（离散选项）",
+        "value": [
+          60,
+          100,
+          120
+        ],
+        "unit": "μm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/material_pdf/EOS_Polymer_Compatibility_SystemMaterial.pdf"
+      }
+    ],
+    "unknownParameters": [
+      "当前设备与粉末批次对应的正式 EOS MaterialSet 版本",
+      "实际激光功率、扫描速度、扫描间距与轮廓策略",
+      "粉床预热与热管理参数",
+      "粉末刷新配比及可复用条件",
+      "冷却、排粉及染色条件",
+      "尺寸补偿、最小可接受壁厚与装配间隙的本企业实测值"
+    ],
+    "notes": [
+      "核验日期2026-09-14；层厚兼容表版本07/2026，已目视检查PDF第1页。",
+      "公开规格与工艺选项，不是可直接发机的完整切片配置，也不是本企业实机校准结果。",
+      "60/100/120μm为对应材料与设备的可选工艺，不表示一个任务可以任意混用层厚。",
+      "页面公布的30W激光和最高5m/s是设备能力，不作为PA2200加工处方录入。"
+    ],
+    "sourceUrls": [
+      "https://www.eos.info/polymer-solutions/polymer-printers/formiga-p-110-velocis",
+      "https://www.eos.info/polymer-solutions/polymer-printers/data-sheets/sds-formiga-p-110-velocis",
+      "https://www.eos.info/03_system-related-assets/material-related-contents/material_pdf/EOS_Polymer_Compatibility_SystemMaterial.pdf"
+    ],
+    "parameters": [
+      {
+        "name": "设备构建空间 X×Y×Z",
+        "value": [
+          200,
+          250,
+          330
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.eos.info/polymer-solutions/polymer-printers/data-sheets/sds-formiga-p-110-velocis",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          200,
+          250,
+          330
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "PA 2200 可选工艺层厚（离散选项）",
+        "value": [
+          60,
+          100,
+          120
+        ],
+        "unit": "μm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/material_pdf/EOS_Polymer_Compatibility_SystemMaterial.pdf",
+        "valueType": "enum",
+        "originalUnit": "μm",
+        "normalizedValue": [
+          0.06,
+          0.1,
+          0.12
+        ],
+        "normalizedUnit": "mm"
+      }
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "lpbf-eos-m290-alsi10mg-30-official",
+    "process": "LPBF",
+    "machine": "EOS M 290（标准400W机型）",
+    "material": "EOS Aluminium AlSi10Mg，粉末料号9011-0024；工艺包AlSi10Mg_FlexM291 2.01",
+    "colorCapability": "金属本色；此组合不原位全彩打印。",
+    "publishedParameters": [
+      {
+        "name": "设备构建空间（含基板、依应用变化）X×Y×Z",
+        "value": [
+          250,
+          250,
+          325
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.eos.info/metal-solutions/metal-printers/eos-m-290"
+      },
+      {
+        "name": "所列工艺包层厚",
+        "value": 30,
+        "unit": "μm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf"
+      },
+      {
+        "name": "所列工艺包构建平台温度",
+        "value": 35,
+        "unit": "°C",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf"
+      },
+      {
+        "name": "所列工艺包筛网尺寸",
+        "value": 90,
+        "unit": "μm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf"
+      },
+      {
+        "name": "所列工艺包惰性气体",
+        "value": "Argon（氩气）",
+        "unit": "",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf"
+      },
+      {
+        "name": "所列工艺包体积成形速率（非整单平均速度）",
+        "value": 5.1,
+        "unit": "mm³/s",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf"
+      },
+      {
+        "name": "所列工艺包公开最小壁厚（不是承载设计保证）",
+        "value": 0.4,
+        "unit": "mm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf"
+      }
+    ],
+    "unknownParameters": [
+      "正式激光功率/扫描速度/扫描间距/光斑与轮廓参数",
+      "支撑、热变形补偿与零件摆放",
+      "氧含量阈值与气体流量",
+      "所用粉末批次、循环次数及筛分验收",
+      "该零件所需应力消除、热处理、切板及机加工路线",
+      "尺寸和性能验收及设备校准状态"
+    ],
+    "notes": [
+      "核验日期2026-09-14；AlSi10Mg官方材料PDF第5页已目视检查。",
+      "本条仅对应30μm的AlSi10Mg_FlexM291 2.01；同一资料另有60μm工艺，平台温度与参数包不同，禁止跨条拼配。",
+      "公开设置还指定EOS HSS刮刀、标准喷嘴、EOSPRINT≥1.6和EOSYSTEM≥2.4；须确认当前安装版本仍支持此包。",
+      "这是官方工艺资料摘要，不是完整制造配方，更不是用户工厂已验证的生产配置。",
+      "400W与设备最高扫描速度不能当成该零件实际曝光处方。材料数据不能证明任意承载件的安全或合格。"
+    ],
+    "sourceUrls": [
+      "https://www.eos.info/metal-solutions/metal-printers/eos-m-290",
+      "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf"
+    ],
+    "parameters": [
+      {
+        "name": "设备构建空间（含基板、依应用变化）X×Y×Z",
+        "value": [
+          250,
+          250,
+          325
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.eos.info/metal-solutions/metal-printers/eos-m-290",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          250,
+          250,
+          325
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "所列工艺包层厚",
+        "value": 30,
+        "unit": "μm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf",
+        "valueType": "scalar",
+        "originalUnit": "μm",
+        "normalizedValue": 0.03,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "所列工艺包构建平台温度",
+        "value": 35,
+        "unit": "°C",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf",
+        "valueType": "scalar",
+        "originalUnit": "°C",
+        "normalizedValue": 35,
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "所列工艺包筛网尺寸",
+        "value": 90,
+        "unit": "μm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf",
+        "valueType": "scalar",
+        "originalUnit": "μm",
+        "normalizedValue": 0.09,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "所列工艺包惰性气体",
+        "value": "Argon（氩气）",
+        "unit": "",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf",
+        "valueType": "scalar",
+        "originalUnit": "",
+        "normalizedValue": "Argon（氩气）",
+        "normalizedUnit": ""
+      },
+      {
+        "name": "所列工艺包体积成形速率（非整单平均速度）",
+        "value": 5.1,
+        "unit": "mm³/s",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf",
+        "valueType": "scalar",
+        "originalUnit": "mm³/s",
+        "normalizedValue": 5.1,
+        "normalizedUnit": "mm³/s"
+      },
+      {
+        "name": "所列工艺包公开最小壁厚（不是承载设计保证）",
+        "value": 0.4,
+        "unit": "mm",
+        "sourceUrl": "https://www.eos.info/03_system-related-assets/material-related-contents/metal-materials-and-examples/metal-material-datasheet/aluminium/material_datasheet_eos_aluminium-alsi10mg_en_web.pdf",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.4,
+        "normalizedUnit": "mm"
+      }
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "mjf-hp5600-pa12-evonik-official",
+    "process": "MJF",
+    "machine": "HP Jet Fusion 5600",
+    "material": "HP 3D High Reusability PA 12 enabled by Evonik",
+    "colorCapability": "该PA12组合为灰色路线；5600产品系列公开支持灰色/浅灰，不能称为纹理全彩机。",
+    "publishedParameters": [
+      {
+        "name": "有效构建空间 X×Y×Z",
+        "value": [
+          380,
+          284,
+          380
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf"
+      },
+      {
+        "name": "PA12 Standard模式层厚",
+        "value": 0.08,
+        "unit": "mm",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf"
+      },
+      {
+        "name": "PA12 Balanced模式层厚",
+        "value": 0.09,
+        "unit": "mm",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf"
+      },
+      {
+        "name": "公开工作环境温度",
+        "value": [
+          20,
+          30
+        ],
+        "unit": "°C",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf"
+      },
+      {
+        "name": "公开工作环境相对湿度（无凝露）",
+        "value": [
+          40,
+          80
+        ],
+        "unit": "%RH",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf"
+      }
+    ],
+    "unknownParameters": [
+      "准确设备/软件版本对应的材料与模式配置",
+      "融合剂/细化剂施加量与完整热控制参数",
+      "粉末批次、老化状态和刷新配比",
+      "摆放、间距、密度、温度补偿与冷却条件",
+      "零件特定尺寸、装配间隙、强度与表面质量验收"
+    ],
+    "notes": [
+      "核验日期2026-09-14；HP官方PDF 4AA8-3303ENW July 2026第6页表格、第7页材料兼容及第8页脚注19已目视检查。",
+      "Standard 0.08mm与Balanced 0.09mm明确来自HP PA12 enabled by Evonik条件，不能泛化给所有HP设备或材料。",
+      "MJF先铺聚合物粉末、喷融合/细化剂并通过热能熔合，不是把光敏树脂液滴逐层喷出并UV固化的MJT。",
+      "HP公开工业组合：5200为灰色，5400为白色，5600为灰/浅灰；历史380/580才明确名为Color。全彩能力须绑定精确机型。",
+      "公开规格仅供筛选和试验规划，不是已完成校准的可发机生产配置。材料本身的环境限制可能严于设备范围。"
+    ],
+    "sourceUrls": [
+      "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf",
+      "https://www.hp.com/gb-en/printers/3d-printers/products.html",
+      "https://www.hp.com/us-en/printers/3d-printers/learning-center/3d-print-binder-vs-material-jetting.html",
+      "https://www.hp.com/us-en/newsroom/press-releases/2018/hp-accelerates-democratization-of-3d-printing-with-breakthrough-.html"
+    ],
+    "parameters": [
+      {
+        "name": "有效构建空间 X×Y×Z",
+        "value": [
+          380,
+          284,
+          380
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          380,
+          284,
+          380
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "PA12 Standard模式层厚",
+        "value": 0.08,
+        "unit": "mm",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.08,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "PA12 Balanced模式层厚",
+        "value": 0.09,
+        "unit": "mm",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.09,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "公开工作环境温度",
+        "value": [
+          20,
+          30
+        ],
+        "unit": "°C",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf",
+        "valueType": "range",
+        "originalUnit": "°C",
+        "normalizedValue": [
+          20,
+          30
+        ],
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "公开工作环境相对湿度（无凝露）",
+        "value": [
+          40,
+          80
+        ],
+        "unit": "%RH",
+        "sourceUrl": "https://h20195.www2.hp.com/v2/getpdf.aspx/4AA8-3303ENW.pdf",
+        "valueType": "range",
+        "originalUnit": "%RH",
+        "normalizedValue": [
+          40,
+          80
+        ],
+        "normalizedUnit": "%RH"
+      }
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "mjf-hp5200-pa12-evonik-official",
+    "process": "MJF",
+    "machine": "HP Jet Fusion 5200",
+    "material": "HP 3D HR PA 12 enabled by Evonik",
+    "colorCapability": "灰色；不是直接纹理全彩，后续染色独立管理。",
+    "publishedParameters": [
+      {
+        "name": "有效构建空间 X×Y×Z",
+        "value": [
+          380,
+          284,
+          380
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.hp.com/gb-en/printers/3d-printers/products.html"
+      }
+    ],
+    "unknownParameters": [
+      "当前设备材料模式的层厚与有效工艺文件",
+      "融合/细化剂与温度控制的实际工艺参数",
+      "粉末刷新与冷却条件",
+      "该零件校准、尺寸补偿与检测方案"
+    ],
+    "notes": [
+      "核验日期2026-09-14；材机兼容与灰色输出由HP当前产品组合页核实。",
+      "未把5600的0.08/0.09mm直接复制给5200，也未将公开整仓时间当成某零件的切片耗时。",
+      "公开规格条目，未在用户工厂校准。"
+    ],
+    "sourceUrls": [
+      "https://www.hp.com/gb-en/printers/3d-printers/products.html"
+    ],
+    "parameters": [
+      {
+        "name": "有效构建空间 X×Y×Z",
+        "value": [
+          380,
+          284,
+          380
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.hp.com/gb-en/printers/3d-printers/products.html",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          380,
+          284,
+          380
+        ],
+        "normalizedUnit": "mm"
+      }
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "mjf-hp580-cbpa12-historical-official",
+    "process": "MJF",
+    "machine": "HP Jet Fusion 580 Color",
+    "material": "HP 3D High Reusability CB PA 12",
+    "colorCapability": "官方明确支持全彩；同代380也是Color，340/540为黑白。",
+    "publishedParameters": [
+      {
+        "name": "2018官方580比较测试使用的层厚（非完整生产配置）",
+        "value": 0.08,
+        "unit": "mm",
+        "sourceUrl": "https://www.hp.com/us-en/newsroom/press-releases/2018/hp-accelerates-democratization-of-3d-printing-with-breakthrough-.html"
+      }
+    ],
+    "unknownParameters": [
+      "2026年当地新机供应、停产/维修政策与材料供货",
+      "当前实机可用软件/材料模式与色彩管理配置",
+      "完整热控制、剂量、粉末刷新与冷却参数",
+      "实际色域、纹理转换和色差验收",
+      "模型尺寸与接口的实机校准结果"
+    ],
+    "notes": [
+      "核验日期2026-09-14；机型及材料组合来自HP 2018年官方发布，官方支持站仍可查580产品。",
+      "历史发布可证明该全彩机型存在，不能证明2026年仍有新机供应或材料供货。应列为已有设备/历史参考，不默认为新采购首选。",
+      "0.08mm仅保留原来源中比较测试条件，不提升为通用材机处方。",
+      "公开信息，不是用户已验证生产配置。"
+    ],
+    "sourceUrls": [
+      "https://www.hp.com/us-en/newsroom/press-releases/2018/hp-accelerates-democratization-of-3d-printing-with-breakthrough-.html",
+      "https://support.hp.com/us-en/product/product-specs/hp-jet-fusion-500-3d-printer-series/model/21430578"
+    ],
+    "parameters": [
+      {
+        "name": "2018官方580比较测试使用的层厚（非完整生产配置）",
+        "value": 0.08,
+        "unit": "mm",
+        "sourceUrl": "https://www.hp.com/us-en/newsroom/press-releases/2018/hp-accelerates-democratization-of-3d-printing-with-breakthrough-.html",
+        "valueType": "scalar",
+        "originalUnit": "mm",
+        "normalizedValue": 0.08,
+        "normalizedUnit": "mm"
+      }
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "mjt-stratasys-j850prime-veroultra-official",
+    "process": "MJT",
+    "machine": "Stratasys J850 Prime",
+    "material": "VeroUltra 黑/白 + VeroVivid Cyan/Magenta/Yellow 等兼容树脂；SUP705或SUP706B支撑",
+    "colorCapability": "全彩与多材料；材料配比、透明度和柔性依具体装载组合及模式。",
+    "publishedParameters": [
+      {
+        "name": "构建空间 X×Y×Z",
+        "value": [
+          490,
+          390,
+          200
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/"
+      },
+      {
+        "name": "High Quality模式层厚",
+        "value": 14,
+        "unit": "μm",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/"
+      },
+      {
+        "name": "High Mix模式层厚",
+        "value": 27,
+        "unit": "μm",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/"
+      },
+      {
+        "name": "High Quality/High Mix模式最多基础树脂种类",
+        "value": 7,
+        "unit": "种",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/"
+      },
+      {
+        "name": "公开工作环境温度",
+        "value": [
+          18,
+          25
+        ],
+        "unit": "°C",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/"
+      },
+      {
+        "name": "公开工作环境相对湿度（无凝露）",
+        "value": [
+          30,
+          70
+        ],
+        "unit": "%RH",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/"
+      }
+    ],
+    "unknownParameters": [
+      "当前固件/GrabCAD Print版本对应的树脂装载组合",
+      "喷射、UV固化、支撑与表面模式的有效配置",
+      "ICC/颜色映射、透明材与数字材料体素分配",
+      "支撑去除、薄小特征与接口公差的实测条件",
+      "实际订单的色差、尺寸和功能验收"
+    ],
+    "notes": [
+      "核验日期2026-09-14。型号必须是J850 Prime，不把J850 Pro泛称为相同全彩能力。",
+      "14μm与27μm为模式层厚，不是零件尺寸公差。",
+      "超高速55μm为单基础树脂模式，本条全彩路线不将其当成7树脂全彩参数。",
+      "MJT是喷射建模材料并固化，HP MJF喷的是粉床用功能剂，二者工艺和配置不能混用。",
+      "公开规格与模式说明，不是用户已校准的完整生产配置。"
+    ],
+    "sourceUrls": [
+      "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/",
+      "https://www.stratasys.com/siteassets/3d-printers/printer-catalog/j8-series/pss_pj_j850_prime_a4_0122a.pdf",
+      "https://www.hp.com/us-en/printers/3d-printers/learning-center/3d-print-binder-vs-material-jetting.html"
+    ],
+    "parameters": [
+      {
+        "name": "构建空间 X×Y×Z",
+        "value": [
+          490,
+          390,
+          200
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          490,
+          390,
+          200
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "High Quality模式层厚",
+        "value": 14,
+        "unit": "μm",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/",
+        "valueType": "scalar",
+        "originalUnit": "μm",
+        "normalizedValue": 0.014,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "High Mix模式层厚",
+        "value": 27,
+        "unit": "μm",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/",
+        "valueType": "scalar",
+        "originalUnit": "μm",
+        "normalizedValue": 0.027,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "High Quality/High Mix模式最多基础树脂种类",
+        "value": 7,
+        "unit": "种",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/",
+        "valueType": "scalar",
+        "originalUnit": "种",
+        "normalizedValue": 7,
+        "normalizedUnit": "种"
+      },
+      {
+        "name": "公开工作环境温度",
+        "value": [
+          18,
+          25
+        ],
+        "unit": "°C",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/",
+        "valueType": "range",
+        "originalUnit": "°C",
+        "normalizedValue": [
+          18,
+          25
+        ],
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "公开工作环境相对湿度（无凝露）",
+        "value": [
+          30,
+          70
+        ],
+        "unit": "%RH",
+        "sourceUrl": "https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j8-series-printers/j850-prime-3d-printer/",
+        "valueType": "range",
+        "originalUnit": "%RH",
+        "normalizedValue": [
+          30,
+          70
+        ],
+        "normalizedUnit": "%RH"
+      }
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  },
+  {
+    "id": "mjt-mimaki-3duj553-mh100-official",
+    "process": "MJT",
+    "machine": "Mimaki 3DUJ-553",
+    "material": "MH-100 C/M/Y/K/White/Clear，SW-100支撑；MH-110 Pure Clear为兼容透明材料选项",
+    "colorCapability": "官方标称超1000万种颜色的全彩，可使用白色/透明材料。",
+    "publishedParameters": [
+      {
+        "name": "可用构建空间 W×D×H",
+        "value": [
+          508,
+          508,
+          305
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html"
+      },
+      {
+        "name": "最小层间距（非尺寸精度）",
+        "value": 20,
+        "unit": "μm",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html"
+      },
+      {
+        "name": "最大造型负载（含支撑，依官方注释）",
+        "value": 70,
+        "unit": "kg",
+        "sourceUrl": "https://mimaki.com/archives/002/202206/DB20300-06_3DUJ-553_EN.pdf"
+      },
+      {
+        "name": "官方推荐环境温度",
+        "value": [
+          20,
+          25
+        ],
+        "unit": "°C",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html"
+      },
+      {
+        "name": "安装环境相对湿度（无凝露）",
+        "value": [
+          35,
+          60
+        ],
+        "unit": "%RH",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html"
+      }
+    ],
+    "unknownParameters": [
+      "当前软件/固件及材料批次对应的打印模式",
+      "喷射剂量、UV固化与支撑策略",
+      "纹理色彩空间、ICC、透明/白墨映射及色差补偿",
+      "支撑清除与后处理条件",
+      "该产品薄壁、细节、装配公差和耐用性验收"
+    ],
+    "notes": [
+      "核验日期2026-09-14；官方规格页明确MH100/MH110/SW100组合与Mimaki 3D Link软件。",
+      "支持STL/OBJ/VRML/PLY/3MF并不意味着这些格式都能携带相同颜色信息；STL不作为纹理全彩交付格式。",
+      "超1000万色为厂商颜色能力说明，不是任意屏幕纹理可无色差打印的保证。",
+      "最小20μm层间距不代表每个订单默认使用20μm，也不代表±20μm尺寸公差。",
+      "这是公开参考规格，不是本企业完成色彩与尺寸校准后的生产工艺。"
+    ],
+    "sourceUrls": [
+      "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html",
+      "https://mimaki.com/archives/002/202206/DB20300-06_3DUJ-553_EN.pdf"
+    ],
+    "parameters": [
+      {
+        "name": "可用构建空间 W×D×H",
+        "value": [
+          508,
+          508,
+          305
+        ],
+        "unit": "mm",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html",
+        "valueType": "vector3",
+        "originalUnit": "mm",
+        "normalizedValue": [
+          508,
+          508,
+          305
+        ],
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "最小层间距（非尺寸精度）",
+        "value": 20,
+        "unit": "μm",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html",
+        "valueType": "scalar",
+        "originalUnit": "μm",
+        "normalizedValue": 0.02,
+        "normalizedUnit": "mm"
+      },
+      {
+        "name": "最大造型负载（含支撑，依官方注释）",
+        "value": 70,
+        "unit": "kg",
+        "sourceUrl": "https://mimaki.com/archives/002/202206/DB20300-06_3DUJ-553_EN.pdf",
+        "valueType": "scalar",
+        "originalUnit": "kg",
+        "normalizedValue": 70,
+        "normalizedUnit": "kg"
+      },
+      {
+        "name": "官方推荐环境温度",
+        "value": [
+          20,
+          25
+        ],
+        "unit": "°C",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html",
+        "valueType": "range",
+        "originalUnit": "°C",
+        "normalizedValue": [
+          20,
+          25
+        ],
+        "normalizedUnit": "°C"
+      },
+      {
+        "name": "安装环境相对湿度（无凝露）",
+        "value": [
+          35,
+          60
+        ],
+        "unit": "%RH",
+        "sourceUrl": "https://mimaki.com/product/3d/3d-inkjet/3duj-553/specification.html",
+        "valueType": "range",
+        "originalUnit": "%RH",
+        "normalizedValue": [
+          35,
+          60
+        ],
+        "normalizedUnit": "%RH"
+      }
+    ],
+    "productionReady": false,
+    "verificationStatus": "manufacturer_reference"
+  }
+]

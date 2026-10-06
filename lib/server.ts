@@ -1,0 +1,10 @@
+import {env} from 'cloudflare:workers';
+import {getChatGPTUser} from '@/app/chatgpt-auth';
+import {ApiError} from './errors';
+export {ApiError};
+export const runtime=()=>env as unknown as {DB:D1Database;BUCKET:R2Bucket;TRIPO_API_KEY?:string;TRIPO_WEBHOOK_SECRET?:string;TRIPO_REGION?:string;TRIPO_DOWNLOAD_HOSTS?:string;TRIPO_PROXY_URL?:string;TRIPO_PROXY_BRIDGE_URL?:string;AI_API_KEY?:string;AI_BASE_URL?:string;AI_MODEL?:string;AI_VISION_MODEL?:string;AI_PROVIDER?:string;LOCAL_AGENT_TOKEN?:string;LOCAL_DEMO_MODE?:string;AGENT_SERVICE_URL?:string;AGENT_SERVICE_TOKEN?:string;AGENT_TOOL_GATEWAY_TOKEN?:string};
+export async function owner(){const e=runtime(),u=await getChatGPTUser({allowLocalDemo:e.LOCAL_DEMO_MODE==='true'});if(!u)throw new ApiError(401,'请先登录工作区，再保存项目或调用生成服务。');return u.userId;}
+export function errorResponse(e:unknown){if(e instanceof ApiError)return Response.json({error:e.message},{status:e.status});console.error('Engineering request failed',e instanceof Error?e.message:String(e));return Response.json({error:'服务暂时不可用，内容仍保留在页面中。请稍后重试。'},{status:503});}
+export function checkOrigin(request:Request){const origin=request.headers.get('origin');if(origin&&origin!==new URL(request.url).origin)throw new ApiError(403,'请求来源不匹配。');}
+export async function bodyJson(request:Request,max=1_000_000){const raw=await request.text();if(raw.length>max)throw new ApiError(413,'数据过大，请将模型作为文件上传。');try{return JSON.parse(raw);}catch{throw new ApiError(400,'请求数据无效。');}}
+export async function bodyBytes(request:Request,max:number){const size=Number(request.headers.get('content-length'));if(!Number.isInteger(size)||size<=0||size>max||!request.body)throw new ApiError(413,'文件大小超出当前任务范围。');const bytes=new Uint8Array(size),reader=request.body.getReader();let used=0;try{while(true){const {done,value}=await reader.read();if(done)break;if(used+value.length>size)throw new ApiError(413,'文件实际长度超过声明。');bytes.set(value,used);used+=value.length;}if(used!==size)throw new ApiError(400,'文件长度不一致。');}catch(e){await reader.cancel().catch(()=>{});throw e;}finally{reader.releaseLock();}return bytes.buffer;}

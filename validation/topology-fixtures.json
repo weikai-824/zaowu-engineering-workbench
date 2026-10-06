@@ -1,0 +1,1320 @@
+{
+  "schema": "synthetic-topology-fixtures/1",
+  "date": "2026-09-14",
+  "kind": "independent_test_plan",
+  "runtimeAnalyzerTested": false,
+  "manufacturingVerified": false,
+  "fixtures": [
+    {
+      "id": "T01_closed_tetra",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Only the listed topology checks can pass; selfIntersection/physicalVerification remain not_run."
+    },
+    {
+      "id": "T02_missing_face",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "One open triangular boundary; vertex links remain manifold paths/cycles."
+    },
+    {
+      "id": "T03_reversed_one_face",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 3,
+        "parityConsistent": true
+      },
+      "note": "Locally inconsistent winding but parity system is solvable; do not claim non-orientable."
+    },
+    {
+      "id": "T04_duplicate_same_orientation",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 3,
+        "duplicateExtraFaces": 1,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 3,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Duplicate is retained in incidence counts. Link multiplicity is invalid under strict simplicial contract."
+    },
+    {
+      "id": "T05_duplicate_reverse_orientation",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 3,
+        "duplicateExtraFaces": 1,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 3,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Opposite orientation is still a coincident duplicate; do not cancel the two faces."
+    },
+    {
+      "id": "T06_repeated_index",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "expectedRaw": {
+        "degenerateFaces": 1,
+        "boundaryEdges": 0,
+        "edgeFaceComponents": 0
+      },
+      "note": "Ordinary topology counts refer to zero non-degenerate faces, not a passed empty solid."
+    },
+    {
+      "id": "T07_collinear_distinct_indices",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "expectedRaw": {
+        "degenerateFaces": 1,
+        "boundaryEdges": 0,
+        "edgeFaceComponents": 0
+      },
+      "note": "Distinct indices are insufficient: cross product is exactly zero for these integer coordinates."
+    },
+    {
+      "id": "T08_two_disjoint_closed_shells",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ],
+        [
+          30,
+          0,
+          0
+        ],
+        [
+          40,
+          0,
+          0
+        ],
+        [
+          30,
+          10,
+          0
+        ],
+        [
+          30,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          6,
+          5
+        ],
+        [
+          4,
+          5,
+          7
+        ],
+        [
+          4,
+          7,
+          6
+        ],
+        [
+          5,
+          6,
+          7
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 2,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Two shells can be intentional. Do not remove one or infer two manufacturing parts automatically."
+    },
+    {
+      "id": "T09_point_touch_closed_shells",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ],
+        [
+          -10,
+          0,
+          0
+        ],
+        [
+          0,
+          -10,
+          0
+        ],
+        [
+          0,
+          0,
+          -10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          6,
+          5
+        ],
+        [
+          4,
+          5,
+          6
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 1,
+        "edgeFaceComponents": 2,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Every edge has exactly two incident faces, yet vertex 0 has two disjoint link cycles."
+    },
+    {
+      "id": "T10_three_faces_share_edge",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          -10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 6,
+        "nonManifoldEdges": 1,
+        "vertexLinkFailures": 2,
+        "edgeFaceComponents": 1
+      },
+      "note": "Edge 0-1 has incidence three; parity on a two-face-edge subset is not global orientability."
+    },
+    {
+      "id": "T11_uv_normal_split_tetra",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 12,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 4,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Raw vertices are separate per face. Exact-position diagnostic reconnects them, source attributes remain untouched.",
+      "attributes": {
+        "normalPerFace": true,
+        "differentUvAtCoincidentPositions": true
+      },
+      "expectedExactPosition": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "expectedUniquePositions": 4
+    },
+    {
+      "id": "T12_intersecting_closed_shells",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          12,
+          2,
+          2
+        ],
+        [
+          2,
+          12,
+          2
+        ],
+        [
+          2,
+          2,
+          12
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          6,
+          5
+        ],
+        [
+          4,
+          5,
+          7
+        ],
+        [
+          4,
+          7,
+          6
+        ],
+        [
+          5,
+          6,
+          7
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 2,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Known inter-shell intersection: the second tetra starts inside the first and crosses x+y+z=10. Topology cannot detect it.",
+      "knownGeometry": {
+        "interShellIntersection": true
+      },
+      "requiredStatuses": {
+        "selfIntersection": "not_run",
+        "manufacturingVerification": "not_run"
+      }
+    },
+    {
+      "id": "T13_nested_closed_shells",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          2
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          6,
+          5
+        ],
+        [
+          4,
+          5,
+          7
+        ],
+        [
+          4,
+          7,
+          6
+        ],
+        [
+          5,
+          6,
+          7
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 2,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Nested inner shell might denote a cavity or overlapping solid. Topology alone cannot choose intended material volume."
+    },
+    {
+      "id": "T14_double_sided_triangle",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 1,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 3,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Every edge appears twice with opposite direction, but this is an overlapping double sheet, not a closed solid."
+    },
+    {
+      "id": "T15_t_junction",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          5,
+          0,
+          0
+        ],
+        [
+          5,
+          -5,
+          0
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          4,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 7,
+        "nonManifoldEdges": 0,
+        "vertexLinkFailures": 2,
+        "edgeFaceComponents": 2
+      },
+      "note": "Endpoint welding cannot split edge 0-1 at existing midpoint 3. Do not silently claim repaired adjacency."
+    },
+    {
+      "id": "T16_mobius_strip",
+      "unit": "mm",
+      "vertices": [
+        [
+          8.0,
+          0.0,
+          -0.0
+        ],
+        [
+          12.0,
+          0.0,
+          0.0
+        ],
+        [
+          -4.499999999999998,
+          7.794228634059948,
+          -1.7320508075688772
+        ],
+        [
+          -5.499999999999997,
+          9.526279441628827,
+          1.7320508075688772
+        ],
+        [
+          -5.500000000000005,
+          -9.526279441628823,
+          -1.7320508075688774
+        ],
+        [
+          -4.5000000000000036,
+          -7.794228634059946,
+          1.7320508075688774
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          4,
+          1,
+          5
+        ],
+        [
+          5,
+          1,
+          0
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 6,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 1,
+        "parityConsistent": false
+      },
+      "note": "Single locally manifold strip; face flip parity has a contradictory cycle, unlike T03."
+    },
+    {
+      "id": "T17_near_degenerate_nonzero",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          10,
+          1e-09,
+          0
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true
+      },
+      "note": "Area is 5e-9 mm², not zero. An explicit 1e-8 mm² warning threshold flags near-degeneracy only.",
+      "areaMm2": 5e-09,
+      "warningThresholdForThisTestMm2": 1e-08
+    },
+    {
+      "id": "T18_isolated_vertex",
+      "unit": "mm",
+      "vertices": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ],
+        [
+          100,
+          100,
+          100
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "expectedRaw": {
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "duplicateExtraFaces": 0,
+        "degenerateFaces": 0,
+        "vertexLinkFailures": 0,
+        "edgeFaceComponents": 1,
+        "inconsistentTwoFaceEdges": 0,
+        "parityConsistent": true,
+        "unusedVertices": 1
+      },
+      "note": "An unreferenced point is not a separate face shell; preserve or explicitly remove it in a later edit."
+    }
+  ],
+  "policyCases": [
+    {
+      "id": "P01_epsilon_chain",
+      "positionsMm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.0075,
+          0,
+          0
+        ],
+        [
+          0.015,
+          0,
+          0
+        ]
+      ],
+      "epsilonMm": 0.01,
+      "expected": "A-B and B-C are within epsilon; A-C is not. No silent transitive merge asserting cluster diameter <= epsilon."
+    },
+    {
+      "id": "P02_grid_boundary",
+      "positionsMm": [
+        [
+          0.0099,
+          0,
+          0
+        ],
+        [
+          0.0101,
+          0,
+          0
+        ]
+      ],
+      "epsilonMm": 0.01,
+      "expected": "Adjacent-cell close pair must be found when tolerance diagnostic is enabled."
+    },
+    {
+      "id": "P03_same_cell_diagonal",
+      "positionsMm": [
+        [
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        [
+          0.0099,
+          0.0099,
+          0.0099
+        ]
+      ],
+      "epsilonMm": 0.01,
+      "expected": "Same cell is not enough: Euclidean separation exceeds epsilon, so this pair is not mergeable."
+    },
+    {
+      "id": "P04_cross_part_seam",
+      "partA": "T01_closed_tetra",
+      "partB": "T01_closed_tetra",
+      "expected": "Do not weld across manufacturing part IDs, including exactly coincident instances. Report assembly overlap not_run."
+    },
+    {
+      "id": "P05_invalid_input",
+      "mutations": [
+        "index out of range",
+        "fractional index",
+        "NaN/Infinity coordinate",
+        "position count not divisible by 3",
+        "unsupported draw mode",
+        "empty faces"
+      ],
+      "expected": "Return invalid_input or unsupported, never no issues detected / passed."
+    },
+    {
+      "id": "P06_budget",
+      "mutations": [
+        "face declaration exceeds configured limit",
+        "high-valence coincident cluster",
+        "issue samples exceed cap",
+        "cancel during scan"
+      ],
+      "expected": "Refuse before large allocation; cancellation/resource_limit means incomplete, counts unavailable/lower_bound, not zero."
+    },
+    {
+      "id": "P07_identity_and_transform",
+      "mutations": [
+        "same mesh referenced by two differently transformed nodes",
+        "negative determinant transform",
+        "nonuniform scale",
+        "mm/m factor 1000",
+        "edit vertex with unchanged bbox"
+      ],
+      "expected": "Analyze actual world geometry once per instance within selected part; units and evidence hash change correctly; geometric signed orientation is separate from face normals."
+    }
+  ]
+}

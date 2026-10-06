@@ -1,0 +1,204 @@
+{
+  "schema": "showcase-digital-checks-v1",
+  "projectId": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+  "fromRevision": 9,
+  "savedRevision": 10,
+  "cadJobId": "5222a958-1bac-46ca-9f88-c32f3c90d9d0",
+  "cadDesignId": "9f2b7c41-8d3e-4a56-b7c9-0e1f2a3b4c5d",
+  "assets": [
+    {
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "assetId": "bf20fa05-3468-493b-abec-93b41979a502",
+      "bytes": 675684,
+      "sha256": "b919d4a01c245d03c8ca6f889896e8cebc3a987d5f21d21400bcfa2c29250690"
+    },
+    {
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "assetId": "00ad17cc-dafd-4575-9cf7-a71406fc6c23",
+      "bytes": 524484,
+      "sha256": "3a9c5c7dd33f10d12adc28b20e64e11525644eda75cd3a51c1fb16e0e2fdd35c"
+    },
+    {
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "assetId": "53e913a8-0298-4d9e-bfa2-ce5ff32c0110",
+      "bytes": 541084,
+      "sha256": "98c1e21648d2727cb596d7e3d24fdc67019e3269c5035a1af7e2cb476de4a02b"
+    },
+    {
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "assetId": "61bec7a6-1249-46a9-9bbd-281a0acc59b4",
+      "bytes": 573484,
+      "sha256": "f3b82aeeee93e0d51b9a3ee7305b930c56a9b21396df4ddbae75d44913c0a292"
+    }
+  ],
+  "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28",
+  "checks": [
+    {
+      "name": "lower shell · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "topology": null
+    },
+    {
+      "name": "lower shell · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "lower shell · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "topology": null
+    },
+    {
+      "name": "front display panel · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "topology": null
+    },
+    {
+      "name": "front display panel · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "front display panel · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "topology": null
+    },
+    {
+      "name": "rear vent cover · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "topology": null
+    },
+    {
+      "name": "rear vent cover · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "rear vent cover · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "topology": null
+    },
+    {
+      "name": "underside support · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "topology": null
+    },
+    {
+      "name": "underside support · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "underside support · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "topology": null
+    },
+    {
+      "name": "自交、壳嵌套与材料体积",
+      "status": "not_run",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "局部壁厚与薄弱结构",
+      "status": "not_run",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "装配干涉与接口公差",
+      "status": "not_run",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "切片与支撑",
+      "status": "not_run",
+      "scope": "manufacturing",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "实机首件与功能测试",
+      "status": "not_run",
+      "scope": "physical",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "CAD 内核执行 · Showcase",
+      "status": "passed",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "CAD 实体结果与接口校验 · Showcase",
+      "status": "passed",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    }
+  ],
+  "manufacturingParts": [
+    {
+      "id": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "name": "lower shell",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "assetId": "bf20fa05-3468-493b-abec-93b41979a502"
+    },
+    {
+      "id": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "name": "front display panel",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "assetId": "00ad17cc-dafd-4575-9cf7-a71406fc6c23"
+    },
+    {
+      "id": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "name": "rear vent cover",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "assetId": "53e913a8-0298-4d9e-bfa2-ce5ff32c0110"
+    },
+    {
+      "id": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "name": "underside support",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "assetId": "61bec7a6-1249-46a9-9bbd-281a0acc59b4"
+    }
+  ],
+  "visualReferenceParts": [
+    {
+      "id": "b260e812-b949-4832-9db0-5824b4b86103",
+      "assetId": "b91acfb5-be11-42e4-a839-fe6397752f9d"
+    }
+  ],
+  "physicalValidation": "not_run",
+  "productionReady": false
+}

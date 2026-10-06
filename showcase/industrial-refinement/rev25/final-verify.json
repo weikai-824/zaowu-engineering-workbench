@@ -1,0 +1,143 @@
+{
+  "schema": "product-maturation-final-verify-v1",
+  "verifiedAt": "2026-09-16T08:55:41.220Z",
+  "project": {
+    "id": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+    "revision": 31,
+    "manufacturingParts": 4,
+    "visualReferences": 1
+  },
+  "cad": {
+    "jobId": "fec19bea-bee6-4ef4-96e6-a49095be5635",
+    "executor": "controlled-cad-v3",
+    "designSha256": "84ca38a0b8c90fea580839dac1855fe6304d1549324ac54db38d44bb2e1ef393",
+    "parts": [
+      {
+        "id": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+        "name": "warm-white sculpted lower shell",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      },
+      {
+        "id": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+        "name": "smoked-glass inset display visor",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      },
+      {
+        "id": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+        "name": "graphite louvered service cover",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      },
+      {
+        "id": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+        "name": "recessed shadow plinth with hidden feet",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      }
+    ],
+    "declaredInterfacesPassed": 4,
+    "interferencePairsChecked": 6,
+    "overlapCount": 0,
+    "outputFormats": [
+      "STEP",
+      "BREP",
+      "STL"
+    ],
+    "executionVerification": "registered_device_signature_verified",
+    "innerReportVerification": "unsigned_local_report"
+  },
+  "digitalChecks": {
+    "geometryTopologyBuildSpacePassed": 12,
+    "geometryTopologyBuildSpaceFailed": 0
+  },
+  "slicing": {
+    "engine": "Bambu Studio 02.08.02.60",
+    "jobs": [
+      {
+        "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+        "jobId": "79f06771-44f6-4d98-91e7-ab78c9abb3f3",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 183,
+        "estimatedSeconds": 5227.3310546875,
+        "estimatedGrams": 59.69413375854492,
+        "warning": null
+      },
+      {
+        "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+        "jobId": "c64b53e6-edec-4a3e-93bc-b67a48b01328",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 84,
+        "estimatedSeconds": 4547.205078125,
+        "estimatedGrams": 20.802942276000977,
+        "warning": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation."
+      },
+      {
+        "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+        "jobId": "eda07e03-4e0a-4308-a586-9c855f185027",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 33,
+        "estimatedSeconds": 1757.61865234375,
+        "estimatedGrams": 6.424637794494629,
+        "warning": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation."
+      },
+      {
+        "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+        "jobId": "566b02a3-d38b-4877-a090-2495d5eb80cf",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 23,
+        "estimatedSeconds": 1853.4283447265625,
+        "estimatedGrams": 17.002084732055664,
+        "warning": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation."
+      }
+    ]
+  },
+  "engineeringPackage": {
+    "path": "work\\validation\\product-maturation-rev25\\engineering-package-v31.zip",
+    "bytes": 28771046,
+    "sha256": "120d37a79b69ea0b41d3416954daff5f4a51318aafc33350ec4312fbc64dd009",
+    "files": 287,
+    "has3mf": true,
+    "hasGcode": true
+  },
+  "evidence": [
+    "rev25-front.png",
+    "rev25-45.png",
+    "rev25-side.png",
+    "rev25-back.png",
+    "rev25-hero.png",
+    "rev25-exploded.png",
+    "rev25-multiview.png",
+    "rev24-vs-rev25-front.png",
+    "rev24-vs-rev25-45.png",
+    "rev24-vs-rev25-side.png",
+    "workbench-manufacturing-default.png"
+  ],
+  "humanAiFoundation": {
+    "meshPick": [
+      "objectId",
+      "partId",
+      "faceIndex",
+      "worldPosition",
+      "localPosition",
+      "normal",
+      "view",
+      "camera"
+    ],
+    "feedbackSchema": "design-feedback-v1",
+    "llmProviders": [
+      "deepseek",
+      "openai",
+      "openai-compatible"
+    ],
+    "automaticCadModification": false
+  },
+  "physicalValidation": "not_run",
+  "productionReady": false,
+  "verdict": "pre_final_digital_showcase_passed_with_slicer_warnings_and_physical_validation_pending"
+}

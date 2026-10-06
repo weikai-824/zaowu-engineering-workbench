@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+# Preset byte hashes are part of the offline task contract.
+public/offline-bambu/*.expanded.json -text
+public/offline-bambu/run_offline.py text eol=lf
+public/cad/run_cad.py -text
+public/executor/local_cad_relay.py -text

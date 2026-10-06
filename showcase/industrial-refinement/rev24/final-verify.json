@@ -1,0 +1,121 @@
+{
+  "schema": "industrial-redesign-final-verify-v1",
+  "verifiedAt": "2026-09-16T03:14:09.340Z",
+  "project": {
+    "id": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+    "revision": 24,
+    "manufacturingParts": 4,
+    "visualReferences": 1
+  },
+  "cad": {
+    "jobId": "f8094348-a445-47e1-86b7-4dcb7488fb4d",
+    "executor": "controlled-cad-v3",
+    "parts": [
+      {
+        "id": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+        "name": "warm-white wedge lower shell",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      },
+      {
+        "id": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+        "name": "dark floating display visor",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      },
+      {
+        "id": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+        "name": "graphite rear vent service cover",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      },
+      {
+        "id": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+        "name": "recessed shadow plinth with feet",
+        "kernelValid": true,
+        "stepRoundtrip": "valid_volume_checked"
+      }
+    ],
+    "declaredInterfacesPassed": 4,
+    "interferencePairsChecked": 6,
+    "overlapCount": 0,
+    "outputFormats": [
+      "STEP",
+      "BREP",
+      "STL"
+    ],
+    "executionVerification": "registered_device_signature_verified",
+    "innerReportVerification": "unsigned_local_report"
+  },
+  "digitalChecks": {
+    "geometryTopologyBuildSpacePassed": 12,
+    "geometryTopologyBuildSpaceFailed": 0
+  },
+  "slicing": {
+    "jobs": [
+      {
+        "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+        "jobId": "8e5fdac4-802c-4078-8001-a6acab861d0a",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 179,
+        "estimatedSeconds": 5215.9970703125,
+        "estimatedGrams": 59.388038635253906,
+        "warning": null
+      },
+      {
+        "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+        "jobId": "4b59a2c1-55be-4b40-83ea-1c67b85f6d29",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 80,
+        "estimatedSeconds": 4397.11328125,
+        "estimatedGrams": 18.96869659423828,
+        "warning": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation."
+      },
+      {
+        "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+        "jobId": "bc8cf67c-0d00-4b02-85ec-9079b885330d",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 32,
+        "estimatedSeconds": 1701.7940673828125,
+        "estimatedGrams": 6.021846294403076,
+        "warning": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation."
+      },
+      {
+        "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+        "jobId": "5f9f3181-f3e6-4b4f-866b-982cf8b030f1",
+        "artifactIntegrity": "consistent",
+        "geometryComparison": "complete_oriented_triangle_bijection",
+        "layers": 23,
+        "estimatedSeconds": 1958.7232666015625,
+        "estimatedGrams": 18.456787109375,
+        "warning": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation."
+      }
+    ],
+    "engine": "Bambu Studio 02.08.02.60"
+  },
+  "engineeringPackage": {
+    "path": "work\\validation\\exterior-redesign\\engineering-package-v24.zip",
+    "bytes": 17223277,
+    "sha256": "cad296f264b74e232ba658cd9cc47fe130ab6c6fb661b8cce78a5596110007bf",
+    "files": 163,
+    "has3mf": true,
+    "hasGcode": true
+  },
+  "evidence": [
+    "new-front.png",
+    "new-left-front.png",
+    "new-side.png",
+    "new-back.png",
+    "new-top.png",
+    "new-bottom.png",
+    "new-exploded.png",
+    "old-new-45.png",
+    "workbench-manufacturing-default.png"
+  ],
+  "physicalValidation": "not_run",
+  "productionReady": false,
+  "verdict": "digital_showcase_passed_with_slicer_warnings_and_physical_validation_pending"
+}

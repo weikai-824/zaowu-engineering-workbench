@@ -1,0 +1,1110 @@
+{
+  "schema": "cad-plan-v1",
+  "id": "4a9f35d1-70c2-4b61-9b8c-11dc37a61590",
+  "name": "桌面智能环境监测终端 · 精密玻璃仪器",
+  "units": "mm",
+  "parameters": {
+    "outer_width": {
+      "label": "机身总宽",
+      "value": 130,
+      "min": 110,
+      "max": 160,
+      "locked": false
+    },
+    "panel_width": {
+      "label": "玻璃与后盖净宽",
+      "value": 110,
+      "min": 96,
+      "max": 124,
+      "locked": false
+    },
+    "body_edge_radius": {
+      "label": "机身肩线圆角",
+      "value": 2.8,
+      "min": 1.2,
+      "max": 3.5,
+      "locked": false
+    },
+    "m3_radius": {
+      "label": "M3 锁定直孔半径",
+      "value": 1.6,
+      "min": 1.5,
+      "max": 1.7,
+      "locked": true
+    },
+    "reveal_gap": {
+      "label": "玻璃悬浮阴影缝",
+      "value": 0.55,
+      "min": 0.25,
+      "max": 0.6,
+      "locked": false
+    }
+  },
+  "parts": [
+    {
+      "id": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "name": "warm-white sculpted lower shell",
+      "color": "#eee9df",
+      "placement": [
+        0,
+        0,
+        0
+      ],
+      "features": [
+        {
+          "id": "body_profile",
+          "op": "profile_extrude",
+          "plane": "YZ",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              2,
+              18.4
+            ],
+            [
+              7,
+              21.3
+            ],
+            [
+              16,
+              24.4
+            ],
+            [
+              31,
+              27.5
+            ],
+            [
+              50,
+              31.2
+            ],
+            [
+              66,
+              35.5
+            ],
+            [
+              79,
+              39.6
+            ],
+            [
+              87,
+              40.7
+            ],
+            [
+              92,
+              36
+            ],
+            [
+              92,
+              4
+            ]
+          ],
+          "depth": {
+            "param": "outer_width"
+          },
+          "origin": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "body_soft",
+          "op": "fillet_edges",
+          "input": "body_profile",
+          "radius": {
+            "param": "body_edge_radius"
+          },
+          "axis": "X"
+        },
+        {
+          "id": "open_cavity",
+          "op": "profile_extrude",
+          "plane": "YZ",
+          "points": [
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              19.5
+            ],
+            [
+              9,
+              23.1
+            ],
+            [
+              17,
+              27.1
+            ],
+            [
+              32,
+              30.8
+            ],
+            [
+              50,
+              34.3
+            ],
+            [
+              65,
+              38.7
+            ],
+            [
+              79,
+              43.2
+            ],
+            [
+              86,
+              43.7
+            ],
+            [
+              87,
+              39
+            ],
+            [
+              87,
+              8
+            ]
+          ],
+          "depth": 120,
+          "origin": [
+            5,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "hollow_body",
+          "op": "subtract",
+          "left": "body_soft",
+          "right": "open_cavity"
+        },
+        {
+          "id": "boss_fl",
+          "op": "cylinder",
+          "radius": 4.3,
+          "height": 20,
+          "origin": [
+            14,
+            14,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "boss_fr",
+          "op": "cylinder",
+          "radius": 4.3,
+          "height": 20,
+          "origin": [
+            116,
+            14,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "boss_rl",
+          "op": "cylinder",
+          "radius": 4.3,
+          "height": 20,
+          "origin": [
+            14,
+            78,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "boss_rr",
+          "op": "cylinder",
+          "radius": 4.3,
+          "height": 20,
+          "origin": [
+            116,
+            78,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "bossed_a",
+          "op": "union",
+          "left": "hollow_body",
+          "right": "boss_fl"
+        },
+        {
+          "id": "bossed_b",
+          "op": "union",
+          "left": "bossed_a",
+          "right": "boss_fr"
+        },
+        {
+          "id": "bossed_c",
+          "op": "union",
+          "left": "bossed_b",
+          "right": "boss_rl"
+        },
+        {
+          "id": "bossed",
+          "op": "union",
+          "left": "bossed_c",
+          "right": "boss_rr"
+        },
+        {
+          "id": "m3_fl",
+          "op": "cylinder",
+          "radius": {
+            "param": "m3_radius"
+          },
+          "height": 20,
+          "origin": [
+            14,
+            14,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "m3_fr",
+          "op": "cylinder",
+          "radius": {
+            "param": "m3_radius"
+          },
+          "height": 20,
+          "origin": [
+            116,
+            14,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "m3_rl",
+          "op": "cylinder",
+          "radius": {
+            "param": "m3_radius"
+          },
+          "height": 20,
+          "origin": [
+            14,
+            78,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "m3_rr",
+          "op": "cylinder",
+          "radius": {
+            "param": "m3_radius"
+          },
+          "height": 20,
+          "origin": [
+            116,
+            78,
+            4
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "bored_a",
+          "op": "subtract",
+          "left": "bossed",
+          "right": "m3_fl"
+        },
+        {
+          "id": "bored_b",
+          "op": "subtract",
+          "left": "bored_a",
+          "right": "m3_fr"
+        },
+        {
+          "id": "bored_c",
+          "op": "subtract",
+          "left": "bored_b",
+          "right": "m3_rl"
+        },
+        {
+          "id": "bored",
+          "op": "subtract",
+          "left": "bored_c",
+          "right": "m3_rr"
+        },
+        {
+          "id": "usb_bridge",
+          "op": "box",
+          "size": [
+            15,
+            7,
+            7
+          ],
+          "origin": [
+            57.5,
+            -1,
+            9
+          ]
+        },
+        {
+          "id": "usb_left",
+          "op": "cylinder",
+          "radius": 3.5,
+          "height": 7,
+          "origin": [
+            57.5,
+            -1,
+            12.5
+          ],
+          "axis": "Y"
+        },
+        {
+          "id": "usb_right",
+          "op": "cylinder",
+          "radius": 3.5,
+          "height": 7,
+          "origin": [
+            72.5,
+            -1,
+            12.5
+          ],
+          "axis": "Y"
+        },
+        {
+          "id": "usb_tool_a",
+          "op": "union",
+          "left": "usb_bridge",
+          "right": "usb_left"
+        },
+        {
+          "id": "usb_tool",
+          "op": "union",
+          "left": "usb_tool_a",
+          "right": "usb_right"
+        },
+        {
+          "id": "shell_result",
+          "op": "subtract",
+          "left": "bored",
+          "right": "usb_tool"
+        }
+      ],
+      "result": "shell_result"
+    },
+    {
+      "id": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "name": "smoked-glass inset display visor",
+      "color": "#10191d",
+      "placement": [
+        0,
+        0,
+        0
+      ],
+      "features": [
+        {
+          "id": "visor_profile",
+          "op": "profile_extrude",
+          "plane": "YZ",
+          "points": [
+            [
+              5.5,
+              22.25
+            ],
+            [
+              7.5,
+              24.05
+            ],
+            [
+              13,
+              25.95
+            ],
+            [
+              60.5,
+              36.25
+            ],
+            [
+              62,
+              36.75
+            ],
+            [
+              62,
+              39.05
+            ],
+            [
+              60.5,
+              39.45
+            ],
+            [
+              13,
+              29.15
+            ],
+            [
+              7.5,
+              27.35
+            ],
+            [
+              5.5,
+              25.45
+            ]
+          ],
+          "depth": {
+            "param": "panel_width"
+          },
+          "origin": [
+            10,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "visor_soft",
+          "op": "fillet_edges",
+          "input": "visor_profile",
+          "radius": 0.7,
+          "axis": "X"
+        },
+        {
+          "id": "glass_crown",
+          "op": "profile_extrude",
+          "plane": "YZ",
+          "points": [
+            [
+              8.5,
+              27.1
+            ],
+            [
+              13.5,
+              28.72
+            ],
+            [
+              59,
+              38.62
+            ],
+            [
+              60.2,
+              38.95
+            ],
+            [
+              60.2,
+              39.85
+            ],
+            [
+              59,
+              40.02
+            ],
+            [
+              13.5,
+              30.12
+            ],
+            [
+              8.5,
+              28.55
+            ]
+          ],
+          "depth": 104,
+          "origin": [
+            13,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_soft",
+          "op": "fillet_edges",
+          "input": "glass_crown",
+          "radius": 0.3,
+          "axis": "X"
+        },
+        {
+          "id": "visor_laminated",
+          "op": "union",
+          "left": "visor_soft",
+          "right": "glass_soft"
+        },
+        {
+          "id": "sensor_aperture",
+          "op": "cylinder",
+          "radius": 2.8,
+          "height": 18,
+          "origin": [
+            103,
+            27,
+            22
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "visor_result",
+          "op": "subtract",
+          "left": "visor_laminated",
+          "right": "sensor_aperture"
+        }
+      ],
+      "result": "visor_result"
+    },
+    {
+      "id": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "name": "graphite louvered service cover",
+      "color": "#303a3e",
+      "placement": [
+        0,
+        0,
+        0
+      ],
+      "features": [
+        {
+          "id": "cover_profile",
+          "op": "profile_extrude",
+          "plane": "YZ",
+          "points": [
+            [
+              63.5,
+              37.85
+            ],
+            [
+              77,
+              41.35
+            ],
+            [
+              82,
+              42.15
+            ],
+            [
+              87,
+              39.95
+            ],
+            [
+              87,
+              42.55
+            ],
+            [
+              82,
+              44.75
+            ],
+            [
+              77,
+              43.95
+            ],
+            [
+              63.5,
+              40.45
+            ]
+          ],
+          "depth": {
+            "param": "panel_width"
+          },
+          "origin": [
+            10,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cover_soft",
+          "op": "fillet_edges",
+          "input": "cover_profile",
+          "radius": 0.95,
+          "axis": "X"
+        },
+        {
+          "id": "vent_1_bridge",
+          "op": "box",
+          "size": [
+            4.6,
+            9,
+            14
+          ],
+          "origin": [
+            26.7,
+            69,
+            32
+          ]
+        },
+        {
+          "id": "vent_1_front",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            29,
+            69,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_1_rear",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            29,
+            78,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_1_tool_a",
+          "op": "union",
+          "left": "vent_1_bridge",
+          "right": "vent_1_front"
+        },
+        {
+          "id": "vent_1_tool",
+          "op": "union",
+          "left": "vent_1_tool_a",
+          "right": "vent_1_rear"
+        },
+        {
+          "id": "vented_1",
+          "op": "subtract",
+          "left": "cover_soft",
+          "right": "vent_1_tool"
+        },
+        {
+          "id": "vent_2_bridge",
+          "op": "box",
+          "size": [
+            4.6,
+            9,
+            14
+          ],
+          "origin": [
+            44.7,
+            69,
+            32
+          ]
+        },
+        {
+          "id": "vent_2_front",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            47,
+            69,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_2_rear",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            47,
+            78,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_2_tool_a",
+          "op": "union",
+          "left": "vent_2_bridge",
+          "right": "vent_2_front"
+        },
+        {
+          "id": "vent_2_tool",
+          "op": "union",
+          "left": "vent_2_tool_a",
+          "right": "vent_2_rear"
+        },
+        {
+          "id": "vented_2",
+          "op": "subtract",
+          "left": "vented_1",
+          "right": "vent_2_tool"
+        },
+        {
+          "id": "vent_3_bridge",
+          "op": "box",
+          "size": [
+            4.6,
+            9,
+            14
+          ],
+          "origin": [
+            62.7,
+            69,
+            32
+          ]
+        },
+        {
+          "id": "vent_3_front",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            65,
+            69,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_3_rear",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            65,
+            78,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_3_tool_a",
+          "op": "union",
+          "left": "vent_3_bridge",
+          "right": "vent_3_front"
+        },
+        {
+          "id": "vent_3_tool",
+          "op": "union",
+          "left": "vent_3_tool_a",
+          "right": "vent_3_rear"
+        },
+        {
+          "id": "vented_3",
+          "op": "subtract",
+          "left": "vented_2",
+          "right": "vent_3_tool"
+        },
+        {
+          "id": "vent_4_bridge",
+          "op": "box",
+          "size": [
+            4.6,
+            9,
+            14
+          ],
+          "origin": [
+            80.7,
+            69,
+            32
+          ]
+        },
+        {
+          "id": "vent_4_front",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            83,
+            69,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_4_rear",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            83,
+            78,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_4_tool_a",
+          "op": "union",
+          "left": "vent_4_bridge",
+          "right": "vent_4_front"
+        },
+        {
+          "id": "vent_4_tool",
+          "op": "union",
+          "left": "vent_4_tool_a",
+          "right": "vent_4_rear"
+        },
+        {
+          "id": "vented_4",
+          "op": "subtract",
+          "left": "vented_3",
+          "right": "vent_4_tool"
+        },
+        {
+          "id": "vent_5_bridge",
+          "op": "box",
+          "size": [
+            4.6,
+            9,
+            14
+          ],
+          "origin": [
+            98.7,
+            69,
+            32
+          ]
+        },
+        {
+          "id": "vent_5_front",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            101,
+            69,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_5_rear",
+          "op": "cylinder",
+          "radius": 2.3,
+          "height": 14,
+          "origin": [
+            101,
+            78,
+            32
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "vent_5_tool_a",
+          "op": "union",
+          "left": "vent_5_bridge",
+          "right": "vent_5_front"
+        },
+        {
+          "id": "vent_5_tool",
+          "op": "union",
+          "left": "vent_5_tool_a",
+          "right": "vent_5_rear"
+        },
+        {
+          "id": "vented_5",
+          "op": "subtract",
+          "left": "vented_4",
+          "right": "vent_5_tool"
+        }
+      ],
+      "result": "vented_5"
+    },
+    {
+      "id": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "name": "recessed shadow plinth with hidden feet",
+      "color": "#222b2e",
+      "placement": [
+        0,
+        0,
+        0
+      ],
+      "features": [
+        {
+          "id": "plinth_profile",
+          "op": "profile_extrude",
+          "plane": "XY",
+          "points": [
+            [
+              21,
+              11
+            ],
+            [
+              109,
+              11
+            ],
+            [
+              116,
+              16
+            ],
+            [
+              120,
+              24
+            ],
+            [
+              116,
+              67
+            ],
+            [
+              108,
+              75
+            ],
+            [
+              22,
+              75
+            ],
+            [
+              14,
+              67
+            ],
+            [
+              10,
+              24
+            ],
+            [
+              14,
+              16
+            ]
+          ],
+          "depth": 3.4,
+          "origin": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "plinth_soft",
+          "op": "fillet_edges",
+          "input": "plinth_profile",
+          "radius": 3.8,
+          "axis": "Z"
+        },
+        {
+          "id": "foot_fl",
+          "op": "cylinder",
+          "radius": 5,
+          "height": 1.5,
+          "origin": [
+            27,
+            23,
+            -1.25
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "foot_fr",
+          "op": "cylinder",
+          "radius": 5,
+          "height": 1.5,
+          "origin": [
+            103,
+            23,
+            -1.25
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "foot_rl",
+          "op": "cylinder",
+          "radius": 5,
+          "height": 1.5,
+          "origin": [
+            27,
+            63,
+            -1.25
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "foot_rr",
+          "op": "cylinder",
+          "radius": 5,
+          "height": 1.5,
+          "origin": [
+            103,
+            63,
+            -1.25
+          ],
+          "axis": "Z"
+        },
+        {
+          "id": "feet_a",
+          "op": "union",
+          "left": "plinth_soft",
+          "right": "foot_fl"
+        },
+        {
+          "id": "feet_b",
+          "op": "union",
+          "left": "feet_a",
+          "right": "foot_fr"
+        },
+        {
+          "id": "feet_c",
+          "op": "union",
+          "left": "feet_b",
+          "right": "foot_rl"
+        },
+        {
+          "id": "plinth_result",
+          "op": "union",
+          "left": "feet_c",
+          "right": "foot_rr"
+        }
+      ],
+      "result": "plinth_result"
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "m3_front_left",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_fl",
+      "kind": "straight_bore_z",
+      "center": [
+        14,
+        14
+      ],
+      "zStart": 4,
+      "length": 20,
+      "radius": {
+        "param": "m3_radius"
+      },
+      "locked": true
+    },
+    {
+      "id": "m3_front_right",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_fr",
+      "kind": "straight_bore_z",
+      "center": [
+        116,
+        14
+      ],
+      "zStart": 4,
+      "length": 20,
+      "radius": {
+        "param": "m3_radius"
+      },
+      "locked": true
+    },
+    {
+      "id": "m3_rear_left",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_rl",
+      "kind": "straight_bore_z",
+      "center": [
+        14,
+        78
+      ],
+      "zStart": 4,
+      "length": 20,
+      "radius": {
+        "param": "m3_radius"
+      },
+      "locked": true
+    },
+    {
+      "id": "m3_rear_right",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "featureId": "m3_rr",
+      "kind": "straight_bore_z",
+      "center": [
+        116,
+        78
+      ],
+      "zStart": 4,
+      "length": 20,
+      "radius": {
+        "param": "m3_radius"
+      },
+      "locked": true
+    }
+  ]
+}

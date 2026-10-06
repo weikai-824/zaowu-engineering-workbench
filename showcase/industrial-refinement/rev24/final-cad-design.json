@@ -1,0 +1,111 @@
+{
+  "schema": "cad-plan-v1",
+  "id": "4a9f35d1-70c2-4b61-9b8c-11dc37a61590",
+  "name": "桌面智能环境监测终端 · 悬浮玻璃楔体",
+  "units": "mm",
+  "parameters": {
+    "outer_width": {"label": "机身总宽", "value": 130, "min": 110, "max": 160, "locked": false},
+    "panel_width": {"label": "玻璃与后盖宽度", "value": 112, "min": 96, "max": 124, "locked": false},
+    "body_edge_radius": {"label": "机身纵向转角", "value": 2.4, "min": 1.2, "max": 3.5, "locked": false},
+    "m3_radius": {"label": "M3 锁定直孔半径", "value": 1.6, "min": 1.5, "max": 1.7, "locked": true},
+    "reveal_gap": {"label": "面板阴影缝", "value": 0.35, "min": 0.25, "max": 0.6, "locked": false}
+  },
+  "parts": [
+    {
+      "id": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "name": "warm-white wedge lower shell",
+      "color": "#e7e1d7",
+      "placement": [0, 0, 0],
+      "features": [
+        {"id": "body_profile", "op": "profile_extrude", "plane": "YZ", "points": [[0,4],[0,18],[8,23],[18,26],[62,35.5],[80,40],[92,35],[92,4]], "depth": {"param":"outer_width"}, "origin": [0,0,0]},
+        {"id": "body_soft", "op": "fillet_edges", "input": "body_profile", "radius": {"param":"body_edge_radius"}, "axis": "X"},
+        {"id": "open_cavity", "op": "profile_extrude", "plane": "YZ", "points": [[5,8],[5,21],[10,25],[17,29],[61,39],[80,44],[87,38],[87,8]], "depth": 120, "origin": [5,0,0]},
+        {"id": "hollow_body", "op": "subtract", "left": "body_soft", "right": "open_cavity"},
+        {"id": "boss_fl", "op": "cylinder", "radius": 4.3, "height": 20, "origin": [14,14,4], "axis": "Z"},
+        {"id": "boss_fr", "op": "cylinder", "radius": 4.3, "height": 20, "origin": [116,14,4], "axis": "Z"},
+        {"id": "boss_rl", "op": "cylinder", "radius": 4.3, "height": 20, "origin": [14,78,4], "axis": "Z"},
+        {"id": "boss_rr", "op": "cylinder", "radius": 4.3, "height": 20, "origin": [116,78,4], "axis": "Z"},
+        {"id": "bossed_a", "op": "union", "left": "hollow_body", "right": "boss_fl"},
+        {"id": "bossed_b", "op": "union", "left": "bossed_a", "right": "boss_fr"},
+        {"id": "bossed_c", "op": "union", "left": "bossed_b", "right": "boss_rl"},
+        {"id": "bossed", "op": "union", "left": "bossed_c", "right": "boss_rr"},
+        {"id": "m3_fl", "op": "cylinder", "radius": {"param":"m3_radius"}, "height": 20, "origin": [14,14,4], "axis": "Z"},
+        {"id": "m3_fr", "op": "cylinder", "radius": {"param":"m3_radius"}, "height": 20, "origin": [116,14,4], "axis": "Z"},
+        {"id": "m3_rl", "op": "cylinder", "radius": {"param":"m3_radius"}, "height": 20, "origin": [14,78,4], "axis": "Z"},
+        {"id": "m3_rr", "op": "cylinder", "radius": {"param":"m3_radius"}, "height": 20, "origin": [116,78,4], "axis": "Z"},
+        {"id": "bored_a", "op": "subtract", "left": "bossed", "right": "m3_fl"},
+        {"id": "bored_b", "op": "subtract", "left": "bored_a", "right": "m3_fr"},
+        {"id": "bored_c", "op": "subtract", "left": "bored_b", "right": "m3_rl"},
+        {"id": "bored", "op": "subtract", "left": "bored_c", "right": "m3_rr"},
+        {"id": "usb_bridge", "op": "box", "size": [15,7,7], "origin": [57.5,-1,9]},
+        {"id": "usb_left", "op": "cylinder", "radius": 3.5, "height": 7, "origin": [57.5,-1,12.5], "axis": "Y"},
+        {"id": "usb_right", "op": "cylinder", "radius": 3.5, "height": 7, "origin": [72.5,-1,12.5], "axis": "Y"},
+        {"id": "usb_tool_a", "op": "union", "left": "usb_bridge", "right": "usb_left"},
+        {"id": "usb_tool", "op": "union", "left": "usb_tool_a", "right": "usb_right"},
+        {"id": "shell_result", "op": "subtract", "left": "bored", "right": "usb_tool"}
+      ],
+      "result": "shell_result"
+    },
+    {
+      "id": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "name": "dark floating display visor",
+      "color": "#171b1d",
+      "placement": [0,0,0],
+      "features": [
+        {"id": "visor_profile", "op": "profile_extrude", "plane": "YZ", "points": [[5,21.73],[8,23.6],[18,26.6],[62,36.1],[62,38.7],[18,29.2],[8,26.2],[5,24.33]], "depth": {"param":"panel_width"}, "origin": [9,0,0]},
+        {"id": "visor_soft", "op": "fillet_edges", "input": "visor_profile", "radius": 0.9, "axis": "X"},
+        {"id": "sensor_aperture", "op": "cylinder", "radius": 3.2, "height": 12, "origin": [104,28,23], "axis": "Z"},
+        {"id": "visor_result", "op": "subtract", "left": "visor_soft", "right": "sensor_aperture"}
+      ],
+      "result": "visor_result"
+    },
+    {
+      "id": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "name": "graphite rear vent service cover",
+      "color": "#3c4244",
+      "placement": [0,0,0],
+      "features": [
+        {"id": "cover_profile", "op": "profile_extrude", "plane": "YZ", "points": [[63,36.1],[80,40.35],[87,37.43],[87,39.83],[80,42.75],[63,38.5]], "depth": {"param":"panel_width"}, "origin": [9,0,0]},
+        {"id": "cover_soft", "op": "fillet_edges", "input": "cover_profile", "radius": 0.65, "axis": "X"},
+        {"id": "vent_1", "op": "box", "size": [6,14,12], "origin": [27,68,33]},
+        {"id": "vented_1", "op": "subtract", "left": "cover_soft", "right": "vent_1"},
+        {"id": "vent_2", "op": "box", "size": [6,14,12], "origin": [41,68,33]},
+        {"id": "vented_2", "op": "subtract", "left": "vented_1", "right": "vent_2"},
+        {"id": "vent_3", "op": "box", "size": [6,14,12], "origin": [55,68,33]},
+        {"id": "vented_3", "op": "subtract", "left": "vented_2", "right": "vent_3"},
+        {"id": "vent_4", "op": "box", "size": [6,14,12], "origin": [69,68,33]},
+        {"id": "vented_4", "op": "subtract", "left": "vented_3", "right": "vent_4"},
+        {"id": "vent_5", "op": "box", "size": [6,14,12], "origin": [83,68,33]},
+        {"id": "vented_5", "op": "subtract", "left": "vented_4", "right": "vent_5"},
+        {"id": "vent_6", "op": "box", "size": [6,14,12], "origin": [97,68,33]},
+        {"id": "cover_result", "op": "subtract", "left": "vented_5", "right": "vent_6"}
+      ],
+      "result": "cover_result"
+    },
+    {
+      "id": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "name": "recessed shadow plinth with feet",
+      "color": "#313638",
+      "placement": [0,0,0],
+      "features": [
+        {"id": "plinth_profile", "op": "profile_extrude", "plane": "XY", "points": [[18,10],[112,10],[120,20],[116,70],[108,78],[22,78],[14,70],[10,22]], "depth": 3.6, "origin": [0,0,0]},
+        {"id": "plinth_soft", "op": "fillet_edges", "input": "plinth_profile", "radius": 3, "axis": "Z"},
+        {"id": "foot_fl", "op": "cylinder", "radius": 6, "height": 1.2, "origin": [25,22,-1], "axis": "Z"},
+        {"id": "foot_fr", "op": "cylinder", "radius": 6, "height": 1.2, "origin": [105,22,-1], "axis": "Z"},
+        {"id": "foot_rl", "op": "cylinder", "radius": 6, "height": 1.2, "origin": [25,66,-1], "axis": "Z"},
+        {"id": "foot_rr", "op": "cylinder", "radius": 6, "height": 1.2, "origin": [105,66,-1], "axis": "Z"},
+        {"id": "feet_a", "op": "union", "left": "plinth_soft", "right": "foot_fl"},
+        {"id": "feet_b", "op": "union", "left": "feet_a", "right": "foot_fr"},
+        {"id": "feet_c", "op": "union", "left": "feet_b", "right": "foot_rl"},
+        {"id": "plinth_result", "op": "union", "left": "feet_c", "right": "foot_rr"}
+      ],
+      "result": "plinth_result"
+    }
+  ],
+  "interfaces": [
+    {"id":"m3_front_left","partId":"6f11a9d4-4d5d-4f1f-9d26-8b1509a91741","featureId":"m3_fl","kind":"straight_bore_z","center":[14,14],"zStart":4,"length":20,"radius":{"param":"m3_radius"},"locked":true},
+    {"id":"m3_front_right","partId":"6f11a9d4-4d5d-4f1f-9d26-8b1509a91741","featureId":"m3_fr","kind":"straight_bore_z","center":[116,14],"zStart":4,"length":20,"radius":{"param":"m3_radius"},"locked":true},
+    {"id":"m3_rear_left","partId":"6f11a9d4-4d5d-4f1f-9d26-8b1509a91741","featureId":"m3_rl","kind":"straight_bore_z","center":[14,78],"zStart":4,"length":20,"radius":{"param":"m3_radius"},"locked":true},
+    {"id":"m3_rear_right","partId":"6f11a9d4-4d5d-4f1f-9d26-8b1509a91741","featureId":"m3_rr","kind":"straight_bore_z","center":[116,78],"zStart":4,"length":20,"radius":{"param":"m3_radius"},"locked":true}
+  ]
+}

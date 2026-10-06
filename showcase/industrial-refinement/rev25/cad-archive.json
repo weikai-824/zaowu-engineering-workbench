@@ -1,0 +1,37 @@
+{
+  "verification": "unsigned_local_report",
+  "productionReady": false,
+  "partCount": 4,
+  "interfaceCount": 4,
+  "overlapCount": 0,
+  "runtime": {
+    "cadquery": "2.8.0",
+    "ocp": "7.9.3.1.1",
+    "python": "3.12.14",
+    "nlopt": "2.9.0",
+    "casadi": "3.8.0",
+    "exitPolicy": "normal_interpreter_shutdown"
+  },
+  "stl": {
+    "linearToleranceMm": 0.05,
+    "relative": false,
+    "angularToleranceRadians": 0.1
+  },
+  "notChecked": [
+    "strength",
+    "wall_thickness",
+    "assembly_clearance",
+    "thread_fit",
+    "support_strategy",
+    "printability",
+    "actual_machine_calibration"
+  ],
+  "executionProof": {
+    "deviceId": "7d2eac6f-403c-456e-a3bd-b190c9e3edd4",
+    "publicKey": "NxdbM56KSogQrk0GxNoVtHC840zcFZrfeC-3_1hMl6s",
+    "receiptJson": "{\"attempt\":1,\"deviceId\":\"7d2eac6f-403c-456e-a3bd-b190c9e3edd4\",\"error\":\"\",\"finishedAt\":\"2026-09-16T08:47:05.403Z\",\"inputSha256\":\"cc0739915c4ccfed0dca1e43cb4fa52706e181e35ce705e7ee0d2c7befc141c7\",\"jobId\":\"fec19bea-bee6-4ef4-96e6-a49095be5635\",\"leaseId\":\"92eff113-908c-495f-8051-7225b670a3e2\",\"resultSha256\":\"4a0df3ed689167c3ea44365389982362eff4030c96ac412176958dd4b399b8ab\",\"runId\":\"78ae7bb8-8cd3-4440-81a3-132a8697bdb0\",\"runnerSha256\":\"1f5b65a1c8c49e89141b5986c5951f1e4ae121932acabf5a25b70d68b6b8856d\",\"schema\":\"execution-receipt-v1\",\"startedAt\":\"2026-09-16T08:46:52.971Z\",\"status\":\"succeeded\"}",
+    "signature": "X6CfzTTIJq0HnSItuqu16OdfnDTiO2BMGWl53arPvS0dWWitNNORly5WRmz7QTYTa5rdL9V-JJy-CM4NC_tGDw",
+    "verification": "registered_device_signature_verified",
+    "limitations": "Software-key provenance only; not hardware attestation, independent CAD recomputation or manufacturing validation"
+  }
+}

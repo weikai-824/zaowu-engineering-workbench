@@ -1,0 +1,6 @@
+import {owner,runtime,errorResponse,ApiError,bodyJson,checkOrigin} from '@/lib/server';
+import {recoverTripoJob,recoveryDto,type TripoJob} from '@/lib/tripo-recovery';
+import {generationInput,submitTripoJob} from '@/lib/tripo-submit';
+export async function GET(request:Request){try{const uid=await owner();const id=new URL(request.url).searchParams.get('projectId');const rows=await runtime().DB.prepare("SELECT * FROM jobs WHERE owner_id=? AND project_id=? AND kind IN ('text','image','multiview','model','concept_image','postprocess') ORDER BY created_at DESC LIMIT 50").bind(uid,id).all<TripoJob>();return Response.json(rows.results.map(recoveryDto));}catch(e){return errorResponse(e);}}
+export async function POST(request:Request){try{checkOrigin(request);const uid=await owner();const parsed=generationInput.safeParse(await bodyJson(request));if(!parsed.success)throw new ApiError(400,'生成要求或防重复提交编号无效，请刷新页面后重试。');return Response.json(await submitTripoJob(runtime(),uid,parsed.data));}catch(e){return errorResponse(e);}}
+export async function PATCH(request:Request){try{checkOrigin(request);const uid=await owner();const id=new URL(request.url).searchParams.get('id');if(!id)throw new ApiError(400,'缺少任务编号。');return Response.json(await recoverTripoJob(runtime(),uid,id));}catch(e){return errorResponse(e);}}

@@ -1,0 +1,11 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+const path=require('path'),fs=require('fs'),esbuild=require('esbuild');
+const site=process.cwd(),bundle=path.join(site,'work','validation','golden-cad-design.cjs');
+esbuild.buildSync({stdin:{contents:"export {goldenEnclosureCadDesign,GOLDEN_ENCLOSURE_ASSUMPTIONS} from './lib/golden-enclosure-cad';export {parseCad,cadHash,cadCanonical} from './lib/cad-spec';",resolveDir:site,sourcefile:'readonly-golden-cad-design.ts',loader:'ts'},outfile:bundle,bundle:true,platform:'node',format:'cjs',tsconfig:path.join(site,'tsconfig.json'),logLevel:'silent'});
+const{goldenEnclosureCadDesign,GOLDEN_ENCLOSURE_ASSUMPTIONS,parseCad,cadHash,cadCanonical}=require(bundle);
+async function main(){
+ const project={id:'91ad21c0-4143-4252-8969-00dc31047b82',revision:2,title:'小型桌面设备防护外壳 · P1-C High Quality Candidate',brief:'为小型桌面传感器或控制盒设计一体式 FDM 打印外壳。',domain:'industrial',targetSize:140,quantity:1,connection:'screw',preferredProcess:'FDM',parts:[],checks:[],notes:[],createdAt:'2026-09-15T00:00:00.000Z',updatedAt:'2026-09-15T00:00:00.000Z'};
+ const design=goldenEnclosureCadDesign(project),validated=parseCad(design),hash=await cadHash(validated),result={schema:'golden-cad-design-validation-v1',designId:validated.id,name:validated.name,parameters:Object.fromEntries(Object.entries(validated.parameters).map(([key,value])=>[key,value.value])),partCount:validated.parts.length,featureCount:validated.parts.reduce((sum,part)=>sum+part.features.length,0),interfaceCount:validated.interfaces.length,designSha256:hash,assumptions:GOLDEN_ENCLOSURE_ASSUMPTIONS,passed:validated.parts.length===1&&validated.interfaces.length===4&&validated.parts[0].features.length===19&&validated.parameters.outer_width.value===140&&validated.parameters.wall_thickness.value===4&&validated.parameters.floor_thickness.value===8&&cadCanonical(validated)===cadCanonical(design)};
+ fs.mkdirSync(path.join(site,'work','validation','p1e-cad'),{recursive:true});fs.writeFileSync(path.join(site,'work','validation','p1e-cad','design.json'),JSON.stringify(validated,null,2));console.log(JSON.stringify(result,null,2));if(!result.passed)process.exitCode=1;
+}
+main().catch(error=>{console.error(error.stack||error);process.exitCode=1;});

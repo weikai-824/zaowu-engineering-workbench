@@ -1,0 +1,22 @@
+import {boundedZip} from './bounded-zip';
+import {binaryStlInfo,sha256} from './slice-contract';
+import {parseCad,scalarValue,type CadDesign} from './cad-spec';
+export type CadTask={schema:'cad-task-v1';jobId:string;projectId:string;projectRevision:number;designJson:string;designSha256:string};
+export async function readCadResult(data:ArrayBuffer,task:CadTask){
+ const zip=await boundedZip(data,24*1024*1024,50),d=parseCad(JSON.parse(task.designJson));
+ const reportFile=zip.file('report.json');if(!reportFile)throw Error('缺少 CAD 执行记录。');const raw=await reportFile.async('string');if(raw.length>500000)throw Error('执行记录过大。');const r=JSON.parse(raw);
+ if(r.schema!=='cad-result-v1'||r.jobId!==task.jobId||r.projectId!==task.projectId||r.projectRevision!==task.projectRevision||r.designSha256!==task.designSha256||!['controlled-cad-v1','controlled-cad-v2','controlled-cad-v3'].includes(r.executor)||r.runtime?.cadquery!=='2.8.0'||r.runtime?.ocp!=='7.9.3.1.1'||r.productionReady!==false||r.physicalValidation!=='not_run'||r.verification!=='unsigned_local_report')throw Error('CAD 任务、版本或执行器记录不一致。');
+ if(['controlled-cad-v2','controlled-cad-v3'].includes(r.executor)&&(r.runtime.nlopt!=='2.9.0'||r.runtime.casadi!=='3.8.0'||r.runtime.exitPolicy!=='normal_interpreter_shutdown'))throw Error('CAD v2/v3 的兼容运行时记录不一致。');
+ const names=['assembly.step','design.json',...d.parts.flatMap(p=>[p.id+'.step',p.id+'.brep',p.id+'.stl'])];
+ if(JSON.stringify(Object.keys(r.files??{}).sort())!==JSON.stringify([...names].sort())||JSON.stringify(Object.keys(zip.files).sort())!==JSON.stringify([...names,'report.json'].sort()))throw Error('CAD 文件清单不完整或包含额外文件。');
+ const files=new Map<string,Uint8Array>();for(const name of names){const f=await zip.file(name)!.async('uint8array');if(!f.length||r.files[name]?.bytes!==f.length||r.files[name]?.sha256!==await sha256(f))throw Error('CAD 文件校验失败：'+name);files.set(name,f);}
+ if(new TextDecoder().decode(files.get('design.json'))!==task.designJson)throw Error('参数源与任务不一致。');
+ if(!Array.isArray(r.parts)||r.parts.length!==d.parts.length||new Set(r.parts.map((p:{id:string})=>p.id)).size!==d.parts.length)throw Error('CAD 零件记录不完整。');
+ const parts=d.parts.map(p=>{const record=r.parts.find((v:{id:string})=>v.id===p.id),stl=files.get(p.id+'.stl')!;const info=binaryStlInfo(stl.buffer.slice(stl.byteOffset,stl.byteOffset+stl.byteLength) as ArrayBuffer,[10000,10000,10000]);if(info.triangles>100000)throw Error('CAD 网格超过每零件 10 万面限制。');if(!record||record.kernelValid!==true||record.stepRoundtrip!=='valid_volume_checked'||!Number.isFinite(record.volumeMm3)||record.volumeMm3<=0)throw Error('缺少有效实体和 STEP 回读记录。');const position=p.placement.map(v=>scalarValue(v,d)) as [number,number,number];if(JSON.stringify(record.position)!==JSON.stringify(position))throw Error('装配位置记录不一致。');return{part:p,position,stl,info,sha256:r.files[p.id+'.stl'].sha256 as string};});
+ if(!Array.isArray(r.interfaces)||r.interfaces.length!==d.interfaces.length||d.interfaces.some(i=>r.interfaces.filter((v:{id:string;passed:boolean})=>v.id===i.id&&v.passed===true).length!==1))throw Error('接口量规检查记录未通过或缺失。');
+ const pairs=new Set<string>();if(!Array.isArray(r.interference)||r.interference.length!==d.parts.length*(d.parts.length-1)/2)throw Error('缺少完整的零件两两交叠记录。');
+ for(const pair of r.interference){if(pair.partA===pair.partB||![pair.partA,pair.partB].every(id=>d.parts.some(p=>p.id===id))||!Number.isFinite(pair.overlapVolumeMm3)||pair.overlapVolumeMm3<0||pair.overlapDetected!==(pair.overlapVolumeMm3>1e-6))throw Error('交叠记录的零件或数值不一致。');const key=[pair.partA,pair.partB].sort().join(':');if(pairs.has(key))throw Error('交叠记录重复。');pairs.add(key);}
+ // Report authors can fabricate both geometry and claims. This check deliberately does not certify kernel execution.
+ return{design:d,parts,summary:{verification:'unsigned_local_report' as const,productionReady:false,partCount:parts.length,interfaceCount:r.interfaces.length,overlapCount:Array.isArray(r.interference)?r.interference.filter((v:{overlapDetected:boolean})=>v.overlapDetected===true).length:null,runtime:r.runtime,stl:r.stl,notChecked:r.notChecked}};
+}
+export async function cadPartCurrent(part:{source?:{kind:string;designId?:string;designSha256?:string}},designs:CadDesign[]=[]){if(part.source?.kind!=='cad')return true;const d=designs.find(d=>d.id===part.source?.designId);if(!d)return false;const {cadHash}=await import('./cad-spec');return await cadHash(d)===part.source.designSha256;}

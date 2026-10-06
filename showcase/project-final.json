@@ -1,0 +1,2267 @@
+{
+  "cadDesigns": [
+    {
+      "schema": "cad-plan-v1",
+      "id": "9f2b7c41-8d3e-4a56-b7c9-0e1f2a3b4c5d",
+      "name": "桌面智能环境监测终端 · 底壁避让修正版参数化外壳",
+      "units": "mm",
+      "parameters": {
+        "outer_x": {
+          "label": "外壳总长 X",
+          "value": 130,
+          "min": 100,
+          "max": 180,
+          "locked": false
+        },
+        "outer_y": {
+          "label": "外壳总宽 Y",
+          "value": 92,
+          "min": 70,
+          "max": 140,
+          "locked": false
+        },
+        "outer_z": {
+          "label": "外壳总高 Z",
+          "value": 28,
+          "min": 18,
+          "max": 45,
+          "locked": false
+        },
+        "wall": {
+          "label": "侧壁厚",
+          "value": 5,
+          "min": 2,
+          "max": 8,
+          "locked": false
+        },
+        "floor": {
+          "label": "底壁厚",
+          "value": 4,
+          "min": 2,
+          "max": 8,
+          "locked": false
+        },
+        "corner_r": {
+          "label": "机身圆角半径",
+          "value": 5,
+          "min": 1,
+          "max": 12,
+          "locked": false
+        },
+        "m3_radius": {
+          "label": "M3 螺钉柱穿孔半径",
+          "value": 1.6,
+          "min": 1.5,
+          "max": 1.7,
+          "locked": true
+        },
+        "panel_t": {
+          "label": "前面板厚度",
+          "value": 2.4,
+          "min": 1.6,
+          "max": 4,
+          "locked": false
+        },
+        "support_t": {
+          "label": "底部支撑厚度",
+          "value": 3,
+          "min": 2,
+          "max": 6,
+          "locked": false
+        },
+        "usb_w": {
+          "label": "USB-C 开口宽",
+          "value": 28,
+          "min": 20,
+          "max": 34,
+          "locked": false
+        },
+        "usb_h": {
+          "label": "USB-C 开口高",
+          "value": 7,
+          "min": 5,
+          "max": 10,
+          "locked": false
+        },
+        "usb_z": {
+          "label": "USB-C 开口中心高",
+          "value": 11,
+          "min": 6,
+          "max": 18,
+          "locked": false
+        }
+      },
+      "parts": [
+        {
+          "id": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+          "name": "lower shell",
+          "color": "#3A3F44",
+          "placement": [
+            0,
+            0,
+            0
+          ],
+          "features": [
+            {
+              "id": "ls_body",
+              "op": "box",
+              "size": [
+                130,
+                92,
+                28
+              ],
+              "origin": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "ls_round",
+              "op": "fillet_all",
+              "input": "ls_body",
+              "radius": 5
+            },
+            {
+              "id": "ls_cavity",
+              "op": "box",
+              "size": [
+                120,
+                82,
+                24
+              ],
+              "origin": [
+                5,
+                5,
+                4
+              ]
+            },
+            {
+              "id": "ls_shell",
+              "op": "subtract",
+              "left": "ls_round",
+              "right": "ls_cavity"
+            },
+            {
+              "id": "ls_boss1",
+              "op": "cylinder",
+              "radius": 4,
+              "height": 25,
+              "origin": [
+                14,
+                14,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_boss2",
+              "op": "cylinder",
+              "radius": 4,
+              "height": 25,
+              "origin": [
+                116,
+                14,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_boss3",
+              "op": "cylinder",
+              "radius": 4,
+              "height": 25,
+              "origin": [
+                14,
+                78,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_boss4",
+              "op": "cylinder",
+              "radius": 4,
+              "height": 25,
+              "origin": [
+                116,
+                78,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_bosses_a",
+              "op": "union",
+              "left": "ls_shell",
+              "right": "ls_boss1"
+            },
+            {
+              "id": "ls_bosses_b",
+              "op": "union",
+              "left": "ls_bosses_a",
+              "right": "ls_boss2"
+            },
+            {
+              "id": "ls_bosses_c",
+              "op": "union",
+              "left": "ls_bosses_b",
+              "right": "ls_boss3"
+            },
+            {
+              "id": "ls_bosses",
+              "op": "union",
+              "left": "ls_bosses_c",
+              "right": "ls_boss4"
+            },
+            {
+              "id": "ls_hole1",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 25,
+              "origin": [
+                14,
+                14,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_hole2",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 25,
+              "origin": [
+                116,
+                14,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_hole3",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 25,
+              "origin": [
+                14,
+                78,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_hole4",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 25,
+              "origin": [
+                116,
+                78,
+                4
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "ls_holes_a",
+              "op": "subtract",
+              "left": "ls_bosses",
+              "right": "ls_hole1"
+            },
+            {
+              "id": "ls_holes_b",
+              "op": "subtract",
+              "left": "ls_holes_a",
+              "right": "ls_hole2"
+            },
+            {
+              "id": "ls_holes_c",
+              "op": "subtract",
+              "left": "ls_holes_b",
+              "right": "ls_hole3"
+            },
+            {
+              "id": "ls_holes",
+              "op": "subtract",
+              "left": "ls_holes_c",
+              "right": "ls_hole4"
+            },
+            {
+              "id": "ls_usb",
+              "op": "box",
+              "size": [
+                28,
+                7,
+                9
+              ],
+              "origin": [
+                51,
+                -1,
+                11
+              ]
+            },
+            {
+              "id": "ls_result",
+              "op": "subtract",
+              "left": "ls_holes",
+              "right": "ls_usb"
+            }
+          ],
+          "result": "ls_result"
+        },
+        {
+          "id": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+          "name": "front display panel",
+          "color": "#1B1E22",
+          "placement": [
+            0,
+            0,
+            28
+          ],
+          "features": [
+            {
+              "id": "fp_body",
+              "op": "box",
+              "size": [
+                114,
+                47,
+                2.4
+              ],
+              "origin": [
+                8,
+                8,
+                0
+              ]
+            },
+            {
+              "id": "fp_round",
+              "op": "fillet_all",
+              "input": "fp_body",
+              "radius": 0.8
+            },
+            {
+              "id": "fp_window",
+              "op": "box",
+              "size": [
+                70,
+                30,
+                3
+              ],
+              "origin": [
+                30,
+                16,
+                0
+              ]
+            },
+            {
+              "id": "fp_sensor",
+              "op": "cylinder",
+              "radius": 4,
+              "height": 3,
+              "origin": [
+                95,
+                23,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "fp_hole1",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 3,
+              "origin": [
+                14,
+                14,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "fp_hole2",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 3,
+              "origin": [
+                116,
+                14,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "fp_cut_a",
+              "op": "subtract",
+              "left": "fp_round",
+              "right": "fp_window"
+            },
+            {
+              "id": "fp_cut_b",
+              "op": "subtract",
+              "left": "fp_cut_a",
+              "right": "fp_sensor"
+            },
+            {
+              "id": "fp_cut_c",
+              "op": "subtract",
+              "left": "fp_cut_b",
+              "right": "fp_hole1"
+            },
+            {
+              "id": "fp_result",
+              "op": "subtract",
+              "left": "fp_cut_c",
+              "right": "fp_hole2"
+            }
+          ],
+          "result": "fp_result"
+        },
+        {
+          "id": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+          "name": "rear vent cover",
+          "color": "#2E3338",
+          "placement": [
+            0,
+            0,
+            28
+          ],
+          "features": [
+            {
+              "id": "rv_body",
+              "op": "box",
+              "size": [
+                114,
+                22,
+                2.4
+              ],
+              "origin": [
+                8,
+                62,
+                0
+              ]
+            },
+            {
+              "id": "rv_round",
+              "op": "fillet_all",
+              "input": "rv_body",
+              "radius": 0.8
+            },
+            {
+              "id": "rv_slot1",
+              "op": "box",
+              "size": [
+                80,
+                3,
+                3
+              ],
+              "origin": [
+                25,
+                66,
+                0
+              ]
+            },
+            {
+              "id": "rv_slot2",
+              "op": "box",
+              "size": [
+                80,
+                3,
+                3
+              ],
+              "origin": [
+                25,
+                70,
+                0
+              ]
+            },
+            {
+              "id": "rv_slot3",
+              "op": "box",
+              "size": [
+                80,
+                3,
+                3
+              ],
+              "origin": [
+                25,
+                74,
+                0
+              ]
+            },
+            {
+              "id": "rv_slot4",
+              "op": "box",
+              "size": [
+                80,
+                3,
+                3
+              ],
+              "origin": [
+                25,
+                78,
+                0
+              ]
+            },
+            {
+              "id": "rv_slot5",
+              "op": "box",
+              "size": [
+                80,
+                3,
+                3
+              ],
+              "origin": [
+                25,
+                82,
+                0
+              ]
+            },
+            {
+              "id": "rv_slot6",
+              "op": "box",
+              "size": [
+                80,
+                3,
+                3
+              ],
+              "origin": [
+                25,
+                86,
+                0
+              ]
+            },
+            {
+              "id": "rv_hole1",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 3,
+              "origin": [
+                14,
+                78,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "rv_hole2",
+              "op": "cylinder",
+              "radius": {
+                "param": "m3_radius"
+              },
+              "height": 3,
+              "origin": [
+                116,
+                78,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "rv_cut_a",
+              "op": "subtract",
+              "left": "rv_round",
+              "right": "rv_slot1"
+            },
+            {
+              "id": "rv_cut_b",
+              "op": "subtract",
+              "left": "rv_cut_a",
+              "right": "rv_slot2"
+            },
+            {
+              "id": "rv_cut_c",
+              "op": "subtract",
+              "left": "rv_cut_b",
+              "right": "rv_slot3"
+            },
+            {
+              "id": "rv_cut_d",
+              "op": "subtract",
+              "left": "rv_cut_c",
+              "right": "rv_slot4"
+            },
+            {
+              "id": "rv_cut_e",
+              "op": "subtract",
+              "left": "rv_cut_d",
+              "right": "rv_slot5"
+            },
+            {
+              "id": "rv_cut_f",
+              "op": "subtract",
+              "left": "rv_cut_e",
+              "right": "rv_slot6"
+            },
+            {
+              "id": "rv_cut_g",
+              "op": "subtract",
+              "left": "rv_cut_f",
+              "right": "rv_hole1"
+            },
+            {
+              "id": "rv_result",
+              "op": "subtract",
+              "left": "rv_cut_g",
+              "right": "rv_hole2"
+            }
+          ],
+          "result": "rv_result"
+        },
+        {
+          "id": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+          "name": "underside support",
+          "color": "#4A5056",
+          "placement": [
+            0,
+            0,
+            -3
+          ],
+          "features": [
+            {
+              "id": "us_body",
+              "op": "box",
+              "size": [
+                118,
+                80,
+                3
+              ],
+              "origin": [
+                6,
+                6,
+                0
+              ]
+            },
+            {
+              "id": "us_round",
+              "op": "fillet_all",
+              "input": "us_body",
+              "radius": 0.9
+            },
+            {
+              "id": "us_pad1",
+              "op": "cylinder",
+              "radius": 6,
+              "height": 3,
+              "origin": [
+                20,
+                20,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "us_pad2",
+              "op": "cylinder",
+              "radius": 6,
+              "height": 3,
+              "origin": [
+                110,
+                20,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "us_pad3",
+              "op": "cylinder",
+              "radius": 6,
+              "height": 3,
+              "origin": [
+                20,
+                72,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "us_pad4",
+              "op": "cylinder",
+              "radius": 6,
+              "height": 3,
+              "origin": [
+                110,
+                72,
+                0
+              ],
+              "axis": "Z"
+            },
+            {
+              "id": "us_union_a",
+              "op": "union",
+              "left": "us_round",
+              "right": "us_pad1"
+            },
+            {
+              "id": "us_union_b",
+              "op": "union",
+              "left": "us_union_a",
+              "right": "us_pad2"
+            },
+            {
+              "id": "us_union_c",
+              "op": "union",
+              "left": "us_union_b",
+              "right": "us_pad3"
+            },
+            {
+              "id": "us_result",
+              "op": "union",
+              "left": "us_union_c",
+              "right": "us_pad4"
+            }
+          ],
+          "result": "us_result"
+        }
+      ],
+      "interfaces": [
+        {
+          "id": "iface_m3_1",
+          "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+          "featureId": "ls_hole1",
+          "kind": "straight_bore_z",
+          "center": [
+            14,
+            14
+          ],
+          "zStart": 4,
+          "length": 25,
+          "radius": {
+            "param": "m3_radius"
+          },
+          "locked": true
+        },
+        {
+          "id": "iface_m3_2",
+          "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+          "featureId": "ls_hole2",
+          "kind": "straight_bore_z",
+          "center": [
+            116,
+            14
+          ],
+          "zStart": 4,
+          "length": 25,
+          "radius": {
+            "param": "m3_radius"
+          },
+          "locked": true
+        },
+        {
+          "id": "iface_m3_3",
+          "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+          "featureId": "ls_hole3",
+          "kind": "straight_bore_z",
+          "center": [
+            14,
+            78
+          ],
+          "zStart": 4,
+          "length": 25,
+          "radius": {
+            "param": "m3_radius"
+          },
+          "locked": true
+        },
+        {
+          "id": "iface_m3_4",
+          "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+          "featureId": "ls_hole4",
+          "kind": "straight_bore_z",
+          "center": [
+            116,
+            78
+          ],
+          "zStart": 4,
+          "length": 25,
+          "radius": {
+            "param": "m3_radius"
+          },
+          "locked": true
+        }
+      ]
+    }
+  ],
+  "id": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+  "revision": 11,
+  "title": "Final Showcase · 桌面智能环境监测终端",
+  "brief": "设计一台桌面智能环境监测终端的消费电子外壳：成熟圆角机身，主体与前面板/上盖分层；前部显示窗与传感器区域；前侧 USB-C 接口；规则散热格栅；四个安装孔与螺丝柱；底部支撑/脚垫；适合 FDM 的合理壁厚、分型和螺钉装配。目标为可交接的工程样机，不是测试方盒。",
+  "domain": "industrial_product",
+  "targetSize": 130,
+  "quantity": 20,
+  "connection": "screw",
+  "preferredProcess": "FDM",
+  "parts": [
+    {
+      "engineeringRole": "visual_reference",
+      "source": {
+        "kind": "tripo",
+        "jobId": "fad34f77-d15f-47a2-bb0a-2129a37b3687",
+        "assetSha256": "4f31fd35123c45643af48eaa5c632acf19c22c644d5f5aa6bc145632e6c12ddd",
+        "sceneIndex": 0,
+        "nodeIndices": [
+          0
+        ],
+        "importerVersion": "glb-static-v1",
+        "derivedFrom": {
+          "assetId": "df0855a4-1ad6-4c2b-adb7-bb034af6065e",
+          "assetSha256": "419ad56ed5c3661860d942a5fb61de8ae7a69c86dccc05e47b21cc530956ed57",
+          "derivedAssetSha256": "4f31fd35123c45643af48eaa5c632acf19c22c644d5f5aa6bc145632e6c12ddd",
+          "method": "embedded-texture-strip-v1"
+        }
+      },
+      "id": "b260e812-b949-4832-9db0-5824b4b86103",
+      "name": "Tripo 工程化候选 fad34f77",
+      "kind": "asset",
+      "params": {
+        "unitScale": 132.52873289430894
+      },
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "assetId": "b91acfb5-be11-42e4-a839-fe6397752f9d",
+      "assetName": "tripo-fad34f77-d15f-47a2-bb0a-2129a37b3687-engineering-intake.glb",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "interfaceLocked": false,
+      "color": "#8ab9cd",
+      "dimensions": [
+        124.87525958407244,
+        108.207195546529,
+        130
+      ],
+      "triangles": 107550
+    },
+    {
+      "engineeringRole": "manufacturing",
+      "source": {
+        "kind": "cad",
+        "jobId": "5222a958-1bac-46ca-9f88-c32f3c90d9d0",
+        "designId": "9f2b7c41-8d3e-4a56-b7c9-0e1f2a3b4c5d",
+        "designSha256": "b569883aa59689db2f22a5db45ae9f1c03f514501cc754f179a3435f13f374f2",
+        "assetSha256": "b919d4a01c245d03c8ca6f889896e8cebc3a987d5f21d21400bcfa2c29250690",
+        "logicalPartId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+        "importerVersion": "controlled-cad-v1"
+      },
+      "id": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "name": "lower shell",
+      "kind": "asset",
+      "params": {
+        "unitScale": 1
+      },
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "assetId": "bf20fa05-3468-493b-abec-93b41979a502",
+      "assetName": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05.stl",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "interfaceLocked": false,
+      "color": "#3A3F44",
+      "dimensions": [
+        130,
+        92,
+        29
+      ],
+      "triangles": 13512
+    },
+    {
+      "engineeringRole": "manufacturing",
+      "source": {
+        "kind": "cad",
+        "jobId": "5222a958-1bac-46ca-9f88-c32f3c90d9d0",
+        "designId": "9f2b7c41-8d3e-4a56-b7c9-0e1f2a3b4c5d",
+        "designSha256": "b569883aa59689db2f22a5db45ae9f1c03f514501cc754f179a3435f13f374f2",
+        "assetSha256": "3a9c5c7dd33f10d12adc28b20e64e11525644eda75cd3a51c1fb16e0e2fdd35c",
+        "logicalPartId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+        "importerVersion": "controlled-cad-v1"
+      },
+      "id": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "name": "front display panel",
+      "kind": "asset",
+      "params": {
+        "unitScale": 1
+      },
+      "position": [
+        0,
+        0,
+        28
+      ],
+      "assetId": "00ad17cc-dafd-4575-9cf7-a71406fc6c23",
+      "assetName": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16.stl",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "interfaceLocked": false,
+      "color": "#1B1E22",
+      "dimensions": [
+        114,
+        47,
+        2.4000000953674316
+      ],
+      "triangles": 10488
+    },
+    {
+      "engineeringRole": "manufacturing",
+      "source": {
+        "kind": "cad",
+        "jobId": "5222a958-1bac-46ca-9f88-c32f3c90d9d0",
+        "designId": "9f2b7c41-8d3e-4a56-b7c9-0e1f2a3b4c5d",
+        "designSha256": "b569883aa59689db2f22a5db45ae9f1c03f514501cc754f179a3435f13f374f2",
+        "assetSha256": "98c1e21648d2727cb596d7e3d24fdc67019e3269c5035a1af7e2cb476de4a02b",
+        "logicalPartId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+        "importerVersion": "controlled-cad-v1"
+      },
+      "id": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "name": "rear vent cover",
+      "kind": "asset",
+      "params": {
+        "unitScale": 1
+      },
+      "position": [
+        0,
+        0,
+        28
+      ],
+      "assetId": "53e913a8-0298-4d9e-bfa2-ce5ff32c0110",
+      "assetName": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41.stl",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "interfaceLocked": false,
+      "color": "#2E3338",
+      "dimensions": [
+        114,
+        22,
+        2.4000000953674316
+      ],
+      "triangles": 10820
+    },
+    {
+      "engineeringRole": "manufacturing",
+      "source": {
+        "kind": "cad",
+        "jobId": "5222a958-1bac-46ca-9f88-c32f3c90d9d0",
+        "designId": "9f2b7c41-8d3e-4a56-b7c9-0e1f2a3b4c5d",
+        "designSha256": "b569883aa59689db2f22a5db45ae9f1c03f514501cc754f179a3435f13f374f2",
+        "assetSha256": "f3b82aeeee93e0d51b9a3ee7305b930c56a9b21396df4ddbae75d44913c0a292",
+        "logicalPartId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+        "importerVersion": "controlled-cad-v1"
+      },
+      "id": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "name": "underside support",
+      "kind": "asset",
+      "params": {
+        "unitScale": 1
+      },
+      "position": [
+        0,
+        0,
+        -3
+      ],
+      "assetId": "61bec7a6-1249-46a9-9bbd-281a0acc59b4",
+      "assetName": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57.stl",
+      "profileId": "fdm-x1c-pla-basic-reference",
+      "interfaceLocked": false,
+      "color": "#4A5056",
+      "dimensions": [
+        118,
+        80,
+        3
+      ],
+      "triangles": 11468
+    }
+  ],
+  "checks": [
+    {
+      "partId": "b260e812-b949-4832-9db0-5824b4b86103",
+      "measuredAtRevision": 3,
+      "id": "8ebdfe21-619b-41a3-997f-90aa75089617",
+      "name": "Tripo 工程化候选 fad34f77 · 几何可读",
+      "status": "stale",
+      "detail": "107,550 个三角面；物理尺寸 124.88 × 108.21 × 130.00 mm；unitScale 132.528733。",
+      "scope": "digital",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "partId": "b260e812-b949-4832-9db0-5824b4b86103",
+      "measuredAtRevision": 3,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "97aafe505e2949676ae45096bcc34d2d52b21b9b8d3b402930bb928ea7093dc1",
+        "measuredAt": "2026-09-15T13:34:40.537Z",
+        "input": {
+          "triangles": 107550,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 322650,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 53290,
+          "validTriangles": 107550,
+          "boundaryEdges": 4,
+          "nonManifoldEdges": 3,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 8,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 53290,
+          "validTriangles": 107550,
+          "boundaryEdges": 4,
+          "nonManifoldEdges": 3,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 8,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "topology_issues",
+        "components": [
+          {
+            "triangles": 107550,
+            "minMm": [
+              -471.1304008960724,
+              -408.13639760017395,
+              -490.43595790863037
+            ],
+            "maxMm": [
+              471.12005949020386,
+              408.3446264266968,
+              490.4834032058716
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [
+          {
+            "kind": "non_manifold",
+            "a": [
+              -394.0921425819397,
+              -217.0889973640442,
+              469.35465931892395
+            ],
+            "b": [
+              -394.2440152168274,
+              -206.15166425704956,
+              469.6648120880127
+            ]
+          },
+          {
+            "kind": "boundary",
+            "a": [
+              -394.0921425819397,
+              -217.0889973640442,
+              469.35465931892395
+            ],
+            "b": [
+              -394.22011375427246,
+              -206.3567191362381,
+              469.50340270996094
+            ]
+          },
+          {
+            "kind": "boundary",
+            "a": [
+              -394.2440152168274,
+              -206.15166425704956,
+              469.6648120880127
+            ],
+            "b": [
+              -394.22011375427246,
+              -206.3567191362381,
+              469.50340270996094
+            ]
+          },
+          {
+            "kind": "non_manifold",
+            "a": [
+              436.7383122444153,
+              73.68715107440948,
+              -315.67156314849854
+            ],
+            "b": [
+              436.3619387149811,
+              74.01211559772491,
+              -311.32495403289795
+            ]
+          },
+          {
+            "kind": "boundary",
+            "a": [
+              436.3619387149811,
+              74.01211559772491,
+              -311.32495403289795
+            ],
+            "b": [
+              436.60590052604675,
+              73.82132112979889,
+              -314.7774338722229
+            ]
+          },
+          {
+            "kind": "boundary",
+            "a": [
+              436.7383122444153,
+              73.68715107440948,
+              -315.67156314849854
+            ],
+            "b": [
+              436.60590052604675,
+              73.82132112979889,
+              -314.7774338722229
+            ]
+          },
+          {
+            "kind": "non_manifold",
+            "a": [
+              334.99690890312195,
+              395.72399854660034,
+              382.4688494205475
+            ],
+            "b": [
+              335.15483140945435,
+              396.1581289768219,
+              381.76459074020386
+            ]
+          }
+        ],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "a0cf289b-710b-42c4-aa21-3f386269af1f",
+      "name": "Tripo 工程化候选 fad34f77 · 网格拓扑",
+      "status": "stale",
+      "detail": "边界边 4；非流形边 3；非流形顶点 8；绕向冲突 0；重复面 0；退化面 0。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "partId": "b260e812-b949-4832-9db0-5824b4b86103",
+      "measuredAtRevision": 3,
+      "id": "5ee90234-8de7-4185-be5b-239ffc3d40b2",
+      "name": "Tripo 工程化候选 fad34f77 · 包围盒初筛",
+      "status": "stale",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "measuredAtRevision": 3,
+      "id": "079f30e0-49b2-4a77-b763-bddc3256d50e",
+      "name": "自交、壳嵌套与材料体积",
+      "status": "not_run",
+      "detail": "边界及流形检查不能排除相交、重叠壳或错误内外关系。",
+      "scope": "digital",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "measuredAtRevision": 3,
+      "id": "9b986cd1-0579-4eaa-b213-2805a3323002",
+      "name": "局部壁厚与薄弱结构",
+      "status": "not_run",
+      "detail": "需要几何内核与经校准的材料工艺条件。",
+      "scope": "digital",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "measuredAtRevision": 3,
+      "id": "e9f0420a-21d4-4841-8d67-429eed4364fe",
+      "name": "装配干涉与接口公差",
+      "status": "not_run",
+      "detail": "尚未执行装配检查。",
+      "scope": "digital",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "measuredAtRevision": 3,
+      "id": "3bb129c0-7a77-4dcc-b374-e24f500ede36",
+      "name": "切片与支撑",
+      "status": "not_run",
+      "detail": "离线试切记录单独归档，尚未完成本工程的制造验证。",
+      "scope": "manufacturing",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "measuredAtRevision": 3,
+      "id": "7fb01255-e9f1-4d5d-b0a2-8fa47df40e51",
+      "name": "实机首件与功能测试",
+      "status": "not_run",
+      "detail": "没有该零件的生产试验记录。",
+      "scope": "physical",
+      "revision": 3,
+      "inputHash": "8adb702dea76a5cf2184feee537975cc64c228e6514e1d977adb07b78ba00c03"
+    },
+    {
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "measuredAtRevision": 7,
+      "id": "bbd77305-b39e-45bc-b9b1-45eb41995937",
+      "name": "lower shell · 几何可读",
+      "status": "stale",
+      "detail": "13,520 个三角面；当前方向尺寸 130.00 × 92.00 × 29.00 mm。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "measuredAtRevision": 7,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "221027d76ee620577640b850701bac5ede799b2d175b2e1e0ca05e00a93265df",
+        "measuredAt": "2026-09-15T13:46:15.734Z",
+        "input": {
+          "triangles": 13520,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 40560,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 6756,
+          "validTriangles": 13512,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 6756,
+          "validTriangles": 13512,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "topology_issues",
+        "components": [
+          {
+            "triangles": 13512,
+            "minMm": [
+              -8.881784197001252e-16,
+              -8.881784197001252e-16,
+              0
+            ],
+            "maxMm": [
+              130,
+              92,
+              29
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [
+          337,
+          1422,
+          2517,
+          3604,
+          5671,
+          6756,
+          7843,
+          9938
+        ],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "47e9f9cd-830d-4a81-9a9c-58fdd8f47835",
+      "name": "lower shell · 网格拓扑",
+      "status": "stale",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 8；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "measuredAtRevision": 7,
+      "id": "21d58d5d-69df-4bfa-a02e-df99834ce3f9",
+      "name": "lower shell · 包围盒初筛",
+      "status": "stale",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "measuredAtRevision": 7,
+      "id": "b9a1428d-e1af-4a50-8c93-a937b4fb044e",
+      "name": "front display panel · 几何可读",
+      "status": "stale",
+      "detail": "10,496 个三角面；当前方向尺寸 114.00 × 47.00 × 2.40 mm。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "measuredAtRevision": 7,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "52a19b2e2a25252160af98193ea1848386aaff9719406d4ce7eceb7313f7c9f9",
+        "measuredAt": "2026-09-15T13:46:15.846Z",
+        "input": {
+          "triangles": 10496,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 31488,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 5240,
+          "validTriangles": 10488,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 5240,
+          "validTriangles": 10488,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "topology_issues",
+        "components": [
+          {
+            "triangles": 10488,
+            "minMm": [
+              8,
+              8,
+              28
+            ],
+            "maxMm": [
+              122,
+              55,
+              30.40000009536743
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [
+          337,
+          1422,
+          2773,
+          4122,
+          6233,
+          7318,
+          8405,
+          9490
+        ],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "4fdf2a87-e4c0-4358-a947-d5984c33038b",
+      "name": "front display panel · 网格拓扑",
+      "status": "stale",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 8；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "measuredAtRevision": 7,
+      "id": "129386b9-d875-47c2-836d-ed17fbe0342c",
+      "name": "front display panel · 包围盒初筛",
+      "status": "stale",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "measuredAtRevision": 7,
+      "id": "ab9aa731-dc19-4a03-8d52-a8432a6b0019",
+      "name": "rear vent cover · 几何可读",
+      "status": "stale",
+      "detail": "10,828 个三角面；当前方向尺寸 114.00 × 22.00 × 2.40 mm。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "measuredAtRevision": 7,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "2ec75ef31600e61350b7cdc95143b881fb3c2f9a5ebff373c2e60fde23eebe8d",
+        "measuredAt": "2026-09-15T13:46:15.937Z",
+        "input": {
+          "triangles": 10828,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 32484,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 5400,
+          "validTriangles": 10820,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 5400,
+          "validTriangles": 10820,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "topology_issues",
+        "components": [
+          {
+            "triangles": 10820,
+            "minMm": [
+              8,
+              62,
+              28
+            ],
+            "maxMm": [
+              122,
+              84,
+              30.40000009536743
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [
+          337,
+          1422,
+          2795,
+          4166,
+          6499,
+          7585,
+          8671,
+          9758
+        ],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "e4b49676-aa5d-4807-a2fc-65e1af5ec306",
+      "name": "rear vent cover · 网格拓扑",
+      "status": "stale",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 8；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "measuredAtRevision": 7,
+      "id": "1fa2d84e-a7eb-497a-8323-11a2b1849a57",
+      "name": "rear vent cover · 包围盒初筛",
+      "status": "stale",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "measuredAtRevision": 7,
+      "id": "03c75b0d-8bde-427a-b11a-a0c08ad30d35",
+      "name": "underside support · 几何可读",
+      "status": "stale",
+      "detail": "11,476 个三角面；当前方向尺寸 118.00 × 80.00 × 3.00 mm。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "measuredAtRevision": 7,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "43b29dc82c53c18392075545c4e96c7da191f21a305672b1c69d54e4f41460b3",
+        "measuredAt": "2026-09-15T13:46:16.042Z",
+        "input": {
+          "triangles": 11476,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 34428,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 5736,
+          "validTriangles": 11468,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 5736,
+          "validTriangles": 11468,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 8,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "topology_issues",
+        "components": [
+          {
+            "triangles": 11468,
+            "minMm": [
+              6,
+              6,
+              -3
+            ],
+            "maxMm": [
+              124,
+              86,
+              0
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [
+          337,
+          1422,
+          3023,
+          4622,
+          7213,
+          8298,
+          9385,
+          10470
+        ],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "8103d62e-983a-4e3b-9c78-d3878d73bfc3",
+      "name": "underside support · 网格拓扑",
+      "status": "stale",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 8；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "measuredAtRevision": 7,
+      "id": "c9465625-0529-46b8-81cc-4e3d4d48f4f8",
+      "name": "underside support · 包围盒初筛",
+      "status": "stale",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "measuredAtRevision": 7,
+      "id": "dd330ae4-671a-4209-b49f-af6982b55145",
+      "name": "自交、壳嵌套与材料体积",
+      "status": "not_run",
+      "detail": "边界及流形检查不能排除相交、重叠壳或错误内外关系。",
+      "scope": "digital",
+      "revision": 7,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "measuredAtRevision": 7,
+      "id": "00fe6bf9-79f8-47af-82ff-d8928c7a3eec",
+      "name": "局部壁厚与薄弱结构",
+      "status": "not_run",
+      "detail": "需要几何内核与经校准的材料工艺条件。",
+      "scope": "digital",
+      "revision": 7,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "measuredAtRevision": 7,
+      "id": "494eed97-c95e-4da9-b7e5-28f4b8443c5c",
+      "name": "装配干涉与接口公差",
+      "status": "not_run",
+      "detail": "尚未执行装配检查。",
+      "scope": "digital",
+      "revision": 7,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "measuredAtRevision": 7,
+      "id": "8465e825-b6a2-4968-b559-99ad40073ffc",
+      "name": "切片与支撑",
+      "status": "not_run",
+      "detail": "离线试切记录单独归档，尚未完成本工程的制造验证。",
+      "scope": "manufacturing",
+      "revision": 7,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "measuredAtRevision": 7,
+      "id": "0ae42fc2-dc85-4c0b-aff6-05b611ce2f25",
+      "name": "实机首件与功能测试",
+      "status": "not_run",
+      "detail": "没有该零件的生产试验记录。",
+      "scope": "physical",
+      "revision": 7,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "id": "38c31fff-b00b-4c7b-9fdf-731c6cfc0c09",
+      "name": "CAD 内核执行 · Showcase",
+      "status": "stale",
+      "detail": "真实 controlled-cad-v2 执行通过；CadQuery 2.8.0 / OCP 7.9.3.1.1 / Python 3.12.14；4 个实体、4 个锁定孔量规和 STEP round-trip 已由本地结果报告确认；result ZIP SHA-256 d958aae9d94d88e5bcbe0dabb6a8f505441b14b541682fc09f0e014026977aa7。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "id": "2758d657-986f-4c1f-9cef-824a7cf42426",
+      "name": "CAD 实体结果与接口校验 · Showcase",
+      "status": "stale",
+      "detail": "cad-result-v1 已归档并通过服务端契约：4 个实体、4 个接口量规通过、2 组装配交叠；productionReady=false，physicalValidation=not_run。",
+      "scope": "digital",
+      "revision": 8,
+      "inputHash": "de66d2e8c1daaaa9d2b3cddad21fbd9c11c9d32c76289e5dfe29bd4ffb9ddc71"
+    },
+    {
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "measuredAtRevision": 9,
+      "id": "fe9facf2-8582-43b7-b7e3-56318331afb9",
+      "name": "lower shell · 几何可读",
+      "status": "passed",
+      "detail": "13,512 个三角面；当前方向尺寸 130.00 × 92.00 × 29.00 mm。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "measuredAtRevision": 9,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "df8ef90a3e6d55e824bab8d4d07671533ae94e4e8bd244c4b0cd54274ab4e6ea",
+        "measuredAt": "2026-09-15T13:53:03.994Z",
+        "input": {
+          "triangles": 13512,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 40536,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 6756,
+          "validTriangles": 13512,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 6756,
+          "validTriangles": 13512,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "no_topology_issue_detected",
+        "components": [
+          {
+            "triangles": 13512,
+            "minMm": [
+              -8.881784197001252e-16,
+              -8.881784197001252e-16,
+              0
+            ],
+            "maxMm": [
+              130,
+              92,
+              29
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "737c6903-fcf1-4ebf-a315-280abb8eeb20",
+      "name": "lower shell · 网格拓扑",
+      "status": "passed",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 0；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "measuredAtRevision": 9,
+      "id": "3f780038-dd18-4df6-a86c-7c0c57fa514b",
+      "name": "lower shell · 包围盒初筛",
+      "status": "passed",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "measuredAtRevision": 9,
+      "id": "70292a12-2e37-4c5c-8870-c8a30b61ae76",
+      "name": "front display panel · 几何可读",
+      "status": "passed",
+      "detail": "10,488 个三角面；当前方向尺寸 114.00 × 47.00 × 2.40 mm。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "measuredAtRevision": 9,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "fdd5f4bf50768b29cd93f4e703888823dc8035a0c2f85e39cc72ac84127ad2aa",
+        "measuredAt": "2026-09-15T13:53:04.123Z",
+        "input": {
+          "triangles": 10488,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 31464,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 5240,
+          "validTriangles": 10488,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 5240,
+          "validTriangles": 10488,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "no_topology_issue_detected",
+        "components": [
+          {
+            "triangles": 10488,
+            "minMm": [
+              8,
+              8,
+              28
+            ],
+            "maxMm": [
+              122,
+              55,
+              30.40000009536743
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "885bdf3e-0fdf-4b1c-a1a5-d2907b0c7984",
+      "name": "front display panel · 网格拓扑",
+      "status": "passed",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 0；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "6d1f8a23-4c07-4e92-b5a8-7f3e0c9d2b16",
+      "measuredAtRevision": 9,
+      "id": "db05e027-6199-4983-98a5-d65a55f9596b",
+      "name": "front display panel · 包围盒初筛",
+      "status": "passed",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "measuredAtRevision": 9,
+      "id": "ec3248c0-aff8-44a6-9f64-5d42b9552143",
+      "name": "rear vent cover · 几何可读",
+      "status": "passed",
+      "detail": "10,820 个三角面；当前方向尺寸 114.00 × 22.00 × 2.40 mm。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "measuredAtRevision": 9,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "ffee1b9daf76776f6bc03e5b6b2a7d9b9f49444723bd0cb610f13067120ed23c",
+        "measuredAt": "2026-09-15T13:53:04.222Z",
+        "input": {
+          "triangles": 10820,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 32460,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 5400,
+          "validTriangles": 10820,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 5400,
+          "validTriangles": 10820,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "no_topology_issue_detected",
+        "components": [
+          {
+            "triangles": 10820,
+            "minMm": [
+              8,
+              62,
+              28
+            ],
+            "maxMm": [
+              122,
+              84,
+              30.40000009536743
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "05f4597c-0594-4bd4-9574-78776c773929",
+      "name": "rear vent cover · 网格拓扑",
+      "status": "passed",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 0；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "8b4e2c76-1a95-4f38-8d20-5e6b9a3c7f41",
+      "measuredAtRevision": 9,
+      "id": "df7997b9-c0d8-4e4d-ad86-b455c570dbec",
+      "name": "rear vent cover · 包围盒初筛",
+      "status": "passed",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "measuredAtRevision": 9,
+      "id": "b108bd96-d303-4112-88b0-4be7834fee33",
+      "name": "underside support · 几何可读",
+      "status": "passed",
+      "detail": "11,468 个三角面；当前方向尺寸 118.00 × 80.00 × 3.00 mm。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "measuredAtRevision": 9,
+      "topology": {
+        "algorithm": "triangle-topology-v1",
+        "producer": "browser_mesh_analysis",
+        "verification": "client_report_unverified",
+        "geometryHash": "272c3ba8a3554d127a78d0ed0992e3f1eb913c0120875e593d63bd8eb47f5cdc",
+        "measuredAt": "2026-09-15T13:53:04.334Z",
+        "input": {
+          "triangles": 11468,
+          "sourceMeshes": 1,
+          "sourceVertexRecords": 34404,
+          "coordinateSystem": "mm_z_up_world",
+          "hashEncoding": "ordered_triangles_float64_le"
+        },
+        "options": {
+          "weldToleranceMm": 0.00001,
+          "minimumAreaMm2": 1e-12
+        },
+        "exact": {
+          "vertices": 5736,
+          "validTriangles": 11468,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "tolerant": {
+          "vertices": 5736,
+          "validTriangles": 11468,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingConflictEdges": 0,
+          "duplicateFaces": 0,
+          "degenerateFaces": 0,
+          "nonManifoldVertices": 0,
+          "edgeConnectedComponents": 1
+        },
+        "mergedDistinctVertices": 0,
+        "verdict": "no_topology_issue_detected",
+        "components": [
+          {
+            "triangles": 11468,
+            "minMm": [
+              6,
+              6,
+              -3
+            ],
+            "maxMm": [
+              124,
+              86,
+              0
+            ]
+          }
+        ],
+        "componentListTruncated": false,
+        "examples": [],
+        "exampleView": "exact",
+        "duplicateFaceExamples": [],
+        "degenerateFaceExamples": [],
+        "notChecked": [
+          "self_intersection",
+          "wall_thickness",
+          "outward_orientation",
+          "shell_containment",
+          "assembly_fit",
+          "physical_manufacturing"
+        ]
+      },
+      "id": "100a6784-c107-434a-aaa4-d5422f3ba82c",
+      "name": "underside support · 网格拓扑",
+      "status": "passed",
+      "detail": "边界边 0；非流形边 0；非流形顶点 0；绕向冲突 0；重复面 0；退化面 0；共享边连通壳 1。仅分析三角网格拓扑，未修补原模型；不代表无自交或可制造。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "partId": "0c5a9d18-7e63-4b02-a4f1-9d8c2e6b3a57",
+      "measuredAtRevision": 9,
+      "id": "0f4944ea-3a93-40b8-8d4a-b6f5d8397a7a",
+      "name": "underside support · 包围盒初筛",
+      "status": "passed",
+      "detail": "按当前 XYZ 方向与公开构建空间比较；未包含支撑、边缘余量和排版。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "measuredAtRevision": 9,
+      "id": "e9b24c8c-1fa9-4103-89c7-d022c48121a5",
+      "name": "自交、壳嵌套与材料体积",
+      "status": "not_run",
+      "detail": "边界及流形检查不能排除相交、重叠壳或错误内外关系。",
+      "scope": "digital",
+      "revision": 9,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "measuredAtRevision": 9,
+      "id": "c0d5bf3f-4eb0-4ad5-9d35-ed9ed18f2ba3",
+      "name": "局部壁厚与薄弱结构",
+      "status": "not_run",
+      "detail": "需要几何内核与经校准的材料工艺条件。",
+      "scope": "digital",
+      "revision": 9,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "measuredAtRevision": 9,
+      "id": "9b4db7f7-c81d-4a12-b41b-90e6c00cc206",
+      "name": "装配干涉与接口公差",
+      "status": "not_run",
+      "detail": "尚未执行装配检查。",
+      "scope": "digital",
+      "revision": 9,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "measuredAtRevision": 9,
+      "id": "f892ceaf-5183-4ccf-8caf-1d5fd16136ee",
+      "name": "切片与支撑",
+      "status": "not_run",
+      "detail": "离线试切记录单独归档，尚未完成本工程的制造验证。",
+      "scope": "manufacturing",
+      "revision": 9,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "measuredAtRevision": 9,
+      "id": "2b67bddf-e48c-41bc-8a0c-8c45ab0a84df",
+      "name": "实机首件与功能测试",
+      "status": "not_run",
+      "detail": "没有该零件的生产试验记录。",
+      "scope": "physical",
+      "revision": 9,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "id": "abb6a7af-d00a-4b74-a3aa-9fc396a2fafa",
+      "name": "CAD 内核执行 · Showcase",
+      "status": "passed",
+      "detail": "真实 controlled-cad-v2 执行通过；CadQuery 2.8.0 / OCP 7.9.3.1.1 / Python 3.12.14；4 个实体、4 个锁定孔量规和 STEP round-trip 已由本地结果报告确认；result ZIP SHA-256 ab084722f231267d2a4d411ea6f3077d4d996e76b7f5a6fb2cccd28fbc0bd318。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "id": "24745527-12e6-46e4-8bce-c90570046db9",
+      "name": "CAD 实体结果与接口校验 · Showcase",
+      "status": "passed",
+      "detail": "cad-result-v1 已归档并通过服务端契约：4 个实体、4 个接口量规通过、2 组装配交叠；productionReady=false，physicalValidation=not_run。",
+      "scope": "digital",
+      "revision": 10,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28"
+    },
+    {
+      "id": "2690d128-5a92-48d4-b91b-e6fb693dc7f3",
+      "name": "lower shell · 离线切片一致性",
+      "status": "passed",
+      "detail": "固定任务输入、保存零件、STL 与 3MF 内嵌网格一致；13,512 个三角面，最大坐标差 3.82e-6 mm；145 层。结果来源未签名，physicalValidation=not_run，productionReady=false。",
+      "scope": "manufacturing",
+      "revision": 11,
+      "inputHash": "167d739083c0968b66d3e84bd53885d68f3f61c28c74938a33ea0157e1bede28",
+      "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+      "measuredAtRevision": 10,
+      "provenance": {
+        "kind": "offline_slice",
+        "jobId": "dd542c29-e022-47a1-a464-a5ce46acdbfb",
+        "manifestSha256": "7508ecdcd1984573c832f7a30395235d2c1ab29fd39c555e41315dcb3f690c4c",
+        "artifactSha256": "631d2fc28f3548fc752268630f612568946c6f468840c984e240048e2b44cd88",
+        "partId": "3a7c1e90-5b24-4d18-9f63-2c8a1b4e7d05",
+        "verification": "offline_consistent",
+        "executionAttestation": "unsigned_local_report",
+        "physicalValidation": "not_run",
+        "productionReady": false
+      }
+    }
+  ],
+  "notes": [
+    "Final Showcase 新项目：从自然语言需求开始。",
+    "范围：真实 DeepSeek 规划、Tripo visual_reference、受控 CAD、签名执行、Bambu 离线参考切片；physicalValidation=not_run，productionReady=false。",
+    "应用 AI 建议；已保留接口，旧检查需复核。",
+    "通过工程化接入保存 Tripo 派生候选；原始提供商资产保留，当前候选移除嵌入贴图以进入工程检查。",
+    "应用 AI 建议；已保留接口，旧检查需复核。",
+    "应用 AI 建议；已保留接口，旧检查需复核。",
+    "附加 CAD 实体派生模型；生产与实机检查待执行。",
+    "保留前两版 AI CAD 失败执行记录；当前工程包采用通过受控 CAD 与锁定孔量规的底壁避让修正版。",
+    "Showcase 数字检查：对 4 个 CAD manufacturing parts 重新导入并执行几何/拓扑/包围盒检查；Tripo visual_reference 保持独立且不进入制造路径。",
+    "附加 CAD 实体派生模型；生产与实机检查待执行。",
+    "Showcase 数字检查：对 4 个 CAD manufacturing parts 重新导入并执行几何/拓扑/包围盒检查；Tripo visual_reference 保持独立且不进入制造路径。",
+    "归档离线切片一致性证据；这不是物理首件或生产放行。"
+  ],
+  "createdAt": "2026-09-15T13:08:09.715Z",
+  "updatedAt": "2026-09-15T13:53:55.944Z"
+}

@@ -1,0 +1,53 @@
+{
+  "invocation": {
+    "run_id": "00000000-0000-4000-8000-000000000010",
+    "plan_version": 1,
+    "step_id": "change-enclosure",
+    "tool_index": 0,
+    "tool": "apply_design_change",
+    "idempotency_key": "repair:00000000-0000-4000-8000-000000000010:plan:1:step:change-enclosure:tool:0",
+    "owner_id": "contract-owner",
+    "project_id": "00000000-0000-4000-8000-000000000001",
+    "expected_revision": 7,
+    "arguments": {
+      "action": "change_cad_parameters",
+      "part_id": "00000000-0000-4000-8000-000000000003",
+      "design_id": "00000000-0000-4000-8000-000000000004",
+      "parameters": { "width": 49 },
+      "success_criteria": ["A new CAD-derived asset is attached."],
+      "prior_results": []
+    }
+  },
+  "result": {
+    "invocation": {
+      "run_id": "00000000-0000-4000-8000-000000000010",
+      "plan_version": 1,
+      "step_id": "change-enclosure",
+      "tool_index": 0,
+      "tool": "apply_design_change",
+      "idempotency_key": "repair:00000000-0000-4000-8000-000000000010:plan:1:step:change-enclosure:tool:0",
+      "owner_id": "contract-owner",
+      "project_id": "00000000-0000-4000-8000-000000000001",
+      "expected_revision": 7,
+      "arguments": {
+        "action": "change_cad_parameters",
+        "part_id": "00000000-0000-4000-8000-000000000003",
+        "design_id": "00000000-0000-4000-8000-000000000004",
+        "parameters": { "width": 49 },
+        "success_criteria": ["A new CAD-derived asset is attached."],
+        "prior_results": []
+      }
+    },
+    "outcome": "succeeded",
+    "summary": "A revision-bound design change was applied.",
+    "output": {
+      "project_revision": 8,
+      "design_id": "00000000-0000-4000-8000-000000000004"
+    },
+    "evidence": [
+      { "kind": "project_revision", "from_revision": 7, "to_revision": 8 }
+    ],
+    "error_code": null,
+    "error_kind": null
+  }
+}

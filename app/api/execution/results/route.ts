@@ -1,0 +1,6 @@
+import {owner,runtime,checkOrigin,bodyBytes,ApiError,errorResponse} from '@/lib/server';
+import {ownedRun,verifyReceipt,assertLease} from '@/lib/execution-server';
+import {archiveCadResult} from '@/lib/cad-storage';
+import {base64urlBytes} from '@/lib/execution-contract';
+import {sha256} from '@/lib/slice-contract';
+export async function POST(request:Request){try{checkOrigin(request);const uid=await owner(),rt=runtime(),run=await ownedRun(rt.DB,uid,request.headers.get('x-execution-id')??'');let receiptJson;try{receiptJson=new TextDecoder('utf-8',{fatal:true}).decode(base64urlBytes(request.headers.get('x-execution-receipt')??'',8192));}catch{throw new ApiError(400,'执行记录编码无效。');}const signature=request.headers.get('x-execution-signature')??'',{receipt,proof}=await verifyReceipt(rt.DB,uid,run,receiptJson,signature);if(receipt.status!=='succeeded')throw new ApiError(400,'失败记录不能上传为成功结果。');const bytes=await bodyBytes(request,8*1024*1024);if(await sha256(bytes)!==receipt.resultSha256)throw new ApiError(400,'结果文件与执行器签名不一致。');if(run.status!=='succeeded')assertLease(run);else if(run.receipt_json!==receiptJson||run.signature!==signature)throw new ApiError(409,'任务已归档另一份执行记录。');return Response.json(await archiveCadResult(rt,uid,run.job_id,bytes,{run,proof}));}catch(e){return errorResponse(e);}}

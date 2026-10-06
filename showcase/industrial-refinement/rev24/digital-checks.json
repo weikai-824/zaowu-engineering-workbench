@@ -1,0 +1,213 @@
+{
+  "schema": "industrial-redesign-digital-checks-v1",
+  "projectId": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+  "fromRevision": 19,
+  "savedRevision": 20,
+  "cadJobId": "f8094348-a445-47e1-86b7-4dcb7488fb4d",
+  "inputHash": "9a290e932fe59e81350cba917a55f09017adffbe5506137507e8faf78251dc6b",
+  "assets": [
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "assetId": "6c7f9161-4e26-4a8f-8b24-a63846d86d95",
+      "bytes": 311284,
+      "sha256": "380fdfaa5a1a41fb969258ac2c85567961c6836cef7b581a76dd779258408d92"
+    },
+    {
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "assetId": "47702eef-4ea0-4a95-8072-724ba2830b66",
+      "bytes": 59884,
+      "sha256": "757b87efcd5ed00a73ac4f1aaeaa86d6f9631a6ae72c8c41c1eb9e8c6c54b679"
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "assetId": "5c64638b-f4c8-4a31-b0a8-7faecde6139a",
+      "bytes": 71484,
+      "sha256": "e197cd03bee94425e4712fc00908747141628300b6b55b9c824a2e72a8c09c22"
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "assetId": "2b1d1eac-827b-4341-afc2-c65961f50f98",
+      "bytes": 128284,
+      "sha256": "18177b4c2b1afb55431d57f4ce5423b80f3c8fb57377e6a3bb5dfdb9f209b4f0"
+    }
+  ],
+  "execution": {
+    "verification": "registered_device_signature_verified",
+    "deviceId": "a03d4f15-e7cc-4594-bf5c-1f08c06d6ce4",
+    "runId": "83c600fb-795a-4087-90b3-eb8f0ef2f111"
+  },
+  "cadSummary": {
+    "verification": "unsigned_local_report",
+    "productionReady": false,
+    "partCount": 4,
+    "interfaceCount": 4,
+    "overlapCount": 0,
+    "runtime": {
+      "cadquery": "2.8.0",
+      "ocp": "7.9.3.1.1",
+      "python": "3.12.14",
+      "nlopt": "2.9.0",
+      "casadi": "3.8.0",
+      "exitPolicy": "normal_interpreter_shutdown"
+    },
+    "stl": {
+      "linearToleranceMm": 0.05,
+      "relative": false,
+      "angularToleranceRadians": 0.1
+    },
+    "notChecked": [
+      "strength",
+      "wall_thickness",
+      "assembly_clearance",
+      "thread_fit",
+      "support_strategy",
+      "printability",
+      "actual_machine_calibration"
+    ],
+    "executionProof": {
+      "deviceId": "a03d4f15-e7cc-4594-bf5c-1f08c06d6ce4",
+      "publicKey": "ipQRJ2wrjP6mjIs-JpSMnhZwoK5pATtndV2TzXhgl7Y",
+      "receiptJson": "{\"attempt\":1,\"deviceId\":\"a03d4f15-e7cc-4594-bf5c-1f08c06d6ce4\",\"error\":\"\",\"finishedAt\":\"2026-09-16T02:54:34.596Z\",\"inputSha256\":\"82d542ab7fd5325b229108131a86ad540e71c092bd3630ca8437ba8087b41d23\",\"jobId\":\"f8094348-a445-47e1-86b7-4dcb7488fb4d\",\"leaseId\":\"aec8cc6d-40a5-4725-b091-48255e76e30c\",\"resultSha256\":\"f6dc4f46b5cebd2821e7457c1317326bedcb116781be393b4f947e79d9c5cc6d\",\"runId\":\"83c600fb-795a-4087-90b3-eb8f0ef2f111\",\"runnerSha256\":\"1f5b65a1c8c49e89141b5986c5951f1e4ae121932acabf5a25b70d68b6b8856d\",\"schema\":\"execution-receipt-v1\",\"startedAt\":\"2026-09-16T02:54:28.887Z\",\"status\":\"succeeded\"}",
+      "signature": "cfMpyIBpBCzyDjkZR4oa_kwF5lTwQ6LWwBUVXtW4fo_xCWxm8-P0Gt8FVPiwM7ROlHdtZRcwD5aI9rC6pbvlAg",
+      "verification": "registered_device_signature_verified",
+      "limitations": "Software-key provenance only; not hardware attestation, independent CAD recomputation or manufacturing validation"
+    }
+  },
+  "currentChecks": [
+    {
+      "name": "warm-white wedge lower shell · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "topology": null
+    },
+    {
+      "name": "warm-white wedge lower shell · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "warm-white wedge lower shell · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "topology": null
+    },
+    {
+      "name": "dark floating display visor · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "topology": null
+    },
+    {
+      "name": "dark floating display visor · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "dark floating display visor · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "topology": null
+    },
+    {
+      "name": "graphite rear vent service cover · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "topology": null
+    },
+    {
+      "name": "graphite rear vent service cover · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "graphite rear vent service cover · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "topology": null
+    },
+    {
+      "name": "recessed shadow plinth with feet · 几何可读",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "topology": null
+    },
+    {
+      "name": "recessed shadow plinth with feet · 网格拓扑",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "topology": "no_topology_issue_detected"
+    },
+    {
+      "name": "recessed shadow plinth with feet · 包围盒初筛",
+      "status": "passed",
+      "scope": "digital",
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "topology": null
+    },
+    {
+      "name": "自交、壳嵌套与材料体积",
+      "status": "not_run",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "局部壁厚与薄弱结构",
+      "status": "not_run",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "装配干涉与接口公差",
+      "status": "not_run",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "切片与支撑",
+      "status": "not_run",
+      "scope": "manufacturing",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "实机首件与功能测试",
+      "status": "not_run",
+      "scope": "physical",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "CAD 内核执行 · Industrial Redesign",
+      "status": "passed",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    },
+    {
+      "name": "CAD 实体、接口与装配校验 · Industrial Redesign",
+      "status": "passed",
+      "scope": "digital",
+      "partId": null,
+      "topology": null
+    }
+  ],
+  "physicalValidation": "not_run",
+  "productionReady": false
+}

@@ -1,0 +1,81 @@
+{
+  "id": "bambu-x1c-pla-basic-020-cool-reference-v1",
+  "label": "X1 Carbon / 0.4 mm / PLA Basic / 0.20 mm / Cool Plate",
+  "purpose": "reference_offline",
+  "productionReady": false,
+  "machineInstanceId": null,
+  "materialLot": null,
+  "engine": {
+    "name": "Bambu Studio",
+    "version": "02.08.02.60",
+    "executableSha256": "fb04b22d21d2dd77e223c68e56b0f36302fd7b860040d553aed2608694017749",
+    "dllSha256": "d6aa10044d11d9b3fcba0d6b52ed3154b4b02897764c270c0fdcbe2cf812f85b"
+  },
+  "files": {
+    "machine.expanded.json": {
+      "sha256": "06224dd580798eef8f5a72a50d9da336b6ecf01e6b37946de7e30ea23354d102",
+      "bytes": 35866
+    },
+    "process.expanded.json": {
+      "sha256": "15624f94266951c0385809163367e255184e46f259e3c307b1b7e062703d76d5",
+      "bytes": 8135
+    },
+    "filament.expanded.json": {
+      "sha256": "6173bffe81d737c62fe4eb093c6ef79a979fd0d4f28d111d9cfaa522a663ae65",
+      "bytes": 8141
+    }
+  },
+  "expectedSettings": {
+    "printer_model": "Bambu Lab X1 Carbon",
+    "printer_settings_id": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "printer_variant": "0.4",
+    "nozzle_diameter": [
+      "0.4"
+    ],
+    "curr_bed_type": "Cool Plate",
+    "filament_type": [
+      "PLA"
+    ],
+    "filament_settings_id": [
+      "Bambu PLA Basic @BBL X1C"
+    ],
+    "filament_colour": [
+      "#00AE42"
+    ],
+    "filament_ids": [
+      "GFA00"
+    ],
+    "filament_diameter": [
+      "1.75"
+    ],
+    "print_settings_id": "0.20mm Standard @BBL X1C",
+    "layer_height": "0.2",
+    "wall_loops": "2",
+    "sparse_infill_density": "15%",
+    "nozzle_temperature": [
+      "220",
+      "220"
+    ],
+    "nozzle_temperature_initial_layer": [
+      "220",
+      "220"
+    ],
+    "cool_plate_temp": [
+      "35"
+    ],
+    "enable_support": "0"
+  },
+  "maxDimensionsMm": [
+    240,
+    240,
+    240
+  ],
+  "notes": [
+    "固定官方示例配置，不代表工厂实物设备或批次。",
+    "单零件、单色；保持输入方向并排版落床；未开启支撑。",
+    "温度、强度、支撑、外观与尺寸需由制造团队另行验证。"
+  ],
+  "source": "https://github.com/bambulab/BambuStudio",
+  "profileSource": "Installed Bambu Studio 02.08.02.60 official resources, inherited presets expanded; see source-provenance.json.",
+  "license": "Bambu Studio upstream GNU AGPL v3; upstream terms apply to copied profiles."
+}

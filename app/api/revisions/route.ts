@@ -1,0 +1,2 @@
+import {owner,runtime,errorResponse,ApiError} from '@/lib/server';
+export async function GET(request:Request){try{const uid=await owner();const id=new URL(request.url).searchParams.get('projectId');if(!id)throw new ApiError(400,'缺少项目编号。');const result=await runtime().DB.prepare('SELECT number,body,created_at FROM revisions WHERE project_id=? AND owner_id=? ORDER BY number DESC LIMIT 100').bind(id,uid).all();return Response.json(result.results);}catch(e){return errorResponse(e);}}

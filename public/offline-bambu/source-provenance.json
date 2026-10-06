@@ -1,0 +1,44 @@
+{
+  "bindings": {
+    "machine": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "process": "0.20mm Standard @BBL X1C",
+    "filament": "Bambu PLA Basic @BBL X1C"
+  },
+  "physical_machine_binding_confirmed": false,
+  "physical_material_binding_confirmed": false,
+  "profile_status": "installed_official_reference_expanded_for_offline_smoke_only",
+  "expansion_note": "Parent, explicit included fields, then leaf overrides. No generic proof of equivalence to native preset default-diff/normalization; effective output will be inspected.",
+  "counts": {
+    "machine": 113,
+    "process": 197,
+    "filament": 139
+  },
+  "source_file_sha256": {
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\Bambu Lab X1 Carbon 0.4 nozzle.json": "81344cfea2c4c962d71ef28bdd875f0c74b272a628ba771dbe624d150ad58747",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\fdm_bbl_3dp_001_common.json": "aa5b0148c3131965ab2bb1d377b43301304030c3d87b339897cef98809a9004f",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\fdm_machine_common.json": "aef949f605e74bd7370dab061d9cb9f6b7fde5ae92e7fe3b34d98c0a7746c514",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\Bambu Lab X1 Carbon 0.4 nozzle template machine_start_gcode.json": "4d099c5bbca95c8c823938bf7e783317d380588c6eae166c48880e965f67df3b",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\Bambu Lab X1 Carbon 0.4 nozzle template machine_end_gcode.json": "9fdc530d13a2187b2bd6655fe53303190dca1e53a9c5949aa71acf66b2025098",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\Bambu Lab X1 Carbon 0.4 nozzle template time_lapse_gcode.json": "4a6d6a47cddd68d8db243b8ee603a523bb5ba5b27bcdec8dd3d4db7804ae8d8c",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\Bambu Lab X1 Carbon 0.4 nozzle template change_filament_gcode.json": "b3bab2512942484d9066c9bcaefdcb0204e9893967c38d866532f66c67dffa1e",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\machine\\Bambu Lab X1 Carbon 0.4 nozzle template layer_change_gcode.json": "d77b6e68aed3c213730f9e82d9157ba90e9e200f81f0e24cae088561249ff22f",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\process\\0.20mm Standard @BBL X1C.json": "9cfd44e7378d6fed4b3507e6bd01d618662837bf1cce9a1a0bc30f8b89454512",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\process\\fdm_process_single_0.20.json": "dc32f236bb0ae0d19560954a1beb87701dac4db85877f5f7c92b3a67315431c5",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\process\\fdm_process_single_common.json": "b589e22e3a9f3513dd71d0a1061181c6f24a2e330b73b1cf7f63a292d7d6a37b",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\process\\fdm_process_common.json": "ff2c0e49a424f70319e52eff6e84c57604b5b86deb883bb4d5614ff448d0c107",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\filament\\Bambu PLA Basic @BBL X1C.json": "4f5df5b3822b4bfe60239f6e62fa4e9f670bb58c024bc3c7c82647a4e45432a0",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\filament\\Bambu PLA Basic @base.json": "c20044226215414d54647fcd5f1217ca3a6801e16b089add1de2b9af12957c07",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\filament\\fdm_filament_pla.json": "1fb8e60457aeda25a5c1b16944188aaa4925267828a194993ddfbcbb727100fe",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\filament\\fdm_filament_common.json": "55573eb37c4031a58e939c4a2c281d62e234192509cac525d4f8d911e8a85c09",
+    "C:\\Program Files\\Bambu Studio\\resources\\profiles\\BBL\\filament\\fdm_filament_template_direct_dual.json": "e10a8a2a230c6e5eb8b83ee1ea54c22c1ae58adb7582a5bc4bb481fb29d9c6fa"
+  },
+  "geometry": {
+    "type": "closed_cube",
+    "dimensions_mm": [
+      20,
+      20,
+      20
+    ],
+    "triangles": 12
+  }
+}

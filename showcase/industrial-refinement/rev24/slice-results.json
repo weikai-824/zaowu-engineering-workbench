@@ -1,0 +1,502 @@
+[
+  {
+    "index": 1,
+    "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+    "partName": "warm-white wedge lower shell",
+    "jobId": "8e5fdac4-802c-4078-8001-a6acab861d0a",
+    "manifestSha256": "c848eb37b32f1fe7a2b7b3f848c1c4e7b5756b1b05a5b62f5ae032c8ed086bae",
+    "taskZip": "1-6f11a9d4-4d5d-4f1f-9d26-8b1509a91741-slice-task.zip",
+    "resultPath": "work\\validation\\exterior-redesign\\bambu-runs\\8e5fdac4-802c-4078-8001-a6acab861d0a-7c5ab308-15c8-41a5-a54a-ba550f354ddd\\offline-result.zip",
+    "summary": {
+      "jobId": "8e5fdac4-802c-4078-8001-a6acab861d0a",
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "projectRevision": 20,
+      "artifactIntegrity": "consistent",
+      "executionAttestation": "unsigned_local_report",
+      "geometryProof": "embedded_mesh_matches_input_within_tolerance",
+      "geometryComparison": {
+        "algorithm": "oriented-triangle-correspondence-v1",
+        "toleranceMm": 0.00001,
+        "comparison": "complete_oriented_triangle_bijection",
+        "triangles": 6224,
+        "matchedTriangles": 6224,
+        "maxCoordinateErrorMm": 0.0000019418212957589276,
+        "translationMm": [
+          63,
+          82,
+          -4
+        ],
+        "translationAllowed": true,
+        "sourceSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 6224,
+          "sha256": "4f924798154e3e0b2fda7848a17db4806148107b3a29473187f5ad1203ad9aa8",
+          "originMm": [
+            0,
+            -4.440892098500626e-16,
+            4
+          ],
+          "dimensionsMm": [
+            130,
+            92,
+            35.87883377075195
+          ]
+        },
+        "targetSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 6224,
+          "sha256": "f56d16da8c6fba68ecb687a8c2d3a585fb21c966091563a3d86ea32114925ead",
+          "originMm": [
+            63,
+            82,
+            0
+          ],
+          "dimensionsMm": [
+            130,
+            92,
+            35.8788338
+          ]
+        }
+      },
+      "plateBinding": {
+        "plate": 1,
+        "buildObjectId": 2,
+        "instanceId": 0,
+        "identifyId": 15,
+        "meshObjectIds": [
+          1
+        ]
+      },
+      "savedPartBinding": "saved_part_recomputed",
+      "physicalValidation": "not_run",
+      "productionReady": false,
+      "layerCount": 179,
+      "estimatedSeconds": 5215.9970703125,
+      "estimatedGrams": 59.388038635253906,
+      "warnings": "",
+      "engine": {
+        "name": "Bambu Studio",
+        "version": "02.08.02.60",
+        "executableSha256": "fb04b22d21d2dd77e223c68e56b0f36302fd7b860040d553aed2608694017749",
+        "dllSha256": "d6aa10044d11d9b3fcba0d6b52ed3154b4b02897764c270c0fdcbe2cf812f85b"
+      },
+      "settings": {
+        "printer_model": "Bambu Lab X1 Carbon",
+        "printer_settings_id": "Bambu Lab X1 Carbon 0.4 nozzle",
+        "printer_variant": "0.4",
+        "nozzle_diameter": [
+          "0.4"
+        ],
+        "curr_bed_type": "Cool Plate",
+        "filament_type": [
+          "PLA"
+        ],
+        "filament_settings_id": [
+          "Bambu PLA Basic @BBL X1C"
+        ],
+        "filament_colour": [
+          "#00AE42"
+        ],
+        "filament_ids": [
+          "GFA00"
+        ],
+        "filament_diameter": [
+          "1.75"
+        ],
+        "print_settings_id": "0.20mm Standard @BBL X1C",
+        "layer_height": "0.2",
+        "wall_loops": "2",
+        "sparse_infill_density": "15%",
+        "nozzle_temperature": [
+          "220",
+          "220"
+        ],
+        "nozzle_temperature_initial_layer": [
+          "220",
+          "220"
+        ],
+        "cool_plate_temp": [
+          "35"
+        ],
+        "enable_support": "0"
+      },
+      "finishedAt": "2026-09-16T02:57:17.353790+00:00",
+      "artifactSha256": "98df65bc260f1d9d139ee76aca6c8f4c5907a9caa65f24032875ad81835048ba"
+    }
+  },
+  {
+    "index": 2,
+    "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+    "partName": "dark floating display visor",
+    "jobId": "4b59a2c1-55be-4b40-83ea-1c67b85f6d29",
+    "manifestSha256": "591a9a2694965a7651049746c5038c2af48057e8f0d7d5803d88faf48ccc9031",
+    "taskZip": "2-a0e2bbf5-6a33-48a0-b50e-096cc1f22b25-slice-task.zip",
+    "resultPath": "work\\validation\\exterior-redesign\\bambu-runs\\4b59a2c1-55be-4b40-83ea-1c67b85f6d29-c511565d-8acb-4f06-af4b-4bbf406e09c0\\offline-result.zip",
+    "summary": {
+      "jobId": "4b59a2c1-55be-4b40-83ea-1c67b85f6d29",
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "projectRevision": 20,
+      "artifactIntegrity": "consistent",
+      "executionAttestation": "unsigned_local_report",
+      "geometryProof": "embedded_mesh_matches_input_within_tolerance",
+      "geometryComparison": {
+        "algorithm": "oriented-triangle-correspondence-v1",
+        "toleranceMm": 0.00001,
+        "comparison": "complete_oriented_triangle_bijection",
+        "triangles": 1196,
+        "matchedTriangles": 1196,
+        "maxCoordinateErrorMm": 9.972778372002722e-7,
+        "translationMm": [
+          63,
+          94.50001,
+          -22.451604883139648
+        ],
+        "translationAllowed": true,
+        "sourceSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 1196,
+          "sha256": "73b0cef1c01e102c2f8c31467b36eaa245a34ce55a1d1252dfdb231364832016",
+          "originMm": [
+            9,
+            5,
+            22.45160484313965
+          ],
+          "dimensionsMm": [
+            112,
+            57,
+            16.03324317932129
+          ]
+        },
+        "targetSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 1196,
+          "sha256": "c20567bf030efcabb29349f48a29b37bd2dce81853a47c146356229841da1c47",
+          "originMm": [
+            72,
+            99.50001,
+            -3.999999975690116e-8
+          ],
+          "dimensionsMm": [
+            112,
+            57,
+            16.03324318
+          ]
+        }
+      },
+      "plateBinding": {
+        "plate": 1,
+        "buildObjectId": 2,
+        "instanceId": 0,
+        "identifyId": 15,
+        "meshObjectIds": [
+          1
+        ]
+      },
+      "savedPartBinding": "saved_part_recomputed",
+      "physicalValidation": "not_run",
+      "productionReady": false,
+      "layerCount": 80,
+      "estimatedSeconds": 4397.11328125,
+      "estimatedGrams": 18.96869659423828,
+      "warnings": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "engine": {
+        "name": "Bambu Studio",
+        "version": "02.08.02.60",
+        "executableSha256": "fb04b22d21d2dd77e223c68e56b0f36302fd7b860040d553aed2608694017749",
+        "dllSha256": "d6aa10044d11d9b3fcba0d6b52ed3154b4b02897764c270c0fdcbe2cf812f85b"
+      },
+      "settings": {
+        "printer_model": "Bambu Lab X1 Carbon",
+        "printer_settings_id": "Bambu Lab X1 Carbon 0.4 nozzle",
+        "printer_variant": "0.4",
+        "nozzle_diameter": [
+          "0.4"
+        ],
+        "curr_bed_type": "Cool Plate",
+        "filament_type": [
+          "PLA"
+        ],
+        "filament_settings_id": [
+          "Bambu PLA Basic @BBL X1C"
+        ],
+        "filament_colour": [
+          "#00AE42"
+        ],
+        "filament_ids": [
+          "GFA00"
+        ],
+        "filament_diameter": [
+          "1.75"
+        ],
+        "print_settings_id": "0.20mm Standard @BBL X1C",
+        "layer_height": "0.2",
+        "wall_loops": "2",
+        "sparse_infill_density": "15%",
+        "nozzle_temperature": [
+          "220",
+          "220"
+        ],
+        "nozzle_temperature_initial_layer": [
+          "220",
+          "220"
+        ],
+        "cool_plate_temp": [
+          "35"
+        ],
+        "enable_support": "0"
+      },
+      "finishedAt": "2026-09-16T02:57:33.704906+00:00",
+      "artifactSha256": "1c738c6fad152e1afeab1147606726c4286f35fcf6ce2cc6e9950adad584857b"
+    }
+  },
+  {
+    "index": 3,
+    "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+    "partName": "graphite rear vent service cover",
+    "jobId": "bc8cf67c-0d00-4b02-85ec-9079b885330d",
+    "manifestSha256": "6dd5dfde67595cf3fa0a44a139e01390f5c2ab91c5b28e9a2f2408b8289ad16d",
+    "taskZip": "3-b1f3cc06-7b44-49b1-a61f-1a7dd2033c36-slice-task.zip",
+    "resultPath": "work\\validation\\exterior-redesign\\bambu-runs\\bc8cf67c-0d00-4b02-85ec-9079b885330d-b719b1e1-4345-470e-a538-42a9344ba946\\offline-result.zip",
+    "summary": {
+      "jobId": "bc8cf67c-0d00-4b02-85ec-9079b885330d",
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "projectRevision": 20,
+      "artifactIntegrity": "consistent",
+      "executionAttestation": "unsigned_local_report",
+      "geometryProof": "embedded_mesh_matches_input_within_tolerance",
+      "geometryComparison": {
+        "algorithm": "oriented-triangle-correspondence-v1",
+        "toleranceMm": 0.00001,
+        "comparison": "complete_oriented_triangle_bijection",
+        "triangles": 1428,
+        "matchedTriangles": 1428,
+        "maxCoordinateErrorMm": 5.000001124244591e-8,
+        "translationMm": [
+          63,
+          53.00001,
+          -36.28250502540039
+        ],
+        "translationAllowed": true,
+        "sourceSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 1428,
+          "sha256": "07cdefe1b96a7516e009bf86750bf1ccd444815842e62094b67b0b9fb5f4cb95",
+          "originMm": [
+            9,
+            63,
+            36.28250503540039
+          ],
+          "dimensionsMm": [
+            112,
+            24,
+            6.434642791748047
+          ]
+        },
+        "targetSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 1428,
+          "sha256": "77bb78bbd57eba9654d01a667594f39f7ce7e4d27911e4bfdec127cdd4eee663",
+          "originMm": [
+            72,
+            116.00001,
+            1.000000215967134e-8
+          ],
+          "dimensionsMm": [
+            112,
+            24,
+            6.43464279
+          ]
+        }
+      },
+      "plateBinding": {
+        "plate": 1,
+        "buildObjectId": 2,
+        "instanceId": 0,
+        "identifyId": 15,
+        "meshObjectIds": [
+          1
+        ]
+      },
+      "savedPartBinding": "saved_part_recomputed",
+      "physicalValidation": "not_run",
+      "productionReady": false,
+      "layerCount": 32,
+      "estimatedSeconds": 1701.7940673828125,
+      "estimatedGrams": 6.021846294403076,
+      "warnings": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "engine": {
+        "name": "Bambu Studio",
+        "version": "02.08.02.60",
+        "executableSha256": "fb04b22d21d2dd77e223c68e56b0f36302fd7b860040d553aed2608694017749",
+        "dllSha256": "d6aa10044d11d9b3fcba0d6b52ed3154b4b02897764c270c0fdcbe2cf812f85b"
+      },
+      "settings": {
+        "printer_model": "Bambu Lab X1 Carbon",
+        "printer_settings_id": "Bambu Lab X1 Carbon 0.4 nozzle",
+        "printer_variant": "0.4",
+        "nozzle_diameter": [
+          "0.4"
+        ],
+        "curr_bed_type": "Cool Plate",
+        "filament_type": [
+          "PLA"
+        ],
+        "filament_settings_id": [
+          "Bambu PLA Basic @BBL X1C"
+        ],
+        "filament_colour": [
+          "#00AE42"
+        ],
+        "filament_ids": [
+          "GFA00"
+        ],
+        "filament_diameter": [
+          "1.75"
+        ],
+        "print_settings_id": "0.20mm Standard @BBL X1C",
+        "layer_height": "0.2",
+        "wall_loops": "2",
+        "sparse_infill_density": "15%",
+        "nozzle_temperature": [
+          "220",
+          "220"
+        ],
+        "nozzle_temperature_initial_layer": [
+          "220",
+          "220"
+        ],
+        "cool_plate_temp": [
+          "35"
+        ],
+        "enable_support": "0"
+      },
+      "finishedAt": "2026-09-16T02:57:35.401349+00:00",
+      "artifactSha256": "5605cbcd11212e89f4192fc77412277003f08b8e5b4f931eea343b4651fe6617"
+    }
+  },
+  {
+    "index": 4,
+    "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+    "partName": "recessed shadow plinth with feet",
+    "jobId": "5f9f3181-f3e6-4b4f-866b-982cf8b030f1",
+    "manifestSha256": "41a9ae5d06e2b534b053edd3b03e581b3ad4fb0fd5eb4065a4317d204a6d018b",
+    "taskZip": "4-c204dd17-8c55-4ac2-b720-2b8ee3144d47-slice-task.zip",
+    "resultPath": "work\\validation\\exterior-redesign\\bambu-runs\\5f9f3181-f3e6-4b4f-866b-982cf8b030f1-dbf6e27e-69d5-498c-8caf-10f6eecbf6b1\\offline-result.zip",
+    "summary": {
+      "jobId": "5f9f3181-f3e6-4b4f-866b-982cf8b030f1",
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "projectRevision": 20,
+      "artifactIntegrity": "consistent",
+      "executionAttestation": "unsigned_local_report",
+      "geometryProof": "embedded_mesh_matches_input_within_tolerance",
+      "geometryComparison": {
+        "algorithm": "oriented-triangle-correspondence-v1",
+        "toleranceMm": 0.00001,
+        "comparison": "complete_oriented_triangle_bijection",
+        "triangles": 2564,
+        "matchedTriangles": 2564,
+        "maxCoordinateErrorMm": 0.0000028951538126875676,
+        "translationMm": [
+          63.004388571203606,
+          84,
+          1
+        ],
+        "translationAllowed": true,
+        "sourceSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 2564,
+          "sha256": "7b894945cf93243f022eccb90e5e956ff29d3a98a133ddf4af073748d70a5d92",
+          "originMm": [
+            10.076769828796387,
+            10,
+            -1
+          ],
+          "dimensionsMm": [
+            109.83766651153564,
+            68,
+            4.599999904632568
+          ]
+        },
+        "targetSignature": {
+          "encoding": "ordered-float64le-mm-v1",
+          "triangles": 2564,
+          "sha256": "fd35bbeb22f9c66a3f2071d786c3a9a22eae4e86c6a4969de2ab26e14da83543",
+          "originMm": [
+            73.08115839999999,
+            94,
+            0
+          ],
+          "dimensionsMm": [
+            109.83766560000001,
+            68,
+            4.5999999
+          ]
+        }
+      },
+      "plateBinding": {
+        "plate": 1,
+        "buildObjectId": 2,
+        "instanceId": 0,
+        "identifyId": 15,
+        "meshObjectIds": [
+          1
+        ]
+      },
+      "savedPartBinding": "saved_part_recomputed",
+      "physicalValidation": "not_run",
+      "productionReady": false,
+      "layerCount": 23,
+      "estimatedSeconds": 1958.7232666015625,
+      "estimatedGrams": 18.456787109375,
+      "warnings": "It seems object input.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "engine": {
+        "name": "Bambu Studio",
+        "version": "02.08.02.60",
+        "executableSha256": "fb04b22d21d2dd77e223c68e56b0f36302fd7b860040d553aed2608694017749",
+        "dllSha256": "d6aa10044d11d9b3fcba0d6b52ed3154b4b02897764c270c0fdcbe2cf812f85b"
+      },
+      "settings": {
+        "printer_model": "Bambu Lab X1 Carbon",
+        "printer_settings_id": "Bambu Lab X1 Carbon 0.4 nozzle",
+        "printer_variant": "0.4",
+        "nozzle_diameter": [
+          "0.4"
+        ],
+        "curr_bed_type": "Cool Plate",
+        "filament_type": [
+          "PLA"
+        ],
+        "filament_settings_id": [
+          "Bambu PLA Basic @BBL X1C"
+        ],
+        "filament_colour": [
+          "#00AE42"
+        ],
+        "filament_ids": [
+          "GFA00"
+        ],
+        "filament_diameter": [
+          "1.75"
+        ],
+        "print_settings_id": "0.20mm Standard @BBL X1C",
+        "layer_height": "0.2",
+        "wall_loops": "2",
+        "sparse_infill_density": "15%",
+        "nozzle_temperature": [
+          "220",
+          "220"
+        ],
+        "nozzle_temperature_initial_layer": [
+          "220",
+          "220"
+        ],
+        "cool_plate_temp": [
+          "35"
+        ],
+        "enable_support": "0"
+      },
+      "finishedAt": "2026-09-16T02:57:36.693618+00:00",
+      "artifactSha256": "2ea6bcaa8aa9c0fe2c978981bb54c6de0fc4717275af87fdea80db8bd2251f3c"
+    }
+  }
+]

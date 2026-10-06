@@ -1,0 +1,8 @@
+{
+  "schema": "executor-contract-v1",
+  "runnerSha256": "1f5b65a1c8c49e89141b5986c5951f1e4ae121932acabf5a25b70d68b6b8856d",
+  "engine": "controlled-cad-v3",
+  "kind": "cad_build",
+  "maxResultBytes": 8388608,
+  "leaseSeconds": 600
+}

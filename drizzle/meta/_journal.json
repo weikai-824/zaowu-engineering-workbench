@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1789319901094,
+      "tag": "0000_acoustic_captain_marvel",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1789332585914,
+      "tag": "0001_cuddly_master_chief",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789332867878,
+      "tag": "0002_spotty_surge",
+      "breakpoints": true
+    }
+  ]
+}

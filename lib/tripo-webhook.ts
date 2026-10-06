@@ -1,0 +1,9 @@
+import {z} from 'zod';
+import {ApiError} from './errors';
+
+const eventSchema=z.object({id:z.string().min(1).max(200),type:z.enum(['task.completed','task.failed','balance.low']),created_at:z.string().min(1).max(80),data:z.record(z.unknown())}).strict();
+export type TripoWebhookEvent=z.infer<typeof eventSchema>;
+export function parseTripoWebhook(raw:string){let value:unknown;try{value=JSON.parse(raw);}catch{throw new ApiError(400,'Tripo Webhook 内容不是有效 JSON。');}const parsed=eventSchema.safeParse(value);if(!parsed.success)throw new ApiError(400,'Tripo Webhook 内容格式无效。');if(!Number.isFinite(Date.parse(parsed.data.created_at)))throw new ApiError(400,'Tripo Webhook 时间戳无效。');return parsed.data;}
+function hex(value:ArrayBuffer){return Array.from(new Uint8Array(value),v=>v.toString(16).padStart(2,'0')).join('');}
+function equal(a:string,b:string){if(a.length!==b.length)return false;let diff=0;for(let i=0;i<a.length;i++)diff|=a.charCodeAt(i)^b.charCodeAt(i);return diff===0;}
+export async function verifyTripoWebhook(raw:string,header:string|undefined,secret:string,now=Date.now()){if(!header)throw new ApiError(401,'缺少 Tripo Webhook 签名。');const parts=new Map<string,string>();for(const part of header.split(',')){const idx=part.indexOf('=');if(idx>0)parts.set(part.slice(0,idx).trim(),part.slice(idx+1).trim());}const timestamp=parts.get('t'),signature=parts.get('v1');if(!timestamp||!signature||!/^[0-9]{9,12}$/.test(timestamp)||!/^[a-f0-9]{64}$/i.test(signature))throw new ApiError(401,'Tripo Webhook 签名格式无效。');if(Math.abs(now-Number(timestamp)*1000)>300000)throw new ApiError(401,'Tripo Webhook 签名已过期。');const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);const expected=hex(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(timestamp+'.'+raw)));if(!equal(expected,signature.toLowerCase()))throw new ApiError(401,'Tripo Webhook 签名校验失败。');}

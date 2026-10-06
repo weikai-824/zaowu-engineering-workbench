@@ -1,0 +1,24 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+// Export only the already-attached P1-D visual candidate. The current P1-E
+// project deliberately contains an incomplete CAD design, and the production
+// engineering export rejects that state until a real CAD result is attached.
+const fs=require('node:fs'),path=require('node:path'),{createRequire}=require('node:module');
+const {DatabaseSync}=require('node:sqlite');
+const site=path.resolve(__dirname,'..'),req=createRequire(path.join(site,'package.json')),esbuild=req('esbuild'),JSZip=req('jszip');
+const dbPath=path.join(site,'.wrangler','state','v3','d1','miniflare-D1DatabaseObject','faaf2b0445ab934c3aac48ddf0cdfade8f9bac050be98993748742cdd2cb05fb.sqlite');
+const inputPath=path.join(site,'work','validation','tripo-p1d','engineering-intake.glb'),out=path.join(site,'work','validation','p1e-export');fs.mkdirSync(out,{recursive:true});
+const bundle=path.join(out,'p1e-visual-export.bundle.cjs');
+esbuild.buildSync({stdin:{contents:"export {exportEngineering,importModel,digitalChecks} from './lib/geometry';export {inspectGlb} from './lib/glb-inspect';export {currentGeometryHash} from './lib/topology-client';",resolveDir:site,sourcefile:'readonly-p1e-visual-export.ts',loader:'ts'},outfile:bundle,bundle:true,platform:'node',format:'cjs',tsconfig:path.join(site,'tsconfig.json'),logLevel:'silent'});
+const {exportEngineering,importModel,digitalChecks,inspectGlb,currentGeometryHash}=require(bundle),projectId='91ad21c0-4143-4252-8969-00dc31047b82',ownerId='local_seedy';
+globalThis.FileReader=class{result=null;onload=null;onloadend=null;onerror=null;readAsArrayBuffer(blob){blob.arrayBuffer().then(result=>{this.result=result;this.onload?.({target:this});this.onloadend?.({target:this});}).catch(()=>this.onerror?.({target:this}));}};
+async function main(){
+ const db=new DatabaseSync(dbPath),row=db.prepare('SELECT body FROM revisions WHERE project_id=? AND owner_id=? AND number=2').get(projectId,ownerId);if(!row)throw Error('找不到 P1-D revision 2。');
+ const project=JSON.parse(row.body),part=project.parts.find(p=>p.source?.kind==='tripo'&&p.assetId);if(!part)throw Error('P1-D revision 2 没有 Tripo visual candidate。');
+ const bytes=fs.readFileSync(inputPath),buffer=bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.length),model=await importModel(buffer,part.assetName??'engineering-intake.glb',part.params.unitScale),models=new Map([[part.id,model]]),actualGeometryHash=await currentGeometryHash(model),topologyEvidence=project.checks.find(c=>c.partId===part.id&&c.topology),freshChecks=await digitalChecks(project,models),freshTopology=freshChecks.find(c=>c.partId===part.id&&c.topology);
+ const exportProject={...project,checks:freshChecks};let blob;try{blob=await exportEngineering(exportProject,models);}catch(error){console.error(JSON.stringify({exportError:error instanceof Error?error.message:String(error),geometryHash:{evidence:topologyEvidence?.topology?.geometryHash??null,imported:actualGeometryHash,match:topologyEvidence?.topology?.geometryHash===actualGeometryHash,fresh:freshTopology?.topology?.geometryHash??null},topology:{stored:topologyEvidence?.topology?.exact??null,fresh:freshTopology?.topology?.exact??null}},null,2));throw error;}
+ const artifact=Buffer.from(await blob.arrayBuffer()),zip=await JSZip.loadAsync(artifact),assembly=await zip.file('assembly/assembly.glb').async('arraybuffer'),projectJson=JSON.parse(await zip.file('project.json').async('string')),checks=JSON.parse(await zip.file('checks.json').async('string'));
+ const artifactPath=path.join(out,'p1d-visual-candidate-engineering-draft.zip');fs.writeFileSync(artifactPath,artifact);
+ const result={schema:'p1e-visual-export-validation-v1',projectRevision:project.revision,partId:part.id,inputBytes:bytes.length,artifactBytes:artifact.length,artifactSha256:require('node:crypto').createHash('sha256').update(artifact).digest('hex'),assemblyInspection:inspectGlb(assembly),geometryHash:{storedStaticEvidence:topologyEvidence?.topology?.geometryHash??null,imported:actualGeometryHash,freshEvidence:freshTopology?.topology?.geometryHash??null,storedMatchesImported:topologyEvidence?.topology?.geometryHash===actualGeometryHash,freshMatchesImported:freshTopology?.topology?.geometryHash===actualGeometryHash},checkStatuses:checks.map(c=>({name:c.name,status:c.status,verdict:c.topology?.verdict??null})),cadDesignsInPackage:projectJson.cadDesigns?.length??0,productionReady:false,packageKind:'visual_candidate_engineering_draft',passed:project.revision===2&&(projectJson.cadDesigns?.length??0)===0&&checks.some(c=>c.status==='failed'&&c.topology?.verdict==='topology_issues')&&artifact.length>0};
+ fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({...result,artifactPath},null,2));console.log(JSON.stringify(result,null,2));if(!result.passed)process.exitCode=1;
+}
+main().catch(error=>{console.error(error.stack||error);process.exitCode=1;});

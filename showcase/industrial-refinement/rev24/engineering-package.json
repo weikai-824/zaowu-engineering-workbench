@@ -1,0 +1,67 @@
+{
+  "schema": "industrial-redesign-engineering-package-v1",
+  "projectId": "217a34ab-6fc4-42ef-a04b-c167c15dd177",
+  "revision": 24,
+  "path": "work\\validation\\exterior-redesign\\engineering-package-v24.zip",
+  "bytes": 17223277,
+  "sha256": "cad296f264b74e232ba658cd9cc47fe130ab6c6fb661b8cce78a5596110007bf",
+  "files": 163,
+  "has3mf": true,
+  "hasGcode": true,
+  "manufacturingAssets": 4,
+  "assets": [
+    {
+      "partId": "b260e812-b949-4832-9db0-5824b4b86103",
+      "assetId": "b91acfb5-be11-42e4-a839-fe6397752f9d",
+      "role": "visual_reference",
+      "bytes": 5197636,
+      "sha256": "4f31fd35123c45643af48eaa5c632acf19c22c644d5f5aa6bc145632e6c12ddd"
+    },
+    {
+      "partId": "6f11a9d4-4d5d-4f1f-9d26-8b1509a91741",
+      "assetId": "6c7f9161-4e26-4a8f-8b24-a63846d86d95",
+      "role": "manufacturing",
+      "bytes": 311284,
+      "sha256": "380fdfaa5a1a41fb969258ac2c85567961c6836cef7b581a76dd779258408d92"
+    },
+    {
+      "partId": "a0e2bbf5-6a33-48a0-b50e-096cc1f22b25",
+      "assetId": "47702eef-4ea0-4a95-8072-724ba2830b66",
+      "role": "manufacturing",
+      "bytes": 59884,
+      "sha256": "757b87efcd5ed00a73ac4f1aaeaa86d6f9631a6ae72c8c41c1eb9e8c6c54b679"
+    },
+    {
+      "partId": "b1f3cc06-7b44-49b1-a61f-1a7dd2033c36",
+      "assetId": "5c64638b-f4c8-4a31-b0a8-7faecde6139a",
+      "role": "manufacturing",
+      "bytes": 71484,
+      "sha256": "e197cd03bee94425e4712fc00908747141628300b6b55b9c824a2e72a8c09c22"
+    },
+    {
+      "partId": "c204dd17-8c55-4ac2-b720-2b8ee3144d47",
+      "assetId": "2b1d1eac-827b-4341-afc2-c65961f50f98",
+      "role": "manufacturing",
+      "bytes": 128284,
+      "sha256": "18177b4c2b1afb55431d57f4ce5423b80f3c8fb57377e6a3bb5dfdb9f209b4f0"
+    }
+  ],
+  "importantFiles": [
+    "BOM.csv",
+    "cad-native/f8094348-a445-47e1-86b7-4dcb7488fb4d/execution-proof.json",
+    "manufacturing/plan.json",
+    "references/visual-candidates.json",
+    "references/visual-candidates/b260e812-b949-4832-9db0-5824b4b86103.glb",
+    "slicing/4b59a2c1-55be-4b40-83ea-1c67b85f6d29/result/files/sliced.3mf",
+    "slicing/4b59a2c1-55be-4b40-83ea-1c67b85f6d29/result/sliced-3mf/Metadata/plate_1.gcode",
+    "slicing/5f9f3181-f3e6-4b4f-866b-982cf8b030f1/result/files/sliced.3mf",
+    "slicing/5f9f3181-f3e6-4b4f-866b-982cf8b030f1/result/sliced-3mf/Metadata/plate_1.gcode",
+    "slicing/8e5fdac4-802c-4078-8001-a6acab861d0a/result/files/sliced.3mf",
+    "slicing/8e5fdac4-802c-4078-8001-a6acab861d0a/result/sliced-3mf/Metadata/plate_1.gcode",
+    "slicing/bc8cf67c-0d00-4b02-85ec-9079b885330d/result/files/sliced.3mf",
+    "slicing/bc8cf67c-0d00-4b02-85ec-9079b885330d/result/sliced-3mf/Metadata/plate_1.gcode",
+    "traceability.json"
+  ],
+  "physicalValidation": "not_run",
+  "productionReady": false
+}
